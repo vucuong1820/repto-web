@@ -25,42 +25,45 @@
 <body>
 <p class="lang"><strong>English</strong> · <a href="privacy-vi.html">Tiếng Việt</a></p>
 <h1>Privacy Policy</h1>
-<p class="meta">Effective date: April 26, 2026</p>
+<p class="meta">Effective date: June 15, 2026</p>
 
-<p>This Privacy Policy describes how Repto ("we", "us", or "our") collects, uses, and shares your information when you use the Repto mobile application (the "App"). Repto is operated by Vũ Mạnh Cường as an individual developer.</p>
+<p>This Privacy Policy describes how Repto ("we", "us", or "our") collects, uses, and shares your information when you use the Repto mobile application on iOS and Android (the "App"). Repto is operated by Vũ Mạnh Cường as an individual developer.</p>
 
 <h2>1. Information We Collect</h2>
 
 <h3>Account Information</h3>
-<p>When you sign in with Apple or create an account, we collect your email address (or a private relay email if you choose to hide it). We do not collect your name unless you provide it.</p>
+<p>When you sign in with Apple (iOS) or Google (Android), or create an account, we collect your email address (or a private relay email if you choose to hide it). If your sign-in provider shares it, we may receive your display name and profile photo to personalize your profile. We do not collect your name unless you or your provider supplies it.</p>
 
 <h3>Workout Data</h3>
 <p>The App stores your workout templates, exercise logs, sets, reps, weights, durations, rest times, and progress photos. This data is stored locally on your device and, if you sign in, synced to our backend (Supabase) for backup and cross-device access.</p>
 
-<h3>Apple Health Data</h3>
-<p>With your explicit permission, the App reads the following from Apple Health to provide personalized insights:</p>
+<h3>Health Data</h3>
+<p>With your explicit permission, the App reads the following from <strong>Apple Health (iOS)</strong> or <strong>Health Connect (Android)</strong> to provide personalized insights:</p>
 <ul>
   <li>Body weight</li>
   <li>Sleep analysis</li>
-  <li>Heart rate</li>
-  <li>Resting heart rate</li>
+  <li>Heart rate (including resting heart rate)</li>
   <li>Body fat percentage</li>
-  <li>Active energy burned</li>
+  <li>Active energy / calories burned</li>
 </ul>
-<p>The App writes your completed strength training workouts back to Apple Health so they count toward your Activity rings. <strong>Health data is processed on your device and is never sold, used for advertising, or shared with third parties for marketing purposes.</strong> Health data is not transmitted to our servers in raw form. When you use the AI Coach feature, only aggregated, non-identifying summaries (e.g., weekly average sleep hours) may be sent to our AI processing partner to generate insights.</p>
+<p>The App writes your completed workouts (and the calories burned) back to Apple Health or Health Connect so they count toward your activity goals. <strong>Health data is processed on your device and is never sold, used for advertising, or shared with third parties for marketing purposes.</strong> Health data is not transmitted to our servers in raw form. When you use the AI Coach feature, only aggregated, non-identifying summaries (e.g., weekly average sleep hours) may be sent to our AI processing partner to generate insights.</p>
+
+<h3>Location Data</h3>
+<p>For outdoor cardio workouts (e.g., running, walking, cycling), the App uses your device's <strong>precise location</strong> while a tracking session is active to measure distance, route, and pace. Location is collected only during an active cardio session, is used solely to compute your workout metrics, and is not used for advertising. Route data is stored with your workout and, if sync is enabled, backed up to our backend. You can decline the location permission and still use all other features.</p>
 
 <h3>Photos</h3>
 <p>If you choose to attach photos to your workout progress, those photos are stored locally on your device and, if account sync is enabled, encrypted and uploaded to our backend.</p>
 
 <h3>Subscription &amp; Purchase Data</h3>
-<p>Subscription purchases are processed by Apple. We receive a receipt verifying your subscription status but do not have access to your payment information.</p>
+<p>Subscription purchases are processed by <strong>Apple (App Store)</strong> or <strong>Google (Google Play Billing)</strong>, and your subscription status is managed by our subscription provider <strong>RevenueCat</strong>. We receive a receipt and an anonymous app user ID verifying your subscription status, but we do not have access to your payment card information.</p>
 
 <h3>Diagnostic Information</h3>
-<p>We do not run any third-party analytics or crash reporting SDKs. Apple may collect anonymous diagnostic information through its standard App Store mechanisms; you can disable this in iOS Settings → Privacy &amp; Security → Analytics.</p>
+<p>We do not run any third-party analytics or crash reporting SDKs. The App Store and Google Play may collect anonymous diagnostic information through their standard platform mechanisms; you can disable this in your device privacy settings (iOS Settings → Privacy &amp; Security → Analytics, or Android Settings → Google → Usage &amp; diagnostics).</p>
 
 <h2>2. How We Use Your Information</h2>
 <ul>
   <li>To provide and operate the App's core features (workout tracking, history, charts)</li>
+  <li>To measure distance, route, and pace during outdoor cardio workouts</li>
   <li>To sync your data across your devices when you sign in</li>
   <li>To generate personalized AI Coach insights (Pro subscribers only)</li>
   <li>To process subscription purchases and verify entitlements</li>
@@ -73,10 +76,16 @@
 <p>We use Supabase as our backend for authentication and data sync. Supabase stores your account email, workout data, and (if applicable) attached photos. See <a href="https://supabase.com/privacy">Supabase's privacy policy</a>.</p>
 
 <h3>Anthropic (AI Coach, Pro only)</h3>
-<p>The AI Coach feature uses the Anthropic Claude API to generate workout plans, weekly reviews, and chart explanations. We send only the data necessary to generate the response: your goals, training history summaries, and aggregated metrics. We do not send raw Apple Health records. Anthropic does not use this data to train its models. See <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>.</p>
+<p>The AI Coach feature uses the Anthropic Claude API to generate workout plans, weekly reviews, and chart explanations. We send only the data necessary to generate the response: your goals, training history summaries, and aggregated metrics. We do not send raw health records. Anthropic does not use this data to train its models. See <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>.</p>
 
-<h3>Apple</h3>
+<h3>RevenueCat (subscription management)</h3>
+<p>We use RevenueCat to manage and verify subscription entitlements across platforms. RevenueCat receives purchase receipts and an anonymous app user ID, but not your payment card details. See <a href="https://www.revenuecat.com/privacy">RevenueCat's privacy policy</a>.</p>
+
+<h3>Apple (iOS)</h3>
 <p>Sign in with Apple, In-App Purchases, Apple Health, Live Activities, and Apple Watch are provided by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
+
+<h3>Google (Android)</h3>
+<p>Google Sign-In, Google Play Billing, and Health Connect are provided by Google under <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
 
 <h2>4. Data Retention</h2>
 <p>We retain your account data for as long as your account is active. You can delete your account at any time from Settings → Account → Delete Account. Upon deletion, your account, workout history, and synced data are permanently removed from our servers within 30 days. Local data on your device is removed when you uninstall the App.</p>
