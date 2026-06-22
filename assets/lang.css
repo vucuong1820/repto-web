@@ -1,0 +1,40 @@
+/* Repto — language switcher dropdown (shared: landing + legal) */
+.lang-switch { position: relative; display: inline-flex; flex: none; }
+
+.lang-switch__btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 38px; padding: 0 10px 0 12px;
+  font: var(--caption); font-weight: 600; color: var(--text-primary);
+  background: var(--surface-highest); border: 1px solid var(--stroke);
+  border-radius: var(--radius-full); cursor: pointer;
+  -webkit-appearance: none; appearance: none;
+  transition: background .18s ease, border-color .18s ease;
+}
+.lang-switch__btn:hover { background: var(--surface-bright); }
+.lang-switch__globe { color: var(--lime); flex: none; }
+.lang-switch__code { letter-spacing: .5px; }
+.lang-switch__chev { color: var(--text-secondary); transition: transform .2s ease; }
+.lang-switch.is-open .lang-switch__chev { transform: rotate(180deg); }
+
+.lang-switch__menu {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 200;
+  min-width: 172px; margin: 0; padding: 6px; list-style: none;
+  background: var(--surface-high); border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-md); box-shadow: 0 12px 32px rgba(0, 0, 0, .36);
+  opacity: 0; transform: translateY(-6px); pointer-events: none;
+  transition: opacity .16s ease, transform .16s ease;
+}
+.lang-switch.is-open .lang-switch__menu { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+.lang-switch__opt {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 9px 12px; border-radius: var(--radius-sm);
+  font: var(--body); font-weight: 500; color: var(--text-primary); text-decoration: none;
+}
+.lang-switch__opt:hover { background: var(--surface-highest); }
+.lang-switch__opt.is-current { color: var(--lime); }
+.lang-switch__opt svg { color: var(--lime); flex: none; }
+
+@media (max-width: 560px) {
+  .lang-switch__btn { height: 34px; padding: 0 8px 0 10px; }
+}
