@@ -1,0 +1,11 @@
+# Vietnamese pages served at clean /vi/ paths
+/vi              /index-vi.html    200
+/vi/privacy      /privacy-vi.html  200
+/vi/terms        /terms-vi.html    200
+/vi/support      /support-vi.html  200
+
+# 301 redirects for old *-vi.html URLs (SEO: prevent duplicate content)
+/index-vi.html   /vi               301
+/privacy-vi.html /vi/privacy       301
+/terms-vi.html   /vi/terms         301
+/support-vi.html /vi/support       301
