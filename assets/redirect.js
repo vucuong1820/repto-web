@@ -23,7 +23,13 @@
     }
     if (want !== cur) {
       var node = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
-      if (node && node.href) location.replace(node.href);
+      var href = node && node.getAttribute('href');
+      if (href) {
+        // hreflang URLs are absolute (required for SEO); navigate on the
+        // CURRENT origin so this works on localhost/preview too, not just prod.
+        var dest = new URL(href, location.href);
+        location.replace(dest.pathname + dest.search + dest.hash);
+      }
     }
   } catch (e) {}
 })();
