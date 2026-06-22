@@ -47,8 +47,9 @@
 
 ## File structure
 
-**New — shared switcher module**
-- `assets/lang.js` — renders the header dropdown into `[data-lang-switch]`, reads target URLs from the page's `hreflang` link tags, persists explicit choice to `localStorage['repto-lang']`. (Auto-redirect is a separate inline `<head>` script, NOT here.)
+**New — shared modules**
+- `assets/redirect.js` — first-visit auto-detect + redirect. Loaded as a **blocking** `<script src>` in `<head>` AFTER the `hreflang` tags so it runs before paint and can read them. Single source of truth (no per-page inline duplication).
+- `assets/lang.js` — renders the header dropdown into `[data-lang-switch]`, reads target URLs from the page's `hreflang` link tags, persists explicit choice to `localStorage['repto-lang']`. Loaded `defer` (runs after paint; switcher only).
 - `assets/lang.css` — dropdown styling using existing tokens.
 
 **New — Vietnamese pages**
@@ -58,23 +59,58 @@
 - `sitemap.xml`.
 
 **Modified — English pages**
-- `index.html`, `privacy.html`, `terms.html`, `support.html` — add SEO head block + inline redirect script, include `lang.css`/`lang.js`, add `[data-lang-switch]` to the header.
+- `index.html`, `privacy.html`, `terms.html`, `support.html` — add SEO head block, include `lang.css` + blocking `redirect.js` (head) + deferred `lang.js`, add `[data-lang-switch]` to the header.
 
 **Local preview for all manual tests:** `python3 -m http.server 8080` from the repo root, then visit `http://localhost:8080/`.
 
 ---
 
-### Task 1: Shared switcher module (`assets/lang.js` + `assets/lang.css`)
+### Task 1: Shared modules (`assets/redirect.js` + `assets/lang.js` + `assets/lang.css`)
 
 **Files:**
+- Create: `assets/redirect.js`
 - Create: `assets/lang.js`
 - Create: `assets/lang.css`
 
 **Interfaces:**
-- Consumes (from each page that includes it): a `<div data-lang-switch>` mount point; `<html lang="en|vi">`; `<link rel="alternate" hreflang="en|vi" href="…">` tags.
-- Produces: a rendered `.lang-switch` dropdown; writes `localStorage['repto-lang']` (`"en"`/`"vi"`) on option click. No exported functions (self-invoking).
+- Consumes (from each page that includes them): a `<div data-lang-switch>` mount point; `<html lang="en|vi">`; `<link rel="alternate" hreflang="en|vi" href="…">` tags.
+- Produces: `redirect.js` runs the first-visit auto-detect/redirect (reads `hreflang` tags, calls `location.replace`); `lang.js` renders a `.lang-switch` dropdown and writes `localStorage['repto-lang']` (`"en"`/`"vi"`) on option click. Both are self-invoking (no exports). They share the `localStorage['repto-lang']` key.
 
-- [ ] **Step 1: Create `assets/lang.js`**
+- [ ] **Step 1: Create `assets/redirect.js`**
+
+```js
+/* ============================================================
+   Repto — first-visit language auto-detect + redirect (shared).
+   Loaded as a BLOCKING <script src> in <head>, AFTER the hreflang
+   <link> tags, so it runs before paint and can read them.
+   Precedence: localStorage['repto-lang'] -> ?lang= -> navigator
+   languages (vi) -> timezone (Asia/Ho_Chi_Minh) -> default en.
+   Uses location.replace() so the Back button never loops.
+   ============================================================ */
+(function () {
+  try {
+    var cur = (document.documentElement.getAttribute('lang') || 'en').slice(0, 2).toLowerCase();
+    var saved = null;
+    try { saved = localStorage.getItem('repto-lang'); } catch (e) {}
+    var q = (location.search.match(/[?&]lang=(en|vi)/) || [])[1];
+    if (q) { try { localStorage.setItem('repto-lang', q); } catch (e) {} }
+    var want = q || saved;
+    if (!want) {
+      var langs = navigator.languages || [navigator.language || ''];
+      var prefersVi = langs.some(function (l) { return /^vi\b/i.test(l); });
+      var tz = '';
+      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+      want = (prefersVi || /Ho_Chi_Minh|Saigon/i.test(tz)) ? 'vi' : 'en';
+    }
+    if (want !== cur) {
+      var node = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+      if (node && node.href) location.replace(node.href);
+    }
+  } catch (e) {}
+})();
+```
+
+- [ ] **Step 2: Create `assets/lang.js`**
 
 ```js
 /* ============================================================
@@ -84,7 +120,7 @@
    current language from <html lang>. On click it writes the user's
    explicit choice to localStorage['repto-lang'] BEFORE navigation so
    the destination page's redirect script honours it.
-   (Auto-detect + first-visit redirect lives in the inline <head> script.)
+   (Auto-detect + first-visit redirect lives in the shared assets/redirect.js.)
    ============================================================ */
 (function () {
   'use strict';
@@ -170,7 +206,7 @@
 })();
 ```
 
-- [ ] **Step 2: Create `assets/lang.css`**
+- [ ] **Step 3: Create `assets/lang.css`**
 
 ```css
 /* Repto — language switcher dropdown (shared: landing + legal) */
@@ -215,16 +251,16 @@
 }
 ```
 
-- [ ] **Step 3: Lint-check the JS for syntax errors**
+- [ ] **Step 4: Lint-check both JS files for syntax errors**
 
-Run: `node --check assets/lang.js`
-Expected: no output, exit code 0 (file parses).
+Run: `node --check assets/redirect.js && node --check assets/lang.js`
+Expected: no output, exit code 0 (both files parse).
 
-- [ ] **Step 4: Commit**
+- [ ] **Step 5: Commit**
 
 ```bash
-git add assets/lang.js assets/lang.css
-git commit -m "feat(i18n): shared language switcher module (lang.js + lang.css)"
+git add assets/redirect.js assets/lang.js assets/lang.css
+git commit -m "feat(i18n): shared redirect + language switcher modules"
 ```
 
 ---
@@ -236,7 +272,7 @@ git commit -m "feat(i18n): shared language switcher module (lang.js + lang.css)"
 - Create: `index-vi.html`
 
 **Interfaces:**
-- Consumes: `assets/lang.js`, `assets/lang.css` (Task 1).
+- Consumes: `assets/redirect.js`, `assets/lang.js`, `assets/lang.css` (Task 1).
 - Produces: the EN↔VI `hreflang` pair for the home page; the `[data-lang-switch]` mount in the landing nav.
 
 - [ ] **Step 1: Add the SEO head block + redirect script to `index.html`**
@@ -256,29 +292,7 @@ In `index.html`, immediately AFTER the existing `<link rel="stylesheet" href="as
 <meta property="og:image" content="https://reptofit.com/assets/repto-logo.jpeg" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="vi_VN" />
-<script>
-(function () {
-  try {
-    var cur = (document.documentElement.getAttribute('lang') || 'en').slice(0, 2).toLowerCase();
-    var saved = null;
-    try { saved = localStorage.getItem('repto-lang'); } catch (e) {}
-    var q = (location.search.match(/[?&]lang=(en|vi)/) || [])[1];
-    if (q) { try { localStorage.setItem('repto-lang', q); } catch (e) {} }
-    var want = q || saved;
-    if (!want) {
-      var langs = navigator.languages || [navigator.language || ''];
-      var prefersVi = langs.some(function (l) { return /^vi\b/i.test(l); });
-      var tz = '';
-      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-      want = (prefersVi || /Ho_Chi_Minh|Saigon/i.test(tz)) ? 'vi' : 'en';
-    }
-    if (want !== cur) {
-      var node = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
-      if (node && node.href) location.replace(node.href);
-    }
-  } catch (e) {}
-})();
-</script>
+<script src="assets/redirect.js"></script>
 ```
 
 - [ ] **Step 2: Add the language switcher to the landing nav**
@@ -302,7 +316,7 @@ In `index.html`, immediately AFTER the existing `<script src="assets/app.js" def
 
 Run:
 ```bash
-grep -c 'hreflang="vi"' index.html && grep -c 'data-lang-switch' index.html && grep -c 'assets/lang.js' index.html && grep -c 'location.replace' index.html
+grep -c 'hreflang="vi"' index.html && grep -c 'data-lang-switch' index.html && grep -c 'assets/lang.js' index.html && grep -c 'assets/redirect.js' index.html
 ```
 Expected: `1` printed four times (each marker present exactly once).
 
@@ -442,7 +456,7 @@ git commit -m "feat(i18n): bilingual landing page (EN wiring + Vietnamese index-
 - Create: `privacy-vi.html`
 
 **Interfaces:**
-- Consumes: `assets/lang.js`, `assets/lang.css`.
+- Consumes: `assets/redirect.js`, `assets/lang.js`, `assets/lang.css`.
 - Produces: EN↔VI `hreflang` pair for privacy; `[data-lang-switch]` mount in the legal nav.
 
 - [ ] **Step 1: Add SEO head block + redirect script to `privacy.html`**
@@ -461,29 +475,7 @@ In `privacy.html`, immediately AFTER `<link rel="stylesheet" href="assets/colors
 <meta property="og:image" content="https://reptofit.com/assets/repto-logo.jpeg" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="vi_VN" />
-<script>
-(function () {
-  try {
-    var cur = (document.documentElement.getAttribute('lang') || 'en').slice(0, 2).toLowerCase();
-    var saved = null;
-    try { saved = localStorage.getItem('repto-lang'); } catch (e) {}
-    var q = (location.search.match(/[?&]lang=(en|vi)/) || [])[1];
-    if (q) { try { localStorage.setItem('repto-lang', q); } catch (e) {} }
-    var want = q || saved;
-    if (!want) {
-      var langs = navigator.languages || [navigator.language || ''];
-      var prefersVi = langs.some(function (l) { return /^vi\b/i.test(l); });
-      var tz = '';
-      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-      want = (prefersVi || /Ho_Chi_Minh|Saigon/i.test(tz)) ? 'vi' : 'en';
-    }
-    if (want !== cur) {
-      var node = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
-      if (node && node.href) location.replace(node.href);
-    }
-  } catch (e) {}
-})();
-</script>
+<script src="assets/redirect.js"></script>
 ```
 
 - [ ] **Step 2: Add the switcher to the legal nav + include `lang.js`**
@@ -556,7 +548,7 @@ git commit -m "feat(i18n): bilingual privacy page"
 - Create: `terms-vi.html`
 
 **Interfaces:**
-- Consumes: `assets/lang.js`, `assets/lang.css`.
+- Consumes: `assets/redirect.js`, `assets/lang.js`, `assets/lang.css`.
 - Produces: EN↔VI `hreflang` pair for terms.
 
 - [ ] **Step 1: Add SEO head block + redirect script to `terms.html`**
@@ -575,29 +567,7 @@ In `terms.html`, immediately AFTER `<link rel="stylesheet" href="assets/colors_a
 <meta property="og:image" content="https://reptofit.com/assets/repto-logo.jpeg" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="vi_VN" />
-<script>
-(function () {
-  try {
-    var cur = (document.documentElement.getAttribute('lang') || 'en').slice(0, 2).toLowerCase();
-    var saved = null;
-    try { saved = localStorage.getItem('repto-lang'); } catch (e) {}
-    var q = (location.search.match(/[?&]lang=(en|vi)/) || [])[1];
-    if (q) { try { localStorage.setItem('repto-lang', q); } catch (e) {} }
-    var want = q || saved;
-    if (!want) {
-      var langs = navigator.languages || [navigator.language || ''];
-      var prefersVi = langs.some(function (l) { return /^vi\b/i.test(l); });
-      var tz = '';
-      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-      want = (prefersVi || /Ho_Chi_Minh|Saigon/i.test(tz)) ? 'vi' : 'en';
-    }
-    if (want !== cur) {
-      var node = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
-      if (node && node.href) location.replace(node.href);
-    }
-  } catch (e) {}
-})();
-</script>
+<script src="assets/redirect.js"></script>
 ```
 
 - [ ] **Step 2: Add switcher to nav + include `lang.js`**
@@ -664,7 +634,7 @@ git commit -m "feat(i18n): bilingual terms page"
 - Create: `support-vi.html`
 
 **Interfaces:**
-- Consumes: `assets/lang.js`, `assets/lang.css`.
+- Consumes: `assets/redirect.js`, `assets/lang.js`, `assets/lang.css`.
 - Produces: EN↔VI `hreflang` pair for support.
 
 - [ ] **Step 1: Add SEO head block + redirect script to `support.html`**
@@ -683,29 +653,7 @@ In `support.html`, immediately AFTER `<link rel="stylesheet" href="assets/colors
 <meta property="og:image" content="https://reptofit.com/assets/repto-logo.jpeg" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="vi_VN" />
-<script>
-(function () {
-  try {
-    var cur = (document.documentElement.getAttribute('lang') || 'en').slice(0, 2).toLowerCase();
-    var saved = null;
-    try { saved = localStorage.getItem('repto-lang'); } catch (e) {}
-    var q = (location.search.match(/[?&]lang=(en|vi)/) || [])[1];
-    if (q) { try { localStorage.setItem('repto-lang', q); } catch (e) {} }
-    var want = q || saved;
-    if (!want) {
-      var langs = navigator.languages || [navigator.language || ''];
-      var prefersVi = langs.some(function (l) { return /^vi\b/i.test(l); });
-      var tz = '';
-      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-      want = (prefersVi || /Ho_Chi_Minh|Saigon/i.test(tz)) ? 'vi' : 'en';
-    }
-    if (want !== cur) {
-      var node = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
-      if (node && node.href) location.replace(node.href);
-    }
-  } catch (e) {}
-})();
-</script>
+<script src="assets/redirect.js"></script>
 ```
 
 - [ ] **Step 2: Add switcher to nav + include `lang.js`**
@@ -851,8 +799,8 @@ Expected: every line reads `en=1 vi=1 x-default=1`.
 
 Run:
 ```bash
-for f in index privacy terms support; do echo "$f: redirect=$(grep -c 'location.replace' $f.html) lang.js=$(grep -c 'assets/lang.js' $f.html)"; done
-for f in index-vi privacy-vi terms-vi support-vi; do echo "$f: vi=$(grep -c 'html lang=\"vi\"' $f.html) redirect=$(grep -c 'location.replace' $f.html)"; done
+for f in index privacy terms support; do echo "$f: redirect=$(grep -c 'assets/redirect.js' $f.html) lang.js=$(grep -c 'assets/lang.js' $f.html)"; done
+for f in index-vi privacy-vi terms-vi support-vi; do echo "$f: vi=$(grep -c 'html lang=\"vi\"' $f.html) redirect=$(grep -c 'assets/redirect.js' $f.html)"; done
 ```
 Expected: EN lines `redirect=1 lang.js=1`; VI lines `vi=1 redirect=1`.
 
