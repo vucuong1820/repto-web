@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Repto — Điều khoản sử dụng</title>
+<meta name="description" content="Các điều khoản điều chỉnh việc bạn sử dụng Repto, bao gồm gói đăng ký, sử dụng hợp lệ và tuyên bố miễn trừ về sức khỏe &amp; thể hình." />
+<link rel="stylesheet" href="assets/colors_and_type.css" />
+<link rel="stylesheet" href="assets/lang.css" />
+<link rel="canonical" href="https://reptofit.com/terms-vi.html" />
+<link rel="alternate" hreflang="en" href="https://reptofit.com/terms.html" />
+<link rel="alternate" hreflang="vi" href="https://reptofit.com/terms-vi.html" />
+<link rel="alternate" hreflang="x-default" href="https://reptofit.com/terms.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://reptofit.com/terms-vi.html" />
+<meta property="og:title" content="Repto — Điều khoản sử dụng" />
+<meta property="og:image" content="https://reptofit.com/assets/repto-logo.jpeg" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<script src="assets/redirect.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  a { color: var(--lime); text-decoration: none; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 6px;
+  }
+  ::selection { background: rgba(164,235,63,.28); color: var(--text-primary); }
+
+  .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- NAV ---------- */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 72px;
+    display: flex; align-items: center;
+    transition: background .3s ease, backdrop-filter .3s ease, box-shadow .3s ease;
+  }
+  .nav.scrolled {
+    background: rgba(15,13,16,.72);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    box-shadow: 0 1px 0 rgba(255,255,255,.05);
+  }
+  .nav-inner { display: flex; align-items: center; gap: 20px; width: 100%; }
+  .wordmark { display: inline-flex; align-items: center; gap: 10px; }
+  .wordmark img { width: 30px; height: 30px; border-radius: 8px; display: block; }
+  .wordmark span {
+    font-family: var(--font-display); font-weight: 700; font-size: 19px;
+    color: var(--text-primary); letter-spacing: .5px;
+  }
+  .nav-spacer { flex: 1; }
+  .nav-back {
+    display: inline-flex; align-items: center; gap: 7px; font: var(--section-link);
+    font-weight: 600; color: var(--text-secondary); transition: color .2s;
+  }
+  .nav-back:hover { color: var(--text-primary); }
+  .nav-cta {
+    display: inline-flex; align-items: center; height: 42px; padding: 0 20px;
+    border-radius: var(--radius-full); background: var(--gradient-primary);
+    color: var(--lime-soft); font: var(--label); font-size: 12px; font-weight: 800;
+    letter-spacing: 1.2px; text-transform: uppercase; box-shadow: var(--glow-lime-cta);
+  }
+
+  /* ---------- HEADER ---------- */
+  .header { position: relative; overflow: hidden; padding: 142px 0 56px; }
+  .header::before {
+    content: ""; position: absolute; top: -260px; right: -140px;
+    width: 720px; height: 720px; pointer-events: none;
+    background: radial-gradient(circle, rgba(164,235,63,.12), transparent 62%);
+  }
+  .header::after {
+    content: ""; position: absolute; top: 120px; left: -260px;
+    width: 640px; height: 640px; pointer-events: none;
+    background: radial-gradient(circle, rgba(164,235,63,.05), transparent 65%);
+  }
+  .header-inner { position: relative; z-index: 2; }
+  .overline {
+    display: inline-flex; align-items: center; gap: 8px;
+    font: var(--overline); text-transform: uppercase;
+    letter-spacing: var(--tracking-overline); color: var(--lime); font-weight: 700;
+  }
+  .overline .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 8px var(--lime); }
+  h1.title {
+    font-family: var(--font-ui); font-weight: 900; letter-spacing: -2px;
+    font-size: clamp(42px, 6vw, 72px); line-height: 1.02; margin: 20px 0 0;
+    color: var(--text-primary);
+  }
+  .header-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 26px; }
+  .eff-date {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+    color: var(--text-secondary); background: var(--surface);
+    padding: 9px 14px; border-radius: var(--radius-full);
+  }
+  .eff-date b { color: var(--text-primary); }
+  .intro {
+    font: var(--body); font-size: 18px; line-height: 1.6; color: var(--text-secondary);
+    max-width: 720px; margin: 30px 0 0;
+  }
+  .intro b { color: var(--text-primary); font-weight: 600; }
+
+  /* ---------- LAYOUT ---------- */
+  .layout {
+    display: grid; grid-template-columns: 248px 1fr; gap: 56px;
+    padding: 16px 0 40px; align-items: start;
+  }
+  .toc { position: sticky; top: 100px; }
+  .toc-label {
+    font: var(--label); text-transform: uppercase; letter-spacing: 1.4px;
+    color: var(--text-secondary); margin: 0 0 16px; padding-left: 14px;
+  }
+  .toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  .toc a {
+    display: flex; align-items: baseline; gap: 11px; padding: 9px 14px;
+    border-radius: var(--radius-md); color: var(--text-secondary);
+    font: var(--section-link); font-weight: 500; line-height: 1.3;
+    transition: background .2s, color .2s;
+  }
+  .toc a .num { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--outline); flex: none; transition: color .2s; }
+  .toc a:hover { background: var(--surface); color: var(--text-primary); }
+  .toc a.active { background: var(--surface-high); color: var(--text-primary); }
+  .toc a.active .num { color: var(--lime); }
+
+  .content { max-width: 760px; min-width: 0; }
+  section.sec { scroll-margin-top: 96px; padding: 40px 0; }
+  section.sec + section.sec { box-shadow: 0 -1px 0 var(--surface-highest); }
+  .sec-head { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+  .sec-num {
+    flex: none; width: 44px; height: 44px; border-radius: var(--radius-md);
+    background: rgba(164,235,63,.12); color: var(--lime);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 18px; font-weight: 800;
+  }
+  h2.sec-title {
+    font-family: var(--font-ui); font-weight: 800; font-size: clamp(24px, 3vw, 32px);
+    letter-spacing: -.6px; line-height: 1.1; margin: 0; color: var(--text-primary);
+  }
+  h3.sub {
+    font: var(--card-title); font-size: 16px; color: var(--text-primary);
+    margin: 28px 0 8px; display: flex; align-items: center; gap: 9px;
+  }
+  h3.sub .tick { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); flex: none; }
+  .content p { font: var(--body); font-size: 16px; line-height: 1.68; color: var(--text-secondary); margin: 0 0 14px; }
+  .content p b, .content li b { color: var(--text-primary); font-weight: 600; }
+  .content ul { margin: 4px 0 16px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .content ul li {
+    position: relative; padding-left: 28px; font: var(--body); font-size: 16px;
+    line-height: 1.55; color: var(--text-secondary);
+  }
+  .content ul li::before {
+    content: ""; position: absolute; left: 8px; top: 9px; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--outline);
+  }
+
+  /* legalese paragraph — softer, smaller caps text kept readable */
+  p.legalese { font-size: 14.5px; line-height: 1.7; color: var(--text-secondary); letter-spacing: .1px; }
+
+  /* plans cards */
+  .plans { display: flex; flex-direction: column; gap: 11px; margin: 6px 0 18px; }
+  .plan {
+    display: flex; align-items: center; gap: 14px; background: var(--surface);
+    border-radius: var(--radius-lg); padding: 16px 18px;
+  }
+  .plan .pico { flex: none; width: 40px; height: 40px; border-radius: var(--radius-md); background: rgba(164,235,63,.12); display: flex; align-items: center; justify-content: center; }
+  .plan .pname { font: var(--card-title); font-size: 16px; color: var(--text-primary); }
+  .plan .pdesc { font: var(--caption); color: var(--text-secondary); margin-top: 2px; }
+
+  /* health disclaimer — amber callout */
+  .disclaimer {
+    background: linear-gradient(135deg, rgba(245,158,11,.12), rgba(245,158,11,.04));
+    border-radius: var(--radius-lg); padding: 26px; margin: 8px 0;
+    box-shadow: 0 4px 24px rgba(245,158,11,.07);
+  }
+  .disclaimer .dis-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .disclaimer .dis-ico { flex: none; width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(245,158,11,.18); display: flex; align-items: center; justify-content: center; }
+  .disclaimer h2 { font-family: var(--font-ui); font-weight: 800; font-size: clamp(22px,2.6vw,28px); letter-spacing: -.4px; margin: 0; color: var(--text-primary); }
+  .disclaimer p { color: var(--text-secondary); font-size: 15.5px; line-height: 1.62; margin: 0 0 12px; }
+  .disclaimer p:last-child { margin-bottom: 0; }
+  .disclaimer p b { color: var(--amber); font-weight: 700; }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--surface); padding: 56px 0 40px; margin-top: 32px; }
+  .foot-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .foot-tag { font: var(--body); font-size: 14.5px; line-height: 1.55; color: var(--text-secondary); max-width: 300px; margin: 16px 0 0; }
+  .foot-links { display: flex; gap: 40px; flex-wrap: wrap; }
+  .foot-col h4 { font: var(--label); text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-secondary); margin: 0 0 16px; }
+  .foot-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { font: var(--body); font-size: 14.5px; color: var(--text-secondary); transition: color .2s; }
+  .foot-col a:hover { color: var(--text-primary); }
+  .foot-col a.cur { color: var(--lime); }
+  .foot-bottom { margin-top: 48px; padding-top: 26px; box-shadow: 0 -1px 0 var(--surface-highest); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font: var(--caption); color: var(--text-secondary); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; gap: 8px; }
+    .toc { position: static; margin-bottom: 24px; background: var(--surface-low); border-radius: var(--radius-lg); padding: 20px; }
+    .toc ol { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .nav-back span { display: none; }
+  }
+  @media (max-width: 560px) {
+    .toc ol { grid-template-columns: 1fr; }
+    .sec-head { gap: 12px; }
+    .sec-num { width: 38px; height: 38px; font-size: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="wordmark" href="index-vi.html" aria-label="Repto home">
+      <img src="assets/repto-logo.png" alt="" />
+      <span>Repto</span>
+    </a>
+    <div class="nav-spacer"></div>
+    <a class="nav-back" href="index-vi.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      <span>Về trang chủ</span>
+    </a>
+    <div class="nav-lang" data-lang-switch><noscript><a href="terms.html">English</a></noscript></div>
+    <a class="nav-cta" href="index-vi.html#download">Tải xuống</a>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="wrap header-inner">
+    <div class="overline"><span class="dot"></span> Pháp lý · Điều khoản</div>
+    <h1 class="title">Điều khoản sử dụng</h1>
+    <div class="header-meta">
+      <span class="eff-date">Ngày hiệu lực: <b>26 tháng 4, 2026</b></span>
+    </div>
+    <p class="intro">
+      Các Điều khoản này điều chỉnh việc bạn sử dụng ứng dụng di động Repto (<b>"Ứng dụng"</b>), được cung cấp bởi Vũ Mạnh Cường với tư cách là nhà phát triển cá nhân (<b>"chúng tôi"</b>). Khi bạn tải xuống, cài đặt hoặc sử dụng Repto, bạn đồng ý với các Điều khoản này. Nếu bạn không đồng ý, vui lòng không sử dụng Ứng dụng.
+    </p>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <aside class="toc">
+    <p class="toc-label">Trên trang này</p>
+    <nav aria-label="Mục lục">
+      <ol>
+        <li><a href="#license"><span class="num">01</span> Giấy phép</a></li>
+        <li><a href="#eligibility"><span class="num">02</span> Điều kiện sử dụng</a></li>
+        <li><a href="#account"><span class="num">03</span> Tài khoản</a></li>
+        <li><a href="#subscriptions"><span class="num">04</span> Đăng ký</a></li>
+        <li><a href="#use"><span class="num">05</span> Sử dụng hợp lệ</a></li>
+        <li><a href="#content"><span class="num">06</span> Nội dung người dùng</a></li>
+        <li><a href="#ai"><span class="num">07</span> AI Coach</a></li>
+        <li><a href="#health"><span class="num">08</span> Miễn trừ sức khỏe</a></li>
+        <li><a href="#ip"><span class="num">09</span> Sở hữu trí tuệ</a></li>
+        <li><a href="#disclaimers"><span class="num">10</span> Tuyên bố miễn trừ</a></li>
+        <li><a href="#liability"><span class="num">11</span> Giới hạn trách nhiệm</a></li>
+        <li><a href="#indemnification"><span class="num">12</span> Bồi thường</a></li>
+        <li><a href="#termination"><span class="num">13</span> Chấm dứt</a></li>
+        <li><a href="#apple"><span class="num">14</span> Điều khoản Apple</a></li>
+        <li><a href="#law"><span class="num">15</span> Luật điều chỉnh</a></li>
+        <li><a href="#changes"><span class="num">16</span> Thay đổi điều khoản</a></li>
+        <li><a href="#contact"><span class="num">17</span> Liên hệ</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <article class="content">
+
+    <section class="sec" id="license">
+      <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Giấy phép</h2></div>
+      <p>Chúng tôi cấp cho bạn giấy phép giới hạn, không độc quyền, không thể chuyển nhượng và có thể thu hồi để tải và sử dụng Ứng dụng trên các thiết bị Apple và Android mà bạn sở hữu hoặc kiểm soát, chỉ cho mục đích sử dụng cá nhân, phi thương mại, tuân theo điều khoản dịch vụ của cửa hàng ứng dụng áp dụng và các Điều khoản này.</p>
+    </section>
+
+    <section class="sec" id="eligibility">
+      <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Điều kiện sử dụng</h2></div>
+      <p>Bạn phải từ 13 tuổi trở lên để sử dụng Ứng dụng. Nếu bạn dưới 18 tuổi, bạn phải có sự cho phép của cha mẹ hoặc người giám hộ hợp pháp.</p>
+    </section>
+
+    <section class="sec" id="account">
+      <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Tài khoản</h2></div>
+      <p>Bạn chịu trách nhiệm bảo mật thông tin đăng nhập tài khoản và mọi hoạt động diễn ra trên tài khoản của mình. Vui lòng thông báo ngay cho chúng tôi nếu phát hiện bất kỳ hành vi sử dụng trái phép nào.</p>
+    </section>
+
+    <section class="sec" id="subscriptions">
+      <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Đăng ký (Repto Pro)</h2></div>
+      <h3 class="sub"><span class="tick"></span> Các gói</h3>
+      <div class="plans">
+        <div class="plan">
+          <span class="pico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span>
+          <div><div class="pname">Repto Pro Monthly</div><div class="pdesc">Đăng ký tự động gia hạn hàng tháng</div></div>
+        </div>
+        <div class="plan">
+          <span class="pico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/><circle cx="17" cy="7" r="5"/></svg></span>
+          <div><div class="pname">Repto Pro Annual</div><div class="pdesc">Đăng ký tự động gia hạn hàng năm · có thời gian dùng thử miễn phí</div></div>
+        </div>
+        <div class="plan">
+          <span class="pico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg></span>
+          <div><div class="pname">Repto Pro Lifetime</div><div class="pdesc">Mua một lần, không thể hoàn tác · không tự động gia hạn</div></div>
+        </div>
+      </div>
+      <h3 class="sub"><span class="tick"></span> Dùng thử miễn phí</h3>
+      <p>Các đăng ký tự động gia hạn bao gồm thời gian dùng thử miễn phí 14 ngày. Nếu bạn không huỷ trước khi kết thúc thời gian dùng thử, bạn sẽ bị tính phí toàn bộ giá đăng ký. Mỗi Apple ID chỉ được dùng thử một lần cho mỗi nhóm đăng ký.</p>
+      <h3 class="sub"><span class="tick"></span> Tự động gia hạn</h3>
+      <p>Các đăng ký tự động gia hạn vào cuối mỗi kỳ thanh toán trừ khi bị huỷ ít nhất 24 giờ trước khi kết thúc kỳ hiện tại. Tài khoản của bạn sẽ bị tính phí gia hạn trong vòng 24 giờ trước khi kết thúc kỳ hiện tại theo giá hiển thị.</p>
+      <h3 class="sub"><span class="tick"></span> Quản lý &amp; huỷ đăng ký</h3>
+      <p>Bạn có thể quản lý hoặc huỷ đăng ký bất kỳ lúc nào tại <b>Cài đặt → [Tên của bạn] → Đăng ký</b> trên thiết bị. Việc huỷ có hiệu lực vào cuối kỳ thanh toán hiện tại. Chúng tôi không hoàn tiền một phần cho phần chưa sử dụng của kỳ đăng ký.</p>
+      <h3 class="sub"><span class="tick"></span> Hoàn tiền</h3>
+      <p>Mọi giao dịch mua được Apple hoặc Google xử lý. Yêu cầu hoàn tiền do cửa hàng tương ứng xử lý theo <a href="https://support.apple.com/en-us/HT204084" target="_blank" rel="noopener">chính sách hoàn tiền</a> của họ. Chúng tôi không thể hoàn tiền trực tiếp.</p>
+      <h3 class="sub"><span class="tick"></span> Thay đổi giá</h3>
+      <p>Chúng tôi có thể thay đổi giá đăng ký. Bạn sẽ được thông báo về việc tăng giá ít nhất 30 ngày trước khi có hiệu lực và có thể huỷ trước khi giá mới được áp dụng.</p>
+    </section>
+
+    <section class="sec" id="use">
+      <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Sử dụng hợp lệ</h2></div>
+      <p>Bạn đồng ý không:</p>
+      <ul>
+        <li>Sử dụng Ứng dụng cho bất kỳ mục đích bất hợp pháp nào</li>
+        <li>Đảo ngược kỹ thuật, phân rã hoặc tháo rời Ứng dụng, ngoại trừ trường hợp pháp luật áp dụng cho phép</li>
+        <li>Cố gắng truy cập trái phép vào hệ thống máy chủ của chúng tôi</li>
+        <li>Can thiệp hoặc làm gián đoạn Ứng dụng hoặc máy chủ của Ứng dụng</li>
+        <li>Sử dụng Ứng dụng để quấy rối, lạm dụng hoặc gây hại cho người khác</li>
+        <li>Sử dụng Ứng dụng để chia sẻ nội dung trái phép, phỉ báng hoặc vi phạm bản quyền thông qua tính năng chia sẻ bài tập</li>
+      </ul>
+    </section>
+
+    <section class="sec" id="content">
+      <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Nội dung người dùng</h2></div>
+      <p>Bạn giữ quyền sở hữu các mẫu bài tập, ảnh, ghi chú và nội dung khác bạn tạo trong Ứng dụng (<b>"Nội dung người dùng"</b>). Khi sử dụng tính năng mã chia sẻ, bạn cấp cho chúng tôi giấy phép giới hạn để lưu trữ và truyền tải Nội dung người dùng của bạn nhằm mục đích gửi đến người nhận mã chia sẻ.</p>
+    </section>
+
+    <section class="sec" id="ai">
+      <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">AI Coach (Pro)</h2></div>
+      <p>Tính năng AI Coach tạo ra các gợi ý bài tập, đánh giá hàng tuần và giải thích bằng trí tuệ nhân tạo. Đầu ra được tạo tự động và có thể chứa lỗi, không chính xác hoặc các khuyến nghị không phù hợp với hoàn cảnh cá nhân của bạn. <b>Đầu ra của AI Coach không phải là lời khuyên y tế, thể hình hoặc sức khỏe chuyên nghiệp.</b> Hãy sử dụng phán đoán của riêng bạn và tham khảo ý kiến chuyên gia có chuyên môn trước khi áp dụng bất kỳ khuyến nghị nào do AI tạo ra.</p>
+    </section>
+
+    <section class="sec" id="health">
+      <div class="disclaimer">
+        <div class="dis-head">
+          <span class="dis-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+          <h2>8 · Tuyên bố miễn trừ về sức khỏe &amp; thể hình</h2>
+        </div>
+        <p><b>Repto là ứng dụng theo dõi tập luyện, không phải thiết bị y tế hoặc dịch vụ chăm sóc sức khỏe.</b></p>
+        <p>Ứng dụng, nội dung và mọi đầu ra (bao gồm thông tin từ AI Coach) chỉ được cung cấp cho mục đích thông tin và theo dõi. Chúng <b>không nhằm mục đích chẩn đoán, điều trị, chữa bệnh hoặc ngăn ngừa bất kỳ bệnh hay tình trạng y tế nào</b> và không thay thế cho lời khuyên, chẩn đoán hoặc điều trị của chuyên gia y tế.</p>
+        <p>Hãy luôn tham khảo bác sĩ hoặc chuyên gia y tế có chuyên môn trước khi bắt đầu bất kỳ chương trình tập luyện mới nào, đặc biệt nếu bạn có tình trạng y tế, đang mang thai hoặc có bất kỳ lo ngại nào về sức khỏe. Hãy ngừng tập và tìm kiếm hỗ trợ y tế nếu bạn gặp đau, chóng mặt hoặc bất kỳ triệu chứng bất thường nào.</p>
+        <p>Bạn chịu hoàn toàn trách nhiệm về sự an toàn của bản thân khi tập luyện. Chúng tôi không chịu trách nhiệm cho bất kỳ chấn thương, thiệt hại hoặc kết quả bất lợi nào phát sinh từ việc bạn sử dụng Ứng dụng.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="ip">
+      <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">Sở hữu trí tuệ</h2></div>
+      <p>Ứng dụng, bao gồm mã nguồn, thiết kế, đồ họa và nội dung (ngoại trừ Nội dung người dùng), thuộc sở hữu của chúng tôi và được bảo vệ bởi luật bản quyền, thương hiệu và các luật khác. Bạn không được sao chép, sửa đổi, phân phối, bán hoặc tạo các tác phẩm phái sinh mà không có sự cho phép bằng văn bản của chúng tôi.</p>
+    </section>
+
+    <section class="sec" id="disclaimers">
+      <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">Tuyên bố miễn trừ</h2></div>
+      <p class="legalese">ỨNG DỤNG ĐƯỢC CUNG CẤP "NGUYÊN TRẠNG" VÀ "THEO TÍNH KHẢ DỤNG" KHÔNG KÈM BẢO ĐẢM DƯỚI BẤT KỲ HÌNH THỨC NÀO, RÕ RÀNG HAY NGỤ Ý, BAO GỒM NHƯNG KHÔNG GIỚI HẠN Ở CÁC BẢO ĐẢM VỀ KHẢ NĂNG THƯƠNG MẠI, TÍNH PHÙ HỢP CHO MỤC ĐÍCH CỤ THỂ, KHÔNG VI PHẠM, HOẶC VIỆC ỨNG DỤNG SẼ KHÔNG BỊ GIÁN ĐOẠN, AN TOÀN HOẶC KHÔNG LỖI.</p>
+    </section>
+
+    <section class="sec" id="liability">
+      <div class="sec-head"><span class="sec-num">11</span><h2 class="sec-title">Giới hạn trách nhiệm</h2></div>
+      <p class="legalese">TRONG PHẠM VI TỐI ĐA PHÁP LUẬT CHO PHÉP, CHÚNG TÔI KHÔNG CHỊU TRÁCH NHIỆM CHO BẤT KỲ THIỆT HẠI GIÁN TIẾP, NGẪU NHIÊN, ĐẶC BIỆT, HỆ QUẢ HOẶC TRỪNG PHẠT NÀO, HOẶC BẤT KỲ TỔN THẤT NÀO VỀ LỢI NHUẬN, DỮ LIỆU HOẶC SỬ DỤNG, PHÁT SINH TỪ HOẶC LIÊN QUAN ĐẾN VIỆC BẠN SỬ DỤNG ỨNG DỤNG, KỂ CẢ KHI CHÚNG TÔI ĐÃ ĐƯỢC THÔNG BÁO VỀ KHẢ NĂNG XẢY RA NHỮNG THIỆT HẠI ĐÓ. TỔNG TRÁCH NHIỆM CỦA CHÚNG TÔI CHO MỌI KHIẾU NẠI LIÊN QUAN ĐẾN ỨNG DỤNG SẼ KHÔNG VƯỢT QUÁ SỐ TIỀN BẠN ĐÃ TRẢ CHO CHÚNG TÔI TRONG 12 THÁNG TRƯỚC KHIẾU NẠI, HOẶC 50 USD, TUỲ THEO MỨC NÀO LỚN HƠN.</p>
+    </section>
+
+    <section class="sec" id="indemnification">
+      <div class="sec-head"><span class="sec-num">12</span><h2 class="sec-title">Bồi thường</h2></div>
+      <p>Bạn đồng ý bồi thường và miễn trừ trách nhiệm cho chúng tôi khỏi bất kỳ khiếu nại, thiệt hại hoặc chi phí nào phát sinh từ việc bạn sử dụng Ứng dụng hoặc vi phạm các Điều khoản này.</p>
+    </section>
+
+    <section class="sec" id="termination">
+      <div class="sec-head"><span class="sec-num">13</span><h2 class="sec-title">Chấm dứt</h2></div>
+      <p>Chúng tôi có thể tạm dừng hoặc chấm dứt quyền truy cập của bạn vào Ứng dụng bất kỳ lúc nào, có hoặc không có lý do hay thông báo. Bạn có thể ngừng sử dụng Ứng dụng bất kỳ lúc nào. Các điều khoản có bản chất phải tiếp tục có hiệu lực (sở hữu trí tuệ, tuyên bố miễn trừ, giới hạn trách nhiệm, luật điều chỉnh) sẽ tiếp tục có hiệu lực sau khi chấm dứt.</p>
+    </section>
+
+    <section class="sec" id="apple">
+      <div class="sec-head"><span class="sec-num">14</span><h2 class="sec-title">Điều khoản bắt buộc của Apple</h2></div>
+      <p>Bạn xác nhận rằng các Điều khoản này là giữa bạn và chúng tôi, không phải Apple, và Apple không chịu trách nhiệm cho Ứng dụng hoặc nội dung của Ứng dụng. Apple không có nghĩa vụ cung cấp bảo trì hoặc hỗ trợ cho Ứng dụng. Trong trường hợp Ứng dụng không tuân thủ bất kỳ bảo đảm áp dụng nào, bạn có thể thông báo cho Apple và Apple sẽ hoàn lại giá mua Ứng dụng; trong phạm vi tối đa pháp luật cho phép, Apple không có nghĩa vụ bảo đảm nào khác. Apple là bên thứ ba thụ hưởng các Điều khoản này với quyền thực thi chúng.</p>
+    </section>
+
+    <section class="sec" id="law">
+      <div class="sec-head"><span class="sec-num">15</span><h2 class="sec-title">Luật điều chỉnh</h2></div>
+      <p>Các Điều khoản này được điều chỉnh bởi pháp luật Việt Nam, không xét đến các nguyên tắc xung đột pháp luật. Tranh chấp sẽ được giải quyết tại các toà án Việt Nam, ngoại trừ trường hợp luật bảo vệ người tiêu dùng bắt buộc của quốc gia bạn cư trú được áp dụng.</p>
+    </section>
+
+    <section class="sec" id="changes">
+      <div class="sec-head"><span class="sec-num">16</span><h2 class="sec-title">Thay đổi điều khoản</h2></div>
+      <p>Chúng tôi có thể cập nhật các Điều khoản này theo thời gian. Các thay đổi quan trọng sẽ được thông báo qua Ứng dụng. Việc tiếp tục sử dụng sau khi có thay đổi đồng nghĩa với việc chấp nhận các Điều khoản mới.</p>
+    </section>
+
+    <section class="sec" id="contact">
+      <div class="sec-head"><span class="sec-num">17</span><h2 class="sec-title">Liên hệ</h2></div>
+      <p>Có câu hỏi về các Điều khoản này? Liên hệ với chúng tôi tại <a href="mailto:reptoapp.official@gmail.com">reptoapp.official@gmail.com</a>.</p>
+    </section>
+
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <a class="wordmark" href="index-vi.html"><img src="assets/repto-logo.png" alt="" /><span>Repto</span></a>
+        <p class="foot-tag">Ứng dụng theo dõi tập luyện nhịp nhàng. Làm chủ thời gian. Nâng tầm phong độ.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Sản phẩm</h4>
+          <ul>
+            <li><a href="index-vi.html#features">Tính năng</a></li>
+            <li><a href="index-vi.html#coach">Repto Coach</a></li>
+            <li><a href="index-vi.html#pricing">Bảng giá</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Pháp lý</h4>
+          <ul>
+            <li><a href="privacy-vi.html">Quyền riêng tư</a></li>
+            <li><a class="cur" href="terms-vi.html">Điều khoản</a></li>
+            <li><a href="support-vi.html">Hỗ trợ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Repto. Bảo lưu mọi quyền.</span>
+      <span>Dành cho những người thực sự tập luyện.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function spy() {
+    var line = 140, idx = 0;
+    for (var i = 0; i < secs.length; i++) {
+      if (secs[i] && secs[i].getBoundingClientRect().top <= line) idx = i;
+    }
+    links.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
+  }
+  var onScroll = function () {
+    if (window.scrollY > 24) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+    spy();
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+<script src="assets/lang.js" defer></script>
+</body>
+</html>
