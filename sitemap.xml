@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://reptofit.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/index-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/"/>
+  </url>
+  <url>
+    <loc>https://reptofit.com/index-vi.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/index-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/"/>
+  </url>
+  <url>
+    <loc>https://reptofit.com/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/privacy-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://reptofit.com/privacy-vi.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/privacy-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://reptofit.com/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/terms-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/terms.html"/>
+  </url>
+  <url>
+    <loc>https://reptofit.com/terms-vi.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/terms-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/terms.html"/>
+  </url>
+  <url>
+    <loc>https://reptofit.com/support.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/support.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/support-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/support.html"/>
+  </url>
+  <url>
+    <loc>https://reptofit.com/support-vi.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/support.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/support-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/support.html"/>
+  </url>
+</urlset>
