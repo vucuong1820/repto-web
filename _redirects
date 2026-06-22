@@ -1,16 +1,9 @@
-# Vietnamese pages served at clean /vi/* paths
-/vi              /index-vi.html    200
-/vi/privacy      /privacy-vi.html  200
-/vi/terms        /terms-vi.html    200
-/vi/support      /support-vi.html  200
-
-# 301 redirects for old paths — both with and without .html
-# (Cloudflare Pages strips .html extensions, so both forms must be covered)
-/index-vi.html   /vi               301
-/index-vi        /vi               301
-/privacy-vi.html /vi/privacy       301
-/privacy-vi      /vi/privacy       301
-/terms-vi.html   /vi/terms         301
-/terms-vi        /vi/terms         301
-/support-vi.html /vi/support       301
-/support-vi      /vi/support       301
+# 301 redirects for old *-vi paths (with and without .html extension)
+/index-vi.html   /vi         301
+/index-vi        /vi         301
+/privacy-vi.html /vi/privacy 301
+/privacy-vi      /vi/privacy 301
+/terms-vi.html   /vi/terms   301
+/terms-vi        /vi/terms   301
+/support-vi.html /vi/support 301
+/support-vi      /vi/support 301
