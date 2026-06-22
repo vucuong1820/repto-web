@@ -331,13 +331,13 @@ cp index.html index-vi.html
 Then edit `index-vi.html`:
 
 1. `<html lang="en">` → `<html lang="vi">`
-2. `<title>` → `<title>Repto — Tập theo nhịp. Ghi lại từng rep.</title>`
+2. `<title>` → `<title>Repto — Tập theo từng nhịp. Ghi lại từng rep.</title>`
 3. `<meta name="description" …>` content → `Ứng dụng theo dõi tập luyện với AI coach tích hợp, hẹn giờ thời gian thực, cùng Apple Watch + Apple Health. Làm chủ thời gian. Nâng tầm phong độ.`
 4. In the head block from Step 1, swap the SEO values for VI:
    - `<link rel="canonical" href="https://reptofit.com/index-vi.html" />`
    - keep both `hreflang="en"` (`https://reptofit.com/`) and `hreflang="vi"` (`https://reptofit.com/index-vi.html`) and `x-default` (`https://reptofit.com/`) — identical to EN (reciprocal).
    - `<meta property="og:url" content="https://reptofit.com/index-vi.html" />`
-   - `<meta property="og:title" content="Repto — Tập theo nhịp. Ghi lại từng rep." />`
+   - `<meta property="og:title" content="Repto — Tập theo từng nhịp. Ghi lại từng rep." />`
    - `<meta property="og:description" content="Ứng dụng theo dõi tập luyện với AI coach tích hợp, hẹn giờ thời gian thực, cùng Apple Watch + Apple Health." />`
    - `<meta property="og:locale" content="vi_VN" />`
    - `<meta property="og:locale:alternate" content="en_US" />`
@@ -350,7 +350,7 @@ Then edit `index-vi.html`:
 | nav | Features / Coach / Showcase / Pricing | Tính năng / Coach / Trải nghiệm / Bảng giá |
 | nav CTA | Download | Tải về |
 | hero overline | Master your time · Elevate your performance | Làm chủ thời gian · Nâng tầm phong độ |
-| hero h1 | Train with rhythm.<br />Track <span class="accent">every rep.</span> | Tập theo nhịp.<br />Ghi lại <span class="accent">từng rep.</span> |
+| hero h1 | Train with rhythm.<br />Track <span class="accent">every rep.</span> | Tập theo từng nhịp.<br />Ghi lại <span class="accent">từng rep.</span> |
 | hero lead | The workout tracker with a built-in AI coach, real-time timers, and Apple Watch + Health built in. | Ứng dụng theo dõi tập luyện tích hợp AI coach, hẹn giờ thời gian thực, cùng Apple Watch + Health. |
 | App Store badge `__pre`/`__name` (all 4 instances) | Download on the / App Store | Tải xuống trên / App Store |
 | Google Play badge `__pre`/`__name` (all 4 instances) | GET IT ON / Google Play | TẢI ỨNG DỤNG TRÊN / Google Play |
@@ -359,7 +359,6 @@ Then edit `index-vi.html`:
 | hero ghost btn | See features | Xem tính năng |
 | hero rating | 4.8 · loved by lifters who actually train | 4.8 · được tin dùng bởi những người tập thật sự |
 | proof stat labels | App Store rating / Workouts logged / Exercises in library | Đánh giá App Store / Buổi tập đã ghi / Bài tập trong thư viện |
-| proof | Works with | Hoạt động cùng |
 | features overline | Everything you train with | Tất cả những gì bạn cần để tập |
 | features title | Built for people who lift. | Tạo ra cho người tập tạ. |
 | features lead | No fluff. Every feature earns its place in your session. | Không màu mè. Mỗi tính năng đều có lý do tồn tại trong buổi tập của bạn. |
