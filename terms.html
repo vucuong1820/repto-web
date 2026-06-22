@@ -1,123 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Repto — Terms of Use</title>
+<meta name="description" content="The terms that govern your use of Repto, including subscriptions, acceptable use, and the health & fitness disclaimer." />
+<link rel="stylesheet" href="assets/colors_and_type.css" />
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 40px auto; padding: 0 24px; line-height: 1.6; color: #1d1d1f; }
-  h1 { font-size: 28px; margin-bottom: 8px; }
-  h2 { font-size: 20px; margin-top: 32px; }
-  h3 { font-size: 16px; margin-top: 20px; }
-  .meta { color: #6e6e73; font-size: 14px; margin-bottom: 32px; }
-  a { color: #0066cc; }
-  ul { padding-left: 24px; }
-  li { margin: 6px 0; }
-  .disclaimer { background: #FFF4E5; padding: 16px; border-radius: 8px; margin: 24px 0; }
-  .lang { float: right; font-size: 13px; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #0F0D10; color: #FEF7FC; }
-    .meta { color: #AFA9AE; }
-    a { color: #A4EB3F; }
-    .disclaimer { background: #2a1f0e; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
+  a { color: var(--lime); text-decoration: none; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 6px;
+  }
+  ::selection { background: rgba(164,235,63,.28); color: var(--text-primary); }
+
+  .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- NAV ---------- */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 72px;
+    display: flex; align-items: center;
+    transition: background .3s ease, backdrop-filter .3s ease, box-shadow .3s ease;
+  }
+  .nav.scrolled {
+    background: rgba(15,13,16,.72);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    box-shadow: 0 1px 0 rgba(255,255,255,.05);
+  }
+  .nav-inner { display: flex; align-items: center; gap: 20px; width: 100%; }
+  .wordmark { display: inline-flex; align-items: center; gap: 10px; }
+  .wordmark img { width: 30px; height: 30px; border-radius: 8px; display: block; }
+  .wordmark span {
+    font-family: var(--font-display); font-weight: 700; font-size: 19px;
+    color: var(--text-primary); letter-spacing: .5px;
+  }
+  .nav-spacer { flex: 1; }
+  .nav-back {
+    display: inline-flex; align-items: center; gap: 7px; font: var(--section-link);
+    font-weight: 600; color: var(--text-secondary); transition: color .2s;
+  }
+  .nav-back:hover { color: var(--text-primary); }
+  .nav-cta {
+    display: inline-flex; align-items: center; height: 42px; padding: 0 20px;
+    border-radius: var(--radius-full); background: var(--gradient-primary);
+    color: var(--lime-soft); font: var(--label); font-size: 12px; font-weight: 800;
+    letter-spacing: 1.2px; text-transform: uppercase; box-shadow: var(--glow-lime-cta);
+  }
+
+  /* ---------- HEADER ---------- */
+  .header { position: relative; overflow: hidden; padding: 142px 0 56px; }
+  .header::before {
+    content: ""; position: absolute; top: -260px; right: -140px;
+    width: 720px; height: 720px; pointer-events: none;
+    background: radial-gradient(circle, rgba(164,235,63,.12), transparent 62%);
+  }
+  .header::after {
+    content: ""; position: absolute; top: 120px; left: -260px;
+    width: 640px; height: 640px; pointer-events: none;
+    background: radial-gradient(circle, rgba(164,235,63,.05), transparent 65%);
+  }
+  .header-inner { position: relative; z-index: 2; }
+  .overline {
+    display: inline-flex; align-items: center; gap: 8px;
+    font: var(--overline); text-transform: uppercase;
+    letter-spacing: var(--tracking-overline); color: var(--lime); font-weight: 700;
+  }
+  .overline .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 8px var(--lime); }
+  h1.title {
+    font-family: var(--font-ui); font-weight: 900; letter-spacing: -2px;
+    font-size: clamp(42px, 6vw, 72px); line-height: 1.02; margin: 20px 0 0;
+    color: var(--text-primary);
+  }
+  .header-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 26px; }
+  .eff-date {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+    color: var(--text-secondary); background: var(--surface);
+    padding: 9px 14px; border-radius: var(--radius-full);
+  }
+  .eff-date b { color: var(--text-primary); }
+  .intro {
+    font: var(--body); font-size: 18px; line-height: 1.6; color: var(--text-secondary);
+    max-width: 720px; margin: 30px 0 0;
+  }
+  .intro b { color: var(--text-primary); font-weight: 600; }
+
+  /* ---------- LAYOUT ---------- */
+  .layout {
+    display: grid; grid-template-columns: 248px 1fr; gap: 56px;
+    padding: 16px 0 40px; align-items: start;
+  }
+  .toc { position: sticky; top: 100px; }
+  .toc-label {
+    font: var(--label); text-transform: uppercase; letter-spacing: 1.4px;
+    color: var(--text-secondary); margin: 0 0 16px; padding-left: 14px;
+  }
+  .toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  .toc a {
+    display: flex; align-items: baseline; gap: 11px; padding: 9px 14px;
+    border-radius: var(--radius-md); color: var(--text-secondary);
+    font: var(--section-link); font-weight: 500; line-height: 1.3;
+    transition: background .2s, color .2s;
+  }
+  .toc a .num { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--outline); flex: none; transition: color .2s; }
+  .toc a:hover { background: var(--surface); color: var(--text-primary); }
+  .toc a.active { background: var(--surface-high); color: var(--text-primary); }
+  .toc a.active .num { color: var(--lime); }
+
+  .content { max-width: 760px; min-width: 0; }
+  section.sec { scroll-margin-top: 96px; padding: 40px 0; }
+  section.sec + section.sec { box-shadow: 0 -1px 0 var(--surface-highest); }
+  .sec-head { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+  .sec-num {
+    flex: none; width: 44px; height: 44px; border-radius: var(--radius-md);
+    background: rgba(164,235,63,.12); color: var(--lime);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 18px; font-weight: 800;
+  }
+  h2.sec-title {
+    font-family: var(--font-ui); font-weight: 800; font-size: clamp(24px, 3vw, 32px);
+    letter-spacing: -.6px; line-height: 1.1; margin: 0; color: var(--text-primary);
+  }
+  h3.sub {
+    font: var(--card-title); font-size: 16px; color: var(--text-primary);
+    margin: 28px 0 8px; display: flex; align-items: center; gap: 9px;
+  }
+  h3.sub .tick { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); flex: none; }
+  .content p { font: var(--body); font-size: 16px; line-height: 1.68; color: var(--text-secondary); margin: 0 0 14px; }
+  .content p b, .content li b { color: var(--text-primary); font-weight: 600; }
+  .content ul { margin: 4px 0 16px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .content ul li {
+    position: relative; padding-left: 28px; font: var(--body); font-size: 16px;
+    line-height: 1.55; color: var(--text-secondary);
+  }
+  .content ul li::before {
+    content: ""; position: absolute; left: 8px; top: 9px; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--outline);
+  }
+
+  /* legalese paragraph — softer, smaller caps text kept readable */
+  p.legalese { font-size: 14.5px; line-height: 1.7; color: var(--text-secondary); letter-spacing: .1px; }
+
+  /* plans cards */
+  .plans { display: flex; flex-direction: column; gap: 11px; margin: 6px 0 18px; }
+  .plan {
+    display: flex; align-items: center; gap: 14px; background: var(--surface);
+    border-radius: var(--radius-lg); padding: 16px 18px;
+  }
+  .plan .pico { flex: none; width: 40px; height: 40px; border-radius: var(--radius-md); background: rgba(164,235,63,.12); display: flex; align-items: center; justify-content: center; }
+  .plan .pname { font: var(--card-title); font-size: 16px; color: var(--text-primary); }
+  .plan .pdesc { font: var(--caption); color: var(--text-secondary); margin-top: 2px; }
+
+  /* health disclaimer — amber callout */
+  .disclaimer {
+    background: linear-gradient(135deg, rgba(245,158,11,.12), rgba(245,158,11,.04));
+    border-radius: var(--radius-lg); padding: 26px; margin: 8px 0;
+    box-shadow: 0 4px 24px rgba(245,158,11,.07);
+  }
+  .disclaimer .dis-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .disclaimer .dis-ico { flex: none; width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(245,158,11,.18); display: flex; align-items: center; justify-content: center; }
+  .disclaimer h2 { font-family: var(--font-ui); font-weight: 800; font-size: clamp(22px,2.6vw,28px); letter-spacing: -.4px; margin: 0; color: var(--text-primary); }
+  .disclaimer p { color: var(--text-secondary); font-size: 15.5px; line-height: 1.62; margin: 0 0 12px; }
+  .disclaimer p:last-child { margin-bottom: 0; }
+  .disclaimer p b { color: var(--amber); font-weight: 700; }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--surface); padding: 56px 0 40px; margin-top: 32px; }
+  .foot-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .foot-tag { font: var(--body); font-size: 14.5px; line-height: 1.55; color: var(--text-secondary); max-width: 300px; margin: 16px 0 0; }
+  .foot-links { display: flex; gap: 40px; flex-wrap: wrap; }
+  .foot-col h4 { font: var(--label); text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-secondary); margin: 0 0 16px; }
+  .foot-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { font: var(--body); font-size: 14.5px; color: var(--text-secondary); transition: color .2s; }
+  .foot-col a:hover { color: var(--text-primary); }
+  .foot-col a.cur { color: var(--lime); }
+  .foot-bottom { margin-top: 48px; padding-top: 26px; box-shadow: 0 -1px 0 var(--surface-highest); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font: var(--caption); color: var(--text-secondary); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; gap: 8px; }
+    .toc { position: static; margin-bottom: 24px; background: var(--surface-low); border-radius: var(--radius-lg); padding: 20px; }
+    .toc ol { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .nav-back span { display: none; }
+  }
+  @media (max-width: 560px) {
+    .toc ol { grid-template-columns: 1fr; }
+    .sec-head { gap: 12px; }
+    .sec-num { width: 38px; height: 38px; font-size: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
-<p class="lang"><strong>English</strong> · <a href="terms-vi.html">Tiếng Việt</a></p>
-<h1>Terms of Use</h1>
-<p class="meta">Effective date: April 26, 2026</p>
 
-<p>These Terms of Use ("Terms") govern your use of the Repto mobile application (the "App"), provided by Vũ Mạnh Cường as an individual developer ("we", "us", or "our"). By downloading, installing, or using Repto, you agree to these Terms. If you do not agree, do not use the App.</p>
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="wordmark" href="index.html" aria-label="Repto home">
+      <img src="assets/repto-logo.png" alt="" />
+      <span>Repto</span>
+    </a>
+    <div class="nav-spacer"></div>
+    <a class="nav-back" href="index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      <span>Back to home</span>
+    </a>
+    <a class="nav-cta" href="index.html#download">Download</a>
+  </div>
+</nav>
 
-<h2>1. License</h2>
-<p>We grant you a limited, non-exclusive, non-transferable, revocable license to download and use the App on Apple devices that you own or control, solely for your personal, non-commercial use, in accordance with the App Store Terms of Service and these Terms.</p>
+<header class="header">
+  <div class="wrap header-inner">
+    <div class="overline"><span class="dot"></span> Legal · Terms</div>
+    <h1 class="title">Terms of Use</h1>
+    <div class="header-meta">
+      <span class="eff-date">Effective date: <b>April 26, 2026</b></span>
+    </div>
+    <p class="intro">
+      These Terms govern your use of the Repto mobile application (the <b>"App"</b>), provided by Vũ Mạnh Cường as an individual developer (<b>"we"</b>, <b>"us"</b>, or <b>"our"</b>). By downloading, installing, or using Repto, you agree to these Terms. If you do not agree, do not use the App.
+    </p>
+  </div>
+</header>
 
-<h2>2. Eligibility</h2>
-<p>You must be at least 13 years old to use the App. If you are under 18, you must have permission from a parent or legal guardian.</p>
+<div class="wrap layout">
+  <aside class="toc">
+    <p class="toc-label">On this page</p>
+    <nav aria-label="Table of contents">
+      <ol>
+        <li><a href="#license"><span class="num">01</span> License</a></li>
+        <li><a href="#eligibility"><span class="num">02</span> Eligibility</a></li>
+        <li><a href="#account"><span class="num">03</span> Account</a></li>
+        <li><a href="#subscriptions"><span class="num">04</span> Subscriptions</a></li>
+        <li><a href="#use"><span class="num">05</span> Acceptable use</a></li>
+        <li><a href="#content"><span class="num">06</span> User content</a></li>
+        <li><a href="#ai"><span class="num">07</span> AI Coach</a></li>
+        <li><a href="#health"><span class="num">08</span> Health disclaimer</a></li>
+        <li><a href="#ip"><span class="num">09</span> Intellectual property</a></li>
+        <li><a href="#disclaimers"><span class="num">10</span> Disclaimers</a></li>
+        <li><a href="#liability"><span class="num">11</span> Limitation of liability</a></li>
+        <li><a href="#indemnification"><span class="num">12</span> Indemnification</a></li>
+        <li><a href="#termination"><span class="num">13</span> Termination</a></li>
+        <li><a href="#apple"><span class="num">14</span> Apple-required terms</a></li>
+        <li><a href="#law"><span class="num">15</span> Governing law</a></li>
+        <li><a href="#changes"><span class="num">16</span> Changes to these terms</a></li>
+        <li><a href="#contact"><span class="num">17</span> Contact</a></li>
+      </ol>
+    </nav>
+  </aside>
 
-<h2>3. Account</h2>
-<p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. Notify us immediately of any unauthorized use.</p>
+  <article class="content">
 
-<h2>4. Subscriptions (Repto Pro)</h2>
+    <section class="sec" id="license">
+      <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">License</h2></div>
+      <p>We grant you a limited, non-exclusive, non-transferable, revocable license to download and use the App on Apple and Android devices that you own or control, solely for your personal, non-commercial use, in accordance with the applicable app store terms of service and these Terms.</p>
+    </section>
 
-<h3>Plans</h3>
-<ul>
-  <li><strong>Repto Pro Monthly</strong> — auto-renewing monthly subscription</li>
-  <li><strong>Repto Pro Annual</strong> — auto-renewing yearly subscription, includes a free trial period</li>
-  <li><strong>Repto Pro Lifetime</strong> — one-time non-consumable purchase, no auto-renewal</li>
-</ul>
+    <section class="sec" id="eligibility">
+      <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Eligibility</h2></div>
+      <p>You must be at least 13 years old to use the App. If you are under 18, you must have permission from a parent or legal guardian.</p>
+    </section>
 
-<h3>Free Trial</h3>
-<p>Auto-renewing subscriptions include a 14-day free trial. If you do not cancel before the trial ends, you will be charged the full subscription price. The trial is offered once per Apple ID per subscription group.</p>
+    <section class="sec" id="account">
+      <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Account</h2></div>
+      <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. Notify us immediately of any unauthorized use.</p>
+    </section>
 
-<h3>Auto-Renewal</h3>
-<p>Auto-renewing subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the end of the current period. Your Apple ID account will be charged for renewal within 24 hours prior to the end of the current period at the displayed price.</p>
+    <section class="sec" id="subscriptions">
+      <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Subscriptions (Repto Pro)</h2></div>
+      <h3 class="sub"><span class="tick"></span> Plans</h3>
+      <div class="plans">
+        <div class="plan">
+          <span class="pico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span>
+          <div><div class="pname">Repto Pro Monthly</div><div class="pdesc">Auto-renewing monthly subscription</div></div>
+        </div>
+        <div class="plan">
+          <span class="pico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/><circle cx="17" cy="7" r="5"/></svg></span>
+          <div><div class="pname">Repto Pro Annual</div><div class="pdesc">Auto-renewing yearly subscription · includes a free trial</div></div>
+        </div>
+        <div class="plan">
+          <span class="pico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg></span>
+          <div><div class="pname">Repto Pro Lifetime</div><div class="pdesc">One-time non-consumable purchase · no auto-renewal</div></div>
+        </div>
+      </div>
+      <h3 class="sub"><span class="tick"></span> Free trial</h3>
+      <p>Auto-renewing subscriptions include a 14-day free trial. If you do not cancel before the trial ends, you will be charged the full subscription price. The trial is offered once per Apple ID per subscription group.</p>
+      <h3 class="sub"><span class="tick"></span> Auto-renewal</h3>
+      <p>Auto-renewing subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period at the displayed price.</p>
+      <h3 class="sub"><span class="tick"></span> Managing &amp; cancelling</h3>
+      <p>You can manage or cancel your subscription at any time in <b>Settings → [Your Name] → Subscriptions</b> on your device. Cancellation takes effect at the end of the current billing period. No partial refunds are provided for unused portions of a subscription period.</p>
+      <h3 class="sub"><span class="tick"></span> Refunds</h3>
+      <p>All purchases are processed by Apple or Google. Refund requests are handled by the respective store under its <a href="https://support.apple.com/en-us/HT204084" target="_blank" rel="noopener">refund policy</a>. We are unable to issue refunds directly.</p>
+      <h3 class="sub"><span class="tick"></span> Price changes</h3>
+      <p>We may change subscription prices. You will be notified of any price increase at least 30 days before it takes effect, and you may cancel before the new price applies.</p>
+    </section>
 
-<h3>Managing &amp; Cancelling</h3>
-<p>You can manage or cancel your subscription at any time in <strong>Settings → [Your Name] → Subscriptions</strong> on your Apple device. Cancellation takes effect at the end of the current billing period. No partial refunds are provided for unused portions of a subscription period.</p>
+    <section class="sec" id="use">
+      <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Acceptable use</h2></div>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the App for any unlawful purpose</li>
+        <li>Reverse-engineer, decompile, or disassemble the App, except as permitted by applicable law</li>
+        <li>Attempt to gain unauthorized access to our backend systems</li>
+        <li>Interfere with or disrupt the App or its servers</li>
+        <li>Use the App to harass, abuse, or harm another person</li>
+        <li>Use the App to share unlawful, defamatory, or infringing content via the workout-sharing feature</li>
+      </ul>
+    </section>
 
-<h3>Refunds</h3>
-<p>All purchases are processed by Apple. Refund requests are handled by Apple under its <a href="https://support.apple.com/en-us/HT204084">refund policy</a>. We are unable to issue refunds directly.</p>
+    <section class="sec" id="content">
+      <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">User content</h2></div>
+      <p>You retain ownership of workout templates, photos, notes, and other content you create in the App (<b>"User Content"</b>). By using the share-code feature, you grant us a limited license to store and transmit your User Content for the purpose of delivering it to recipients of the share code.</p>
+    </section>
 
-<h3>Price Changes</h3>
-<p>We may change subscription prices. You will be notified of any price increase at least 30 days before it takes effect, and you may cancel before the new price applies.</p>
+    <section class="sec" id="ai">
+      <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">AI Coach (Pro)</h2></div>
+      <p>The AI Coach feature generates workout suggestions, weekly reviews, and explanations using artificial intelligence. Output is generated automatically and may contain errors, inaccuracies, or recommendations that are not appropriate for your individual circumstances. <b>AI Coach output is not professional medical, fitness, or health advice.</b> Use your own judgment and consult a qualified professional before acting on any AI-generated recommendation.</p>
+    </section>
 
-<h2>5. Acceptable Use</h2>
-<p>You agree not to:</p>
-<ul>
-  <li>Use the App for any unlawful purpose</li>
-  <li>Reverse-engineer, decompile, or disassemble the App, except as permitted by applicable law</li>
-  <li>Attempt to gain unauthorized access to our backend systems</li>
-  <li>Interfere with or disrupt the App or its servers</li>
-  <li>Use the App to harass, abuse, or harm another person</li>
-  <li>Use the App to share unlawful, defamatory, or infringing content via the workout-sharing feature</li>
-</ul>
+    <section class="sec" id="health">
+      <div class="disclaimer">
+        <div class="dis-head">
+          <span class="dis-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+          <h2>8 · Health &amp; fitness disclaimer</h2>
+        </div>
+        <p><b>Repto is a fitness tracking app, not a medical device or healthcare service.</b></p>
+        <p>The App, its content, and any output (including AI Coach insights) are provided for informational and tracking purposes only. They are <b>not intended to diagnose, treat, cure, or prevent any disease or medical condition</b>, and are not a substitute for professional medical advice, diagnosis, or treatment.</p>
+        <p>Always consult your physician or other qualified healthcare provider before starting any new exercise program, especially if you have a medical condition, are pregnant, or have any concerns about your health. Stop exercising and seek medical attention if you experience pain, dizziness, or any unusual symptoms.</p>
+        <p>You are solely responsible for your own safety while exercising. We are not liable for any injury, harm, or adverse outcome resulting from your use of the App.</p>
+      </div>
+    </section>
 
-<h2>6. User Content</h2>
-<p>You retain ownership of workout templates, photos, notes, and other content you create in the App ("User Content"). By using the share-code feature, you grant us a limited license to store and transmit your User Content for the purpose of delivering it to recipients of the share code.</p>
+    <section class="sec" id="ip">
+      <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">Intellectual property</h2></div>
+      <p>The App, including its code, design, graphics, and content (excluding User Content), is owned by us and protected by copyright, trademark, and other laws. You may not copy, modify, distribute, sell, or create derivative works without our written permission.</p>
+    </section>
 
-<h2>7. AI Coach (Pro)</h2>
-<p>The AI Coach feature generates workout suggestions, weekly reviews, and explanations using artificial intelligence. Output is generated automatically and may contain errors, inaccuracies, or recommendations that are not appropriate for your individual circumstances. <strong>AI Coach output is not professional medical, fitness, or health advice.</strong> Use your own judgment and consult a qualified professional before acting on any AI-generated recommendation.</p>
+    <section class="sec" id="disclaimers">
+      <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">Disclaimers</h2></div>
+      <p class="legalese">THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR THAT THE APP WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE.</p>
+    </section>
 
-<div class="disclaimer">
-<h2>8. Health &amp; Fitness Disclaimer</h2>
-<p><strong>Repto is a fitness tracking app, not a medical device or healthcare service.</strong></p>
-<p>The App, its content, and any output (including AI Coach insights) are provided for informational and tracking purposes only. They are <strong>not intended to diagnose, treat, cure, or prevent any disease or medical condition</strong>, and are not a substitute for professional medical advice, diagnosis, or treatment.</p>
-<p>Always consult your physician or other qualified healthcare provider before starting any new exercise program, especially if you have a medical condition, are pregnant, or have any concerns about your health. Stop exercising and seek medical attention if you experience pain, dizziness, or any unusual symptoms.</p>
-<p>You are solely responsible for your own safety while exercising. We are not liable for any injury, harm, or adverse outcome resulting from your use of the App.</p>
+    <section class="sec" id="liability">
+      <div class="sec-head"><span class="sec-num">11</span><h2 class="sec-title">Limitation of liability</h2></div>
+      <p class="legalese">TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL WE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, OR USE, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE APP, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY FOR ALL CLAIMS RELATED TO THE APP WILL NOT EXCEED THE AMOUNT YOU PAID US IN THE 12 MONTHS PRECEDING THE CLAIM, OR USD 50, WHICHEVER IS GREATER.</p>
+    </section>
+
+    <section class="sec" id="indemnification">
+      <div class="sec-head"><span class="sec-num">12</span><h2 class="sec-title">Indemnification</h2></div>
+      <p>You agree to indemnify and hold us harmless from any claims, damages, or expenses arising out of your use of the App or your violation of these Terms.</p>
+    </section>
+
+    <section class="sec" id="termination">
+      <div class="sec-head"><span class="sec-num">13</span><h2 class="sec-title">Termination</h2></div>
+      <p>We may suspend or terminate your access to the App at any time, with or without cause or notice. You may stop using the App at any time. Sections that by their nature should survive (intellectual property, disclaimers, liability limits, governing law) will survive termination.</p>
+    </section>
+
+    <section class="sec" id="apple">
+      <div class="sec-head"><span class="sec-num">14</span><h2 class="sec-title">Apple-required terms</h2></div>
+      <p>You acknowledge that these Terms are between you and us, not Apple, and that Apple is not responsible for the App or its content. Apple has no obligation to provide maintenance or support for the App. In the event of any failure of the App to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the App; to the maximum extent permitted by law, Apple has no other warranty obligation. Apple is a third-party beneficiary of these Terms with the right to enforce them.</p>
+    </section>
+
+    <section class="sec" id="law">
+      <div class="sec-head"><span class="sec-num">15</span><h2 class="sec-title">Governing law</h2></div>
+      <p>These Terms are governed by the laws of Vietnam, without regard to conflict-of-law principles. Disputes will be resolved in the courts of Vietnam, except where mandatory consumer-protection laws of your country of residence apply.</p>
+    </section>
+
+    <section class="sec" id="changes">
+      <div class="sec-head"><span class="sec-num">16</span><h2 class="sec-title">Changes to these terms</h2></div>
+      <p>We may update these Terms from time to time. Material changes will be communicated through the App. Continued use after changes constitutes acceptance.</p>
+    </section>
+
+    <section class="sec" id="contact">
+      <div class="sec-head"><span class="sec-num">17</span><h2 class="sec-title">Contact</h2></div>
+      <p>Questions about these Terms? Reach us at <a href="mailto:reptoapp.official@gmail.com">reptoapp.official@gmail.com</a>.</p>
+    </section>
+
+  </article>
 </div>
 
-<h2>9. Intellectual Property</h2>
-<p>The App, including its code, design, graphics, and content (excluding User Content), is owned by us and protected by copyright, trademark, and other laws. You may not copy, modify, distribute, sell, or create derivative works without our written permission.</p>
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <a class="wordmark" href="index.html"><img src="assets/repto-logo.png" alt="" /><span>Repto</span></a>
+        <p class="foot-tag">The workout tracker with rhythm. Master your time. Elevate your performance.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#coach">Repto Coach</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a class="cur" href="terms.html">Terms</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Repto. All rights reserved.</span>
+      <span>Made for people who actually train.</span>
+    </div>
+  </div>
+</footer>
 
-<h2>10. Disclaimers</h2>
-<p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR THAT THE APP WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE.</p>
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function spy() {
+    var line = 140, idx = 0;
+    for (var i = 0; i < secs.length; i++) {
+      if (secs[i] && secs[i].getBoundingClientRect().top <= line) idx = i;
+    }
+    links.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
+  }
+  var onScroll = function () {
+    if (window.scrollY > 24) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+    spy();
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 
-<h2>11. Limitation of Liability</h2>
-<p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL WE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, OR USE, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE APP, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY FOR ALL CLAIMS RELATED TO THE APP WILL NOT EXCEED THE AMOUNT YOU PAID US IN THE 12 MONTHS PRECEDING THE CLAIM, OR USD 50, WHICHEVER IS GREATER.</p>
-
-<h2>12. Indemnification</h2>
-<p>You agree to indemnify and hold us harmless from any claims, damages, or expenses arising out of your use of the App or your violation of these Terms.</p>
-
-<h2>13. Termination</h2>
-<p>We may suspend or terminate your access to the App at any time, with or without cause or notice. You may stop using the App at any time. Sections that by their nature should survive (intellectual property, disclaimers, liability limits, governing law) will survive termination.</p>
-
-<h2>14. Apple-Required Terms</h2>
-<p>You acknowledge that these Terms are between you and us, not Apple, and that Apple is not responsible for the App or its content. Apple has no obligation to provide maintenance or support for the App. In the event of any failure of the App to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the App; to the maximum extent permitted by law, Apple has no other warranty obligation. Apple is a third-party beneficiary of these Terms with the right to enforce them.</p>
-
-<h2>15. Governing Law</h2>
-<p>These Terms are governed by the laws of Vietnam, without regard to conflict-of-law principles. Disputes will be resolved in the courts of Vietnam, except where mandatory consumer-protection laws of your country of residence apply.</p>
-
-<h2>16. Changes to These Terms</h2>
-<p>We may update these Terms from time to time. Material changes will be communicated through the App. Continued use after changes constitutes acceptance.</p>
-
-<h2>17. Contact</h2>
-<p><strong>Email:</strong> <a href="mailto:reptoapp.official@gmail.com">reptoapp.official@gmail.com</a></p>
-
-<p style="margin-top: 48px; font-size: 14px; color: #6e6e73;">
-  <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a>
-</p>
 </body>
 </html>

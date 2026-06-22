@@ -1,125 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Repto — Privacy Policy</title>
+<meta name="description" content="How Repto collects, uses, and protects your data. Your health data is processed on your device and is never sold." />
+<link rel="stylesheet" href="assets/colors_and_type.css" />
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 40px auto; padding: 0 24px; line-height: 1.6; color: #1d1d1f; }
-  h1 { font-size: 28px; margin-bottom: 8px; }
-  h2 { font-size: 20px; margin-top: 32px; }
-  h3 { font-size: 16px; margin-top: 20px; }
-  .meta { color: #6e6e73; font-size: 14px; margin-bottom: 32px; }
-  a { color: #0066cc; }
-  ul { padding-left: 24px; }
-  li { margin: 6px 0; }
-  .lang { float: right; font-size: 13px; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #0F0D10; color: #FEF7FC; }
-    .meta { color: #AFA9AE; }
-    a { color: #A4EB3F; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  a { color: var(--lime); text-decoration: none; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 6px;
+  }
+  ::selection { background: rgba(164,235,63,.28); color: var(--text-primary); }
+
+  .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- NAV ---------- */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 72px;
+    display: flex; align-items: center;
+    transition: background .3s ease, backdrop-filter .3s ease, box-shadow .3s ease;
+  }
+  .nav.scrolled {
+    background: rgba(15,13,16,.72);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    box-shadow: 0 1px 0 rgba(255,255,255,.05);
+  }
+  .nav-inner { display: flex; align-items: center; gap: 20px; width: 100%; }
+  .wordmark { display: inline-flex; align-items: center; gap: 10px; }
+  .wordmark img { width: 30px; height: 30px; border-radius: 8px; display: block; }
+  .wordmark span {
+    font-family: var(--font-display); font-weight: 700; font-size: 19px;
+    color: var(--text-primary); letter-spacing: .5px;
+  }
+  .nav-spacer { flex: 1; }
+  .nav-back {
+    display: inline-flex; align-items: center; gap: 7px; font: var(--section-link);
+    font-weight: 600; color: var(--text-secondary); transition: color .2s;
+  }
+  .nav-back:hover { color: var(--text-primary); }
+  .nav-cta {
+    display: inline-flex; align-items: center; height: 42px; padding: 0 20px;
+    border-radius: var(--radius-full); background: var(--gradient-primary);
+    color: var(--lime-soft); font: var(--label); font-size: 12px; font-weight: 800;
+    letter-spacing: 1.2px; text-transform: uppercase; box-shadow: var(--glow-lime-cta);
+  }
+
+  /* ---------- HEADER ---------- */
+  .header { position: relative; overflow: hidden; padding: 142px 0 56px; }
+  .header::before {
+    content: ""; position: absolute; top: -260px; right: -140px;
+    width: 720px; height: 720px; pointer-events: none;
+    background: radial-gradient(circle, rgba(164,235,63,.12), transparent 62%);
+  }
+  .header::after {
+    content: ""; position: absolute; top: 120px; left: -260px;
+    width: 640px; height: 640px; pointer-events: none;
+    background: radial-gradient(circle, rgba(164,235,63,.05), transparent 65%);
+  }
+  .header-inner { position: relative; z-index: 2; }
+  .overline {
+    display: inline-flex; align-items: center; gap: 8px;
+    font: var(--overline); text-transform: uppercase;
+    letter-spacing: var(--tracking-overline); color: var(--lime); font-weight: 700;
+  }
+  .overline .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 8px var(--lime); }
+  h1.title {
+    font-family: var(--font-ui); font-weight: 900; letter-spacing: -2px;
+    font-size: clamp(42px, 6vw, 72px); line-height: 1.02; margin: 20px 0 0;
+    color: var(--text-primary);
+  }
+  .header-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 26px; }
+  .eff-date {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+    color: var(--text-secondary); background: var(--surface);
+    padding: 9px 14px; border-radius: var(--radius-full);
+  }
+  .eff-date b { color: var(--text-primary); }
+  .lang-toggle { display: inline-flex; align-items: center; gap: 4px; background: var(--surface); border-radius: var(--radius-full); padding: 4px; }
+  .lang-toggle a, .lang-toggle span {
+    font: var(--caption); font-weight: 700; letter-spacing: .4px; text-transform: uppercase;
+    padding: 6px 13px; border-radius: var(--radius-full);
+  }
+  .lang-toggle .active { background: var(--lime); color: var(--text-on-primary); }
+  .lang-toggle a { color: var(--text-secondary); transition: color .2s; }
+  .lang-toggle a:hover { color: var(--text-primary); }
+  .intro {
+    font: var(--body); font-size: 18px; line-height: 1.6; color: var(--text-secondary);
+    max-width: 720px; margin: 30px 0 0;
+  }
+  .intro b { color: var(--text-primary); font-weight: 600; }
+
+  /* ---------- LAYOUT ---------- */
+  .layout {
+    display: grid; grid-template-columns: 248px 1fr; gap: 56px;
+    padding: 16px 0 40px; align-items: start;
+  }
+
+  /* TOC */
+  .toc { position: sticky; top: 100px; }
+  .toc-label {
+    font: var(--label); text-transform: uppercase; letter-spacing: 1.4px;
+    color: var(--text-secondary); margin: 0 0 16px; padding-left: 14px;
+  }
+  .toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  .toc a {
+    display: flex; align-items: baseline; gap: 11px; padding: 9px 14px;
+    border-radius: var(--radius-md); color: var(--text-secondary);
+    font: var(--section-link); font-weight: 500; line-height: 1.3;
+    transition: background .2s, color .2s;
+  }
+  .toc a .num { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--outline); flex: none; transition: color .2s; }
+  .toc a:hover { background: var(--surface); color: var(--text-primary); }
+  .toc a.active { background: var(--surface-high); color: var(--text-primary); }
+  .toc a.active .num { color: var(--lime); }
+
+  /* CONTENT */
+  .content { max-width: 760px; min-width: 0; }
+  section.sec { scroll-margin-top: 96px; padding: 40px 0; }
+  section.sec + section.sec { box-shadow: 0 -1px 0 var(--surface-highest); }
+  .sec-head { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+  .sec-num {
+    flex: none; width: 44px; height: 44px; border-radius: var(--radius-md);
+    background: rgba(164,235,63,.12); color: var(--lime);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 18px; font-weight: 800;
+  }
+  h2.sec-title {
+    font-family: var(--font-ui); font-weight: 800; font-size: clamp(24px, 3vw, 32px);
+    letter-spacing: -.6px; line-height: 1.1; margin: 0; color: var(--text-primary);
+  }
+  h3.sub {
+    font: var(--card-title); font-size: 16px; color: var(--text-primary);
+    margin: 28px 0 8px; display: flex; align-items: center; gap: 9px;
+  }
+  h3.sub .tick { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); flex: none; }
+  .content p { font: var(--body); font-size: 16px; line-height: 1.68; color: var(--text-secondary); margin: 0 0 14px; }
+  .content p b, .content li b { color: var(--text-primary); font-weight: 600; }
+  .content ul { margin: 4px 0 16px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .content ul li {
+    position: relative; padding-left: 28px; font: var(--body); font-size: 16px;
+    line-height: 1.55; color: var(--text-secondary);
+  }
+  .content ul li::before {
+    content: ""; position: absolute; left: 8px; top: 9px; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--outline);
+  }
+
+  /* surfaced data list card */
+  .data-card { background: var(--surface); border-radius: var(--radius-lg); padding: 22px 24px; margin: 4px 0 16px; }
+  .data-card .data-head { font: var(--label); text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-secondary); margin-bottom: 14px; }
+  .data-card ul { margin: 0; }
+  .data-card ul li::before { background: var(--lime); }
+
+  /* callout — the key privacy promise */
+  .callout {
+    display: flex; gap: 18px; align-items: flex-start;
+    background: linear-gradient(135deg, rgba(164,235,63,.10), rgba(130,198,20,.04));
+    border-radius: var(--radius-lg); padding: 22px 24px; margin: 18px 0;
+    box-shadow: var(--glow-lime-soft);
+  }
+  .callout .ico {
+    flex: none; width: 44px; height: 44px; border-radius: var(--radius-md);
+    background: rgba(164,235,63,.16); display: flex; align-items: center; justify-content: center;
+  }
+  .callout p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--text-primary); }
+  .callout .co-label { font: var(--label); text-transform: uppercase; letter-spacing: 1.2px; color: var(--lime); display: block; margin-bottom: 6px; }
+
+  /* third-party grid */
+  .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
+  .svc {
+    background: var(--surface); border-radius: var(--radius-lg); padding: 20px;
+    display: flex; flex-direction: column; transition: background .25s ease, transform .25s ease;
+  }
+  .svc:hover { background: var(--surface-high); transform: translateY(-3px); }
+  .svc-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+  .svc-name { font: var(--card-title); font-size: 16px; color: var(--text-primary); }
+  .svc-role { font: var(--label); text-transform: uppercase; letter-spacing: .6px; color: var(--text-secondary); background: var(--surface-highest); padding: 4px 9px; border-radius: var(--radius-full); white-space: nowrap; }
+  .svc p { font-size: 14.5px; line-height: 1.55; margin: 0 0 14px; }
+  .svc a { display: inline-flex; align-items: center; gap: 5px; font: var(--section-link); font-weight: 600; margin-top: auto; }
+
+  /* rights list */
+  .rights { display: flex; flex-direction: column; gap: 11px; margin: 6px 0 16px; padding: 0; list-style: none; }
+  .rights li { display: flex; align-items: flex-start; gap: 13px; font: var(--body); font-size: 16px; line-height: 1.5; color: var(--text-secondary); padding-left: 0; }
+  .rights li::before { display: none; }
+  .rights .chk {
+    flex: none; width: 24px; height: 24px; border-radius: 50%; margin-top: 1px;
+    background: rgba(164,235,63,.16); display: flex; align-items: center; justify-content: center;
+  }
+  .rights li b { color: var(--text-primary); }
+
+  /* contact card */
+  .contact-card {
+    background: var(--surface); border-radius: var(--radius-lg); padding: 26px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    flex-wrap: wrap; margin-top: 8px;
+  }
+  .contact-card .cc-text { font: var(--body); font-size: 16px; color: var(--text-secondary); }
+  .contact-card .cc-text b { display: block; font: var(--card-title); font-size: 17px; color: var(--text-primary); margin-bottom: 4px; }
+  .mail-btn {
+    display: inline-flex; align-items: center; gap: 9px; height: 52px; padding: 0 24px;
+    border-radius: var(--radius-full); background: var(--gradient-primary); color: var(--lime-soft);
+    font: var(--label); font-size: 13px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+    box-shadow: var(--glow-lime-cta);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--surface); padding: 56px 0 40px; margin-top: 32px; }
+  .foot-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .foot-tag { font: var(--body); font-size: 14.5px; line-height: 1.55; color: var(--text-secondary); max-width: 300px; margin: 16px 0 0; }
+  .foot-links { display: flex; gap: 40px; flex-wrap: wrap; }
+  .foot-col h4 { font: var(--label); text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-secondary); margin: 0 0 16px; }
+  .foot-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { font: var(--body); font-size: 14.5px; color: var(--text-secondary); transition: color .2s; }
+  .foot-col a:hover { color: var(--text-primary); }
+  .foot-col a.cur { color: var(--lime); }
+  .foot-bottom { margin-top: 48px; padding-top: 26px; box-shadow: 0 -1px 0 var(--surface-highest); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font: var(--caption); color: var(--text-secondary); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; gap: 8px; }
+    .toc { position: static; margin-bottom: 24px; background: var(--surface-low); border-radius: var(--radius-lg); padding: 20px; }
+    .toc ol { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .svc-grid { grid-template-columns: 1fr; }
+    .nav-back span { display: none; }
+  }
+  @media (max-width: 560px) {
+    .toc ol { grid-template-columns: 1fr; }
+    .sec-head { gap: 12px; }
+    .sec-num { width: 38px; height: 38px; font-size: 16px; }
+    .contact-card { flex-direction: column; align-items: flex-start; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .svc { transition: none; }
   }
 </style>
 </head>
 <body>
-<p class="lang"><strong>English</strong> · <a href="privacy-vi.html">Tiếng Việt</a></p>
-<h1>Privacy Policy</h1>
-<p class="meta">Effective date: June 15, 2026</p>
 
-<p>This Privacy Policy describes how Repto ("we", "us", or "our") collects, uses, and shares your information when you use the Repto mobile application on iOS and Android (the "App"). Repto is operated by Vũ Mạnh Cường as an individual developer.</p>
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="wordmark" href="index.html" aria-label="Repto home">
+      <img src="assets/repto-logo.png" alt="" />
+      <span>Repto</span>
+    </a>
+    <div class="nav-spacer"></div>
+    <a class="nav-back" href="index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      <span>Back to home</span>
+    </a>
+    <a class="nav-cta" href="index.html#download">Download</a>
+  </div>
+</nav>
 
-<h2>1. Information We Collect</h2>
+<header class="header">
+  <div class="wrap header-inner">
+    <div class="overline"><span class="dot"></span> Legal · Privacy</div>
+    <h1 class="title">Privacy Policy</h1>
+    <div class="header-meta">
+      <span class="eff-date">Effective date: <b>June 15, 2026</b></span>
+    </div>
+    <p class="intro">
+      This policy describes how Repto (<b>"we"</b>, <b>"us"</b>, or <b>"our"</b>) collects, uses, and shares your information when you use the Repto mobile application on iOS and Android (the <b>"App"</b>). Repto is operated by Vũ Mạnh Cường as an individual developer.
+    </p>
+  </div>
+</header>
 
-<h3>Account Information</h3>
-<p>When you sign in with Apple (iOS) or Google (Android), or create an account, we collect your email address (or a private relay email if you choose to hide it). If your sign-in provider shares it, we may receive your display name and profile photo to personalize your profile. We do not collect your name unless you or your provider supplies it.</p>
+<div class="wrap layout">
+  <!-- TABLE OF CONTENTS -->
+  <aside class="toc">
+    <p class="toc-label">On this page</p>
+    <nav aria-label="Table of contents">
+      <ol>
+        <li><a href="#collect"><span class="num">01</span> Information we collect</a></li>
+        <li><a href="#use"><span class="num">02</span> How we use your information</a></li>
+        <li><a href="#third-party"><span class="num">03</span> Third-party services</a></li>
+        <li><a href="#retention"><span class="num">04</span> Data retention</a></li>
+        <li><a href="#rights"><span class="num">05</span> Your rights</a></li>
+        <li><a href="#children"><span class="num">06</span> Children's privacy</a></li>
+        <li><a href="#security"><span class="num">07</span> Security</a></li>
+        <li><a href="#transfers"><span class="num">08</span> International transfers</a></li>
+        <li><a href="#changes"><span class="num">09</span> Changes to this policy</a></li>
+        <li><a href="#contact"><span class="num">10</span> Contact us</a></li>
+      </ol>
+    </nav>
+  </aside>
 
-<h3>Workout Data</h3>
-<p>The App stores your workout templates, exercise logs, sets, reps, weights, durations, rest times, and progress photos. This data is stored locally on your device and, if you sign in, synced to our backend (Supabase) for backup and cross-device access.</p>
+  <!-- CONTENT -->
+  <article class="content">
 
-<h3>Health Data</h3>
-<p>With your explicit permission, the App reads the following from <strong>Apple Health (iOS)</strong> or <strong>Health Connect (Android)</strong> to provide personalized insights:</p>
-<ul>
-  <li>Body weight</li>
-  <li>Sleep analysis</li>
-  <li>Heart rate (including resting heart rate)</li>
-  <li>Body fat percentage</li>
-  <li>Active energy / calories burned</li>
-</ul>
-<p>The App writes your completed workouts (and the calories burned) back to Apple Health or Health Connect so they count toward your activity goals. <strong>Health data is processed on your device and is never sold, used for advertising, or shared with third parties for marketing purposes.</strong> Health data is not transmitted to our servers in raw form. When you use the AI Coach feature, only aggregated, non-identifying summaries (e.g., weekly average sleep hours) may be sent to our AI processing partner to generate insights.</p>
+    <section class="sec" id="collect">
+      <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Information we collect</h2></div>
 
-<h3>Location Data</h3>
-<p>For outdoor cardio workouts (e.g., running, walking, cycling), the App uses your device's <strong>precise location</strong> while a tracking session is active to measure distance, route, and pace. Location is collected only during an active cardio session, is used solely to compute your workout metrics, and is not used for advertising. Route data is stored with your workout and, if sync is enabled, backed up to our backend. You can decline the location permission and still use all other features.</p>
+      <h3 class="sub"><span class="tick"></span> Account information</h3>
+      <p>When you sign in with Apple (iOS) or Google (Android), or create an account, we collect your email address (or a private relay email if you choose to hide it). If your sign-in provider shares it, we may receive your display name and profile photo to personalize your profile. We do not collect your name unless you or your provider supplies it.</p>
 
-<h3>Photos</h3>
-<p>If you choose to attach photos to your workout progress, those photos are stored locally on your device and, if account sync is enabled, encrypted and uploaded to our backend.</p>
+      <h3 class="sub"><span class="tick"></span> Workout data</h3>
+      <p>The App stores your workout templates, exercise logs, sets, reps, weights, durations, rest times, and progress photos. This data is stored locally on your device and, if you sign in, synced to our backend (Supabase) for backup and cross-device access.</p>
 
-<h3>Subscription &amp; Purchase Data</h3>
-<p>Subscription purchases are processed by <strong>Apple (App Store)</strong> or <strong>Google (Google Play Billing)</strong>, and your subscription status is managed by our subscription provider <strong>RevenueCat</strong>. We receive a receipt and an anonymous app user ID verifying your subscription status, but we do not have access to your payment card information.</p>
+      <h3 class="sub"><span class="tick"></span> Health data</h3>
+      <p>With your explicit permission, the App reads the following from <b>Apple Health (iOS)</b> or <b>Health Connect (Android)</b> to provide personalized insights:</p>
+      <div class="data-card">
+        <div class="data-head">Health metrics we read</div>
+        <ul>
+          <li>Body weight</li>
+          <li>Sleep analysis</li>
+          <li>Heart rate (including resting heart rate)</li>
+          <li>Body fat percentage</li>
+          <li>Active energy / calories burned</li>
+        </ul>
+      </div>
+      <p>The App writes your completed workouts (and the calories burned) back to Apple Health or Health Connect so they count toward your activity goals.</p>
+      <div class="callout">
+        <span class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <p><span class="co-label">Our promise</span>Health data is processed on your device and is <b>never sold, used for advertising, or shared with third parties for marketing purposes.</b> Health data is not transmitted to our servers in raw form. When you use the AI Coach, only aggregated, non-identifying summaries (e.g., weekly average sleep hours) may be sent to our AI processing partner to generate insights.</p>
+      </div>
 
-<h3>Diagnostic Information</h3>
-<p>We do not run any third-party analytics or crash reporting SDKs. The App Store and Google Play may collect anonymous diagnostic information through their standard platform mechanisms; you can disable this in your device privacy settings (iOS Settings → Privacy &amp; Security → Analytics, or Android Settings → Google → Usage &amp; diagnostics).</p>
+      <h3 class="sub"><span class="tick"></span> Location data</h3>
+      <p>For outdoor cardio workouts (e.g., running, walking, cycling), the App uses your device's <b>precise location</b> while a tracking session is active to measure distance, route, and pace. Location is collected only during an active cardio session, is used solely to compute your workout metrics, and is not used for advertising. Route data is stored with your workout and, if sync is enabled, backed up to our backend. You can decline the location permission and still use all other features.</p>
 
-<h2>2. How We Use Your Information</h2>
-<ul>
-  <li>To provide and operate the App's core features (workout tracking, history, charts)</li>
-  <li>To measure distance, route, and pace during outdoor cardio workouts</li>
-  <li>To sync your data across your devices when you sign in</li>
-  <li>To generate personalized AI Coach insights (Pro subscribers only)</li>
-  <li>To process subscription purchases and verify entitlements</li>
-  <li>To respond to support requests</li>
-</ul>
+      <h3 class="sub"><span class="tick"></span> Photos</h3>
+      <p>If you choose to attach photos to your workout progress, those photos are stored locally on your device and, if account sync is enabled, encrypted and uploaded to our backend.</p>
 
-<h2>3. Third-Party Services</h2>
+      <h3 class="sub"><span class="tick"></span> Subscription &amp; purchase data</h3>
+      <p>Subscription purchases are processed by <b>Apple (App Store)</b> or <b>Google (Google Play Billing)</b>, and your subscription status is managed by our subscription provider <b>RevenueCat</b>. We receive a receipt and an anonymous app user ID verifying your subscription status, but we do not have access to your payment card information.</p>
 
-<h3>Supabase (data storage)</h3>
-<p>We use Supabase as our backend for authentication and data sync. Supabase stores your account email, workout data, and (if applicable) attached photos. See <a href="https://supabase.com/privacy">Supabase's privacy policy</a>.</p>
+      <h3 class="sub"><span class="tick"></span> Diagnostic information</h3>
+      <p>We do not run any third-party analytics or crash reporting SDKs. The App Store and Google Play may collect anonymous diagnostic information through their standard platform mechanisms; you can disable this in your device privacy settings (iOS Settings → Privacy &amp; Security → Analytics, or Android Settings → Google → Usage &amp; diagnostics).</p>
+    </section>
 
-<h3>Anthropic (AI Coach, Pro only)</h3>
-<p>The AI Coach feature uses the Anthropic Claude API to generate workout plans, weekly reviews, and chart explanations. We send only the data necessary to generate the response: your goals, training history summaries, and aggregated metrics. We do not send raw health records. Anthropic does not use this data to train its models. See <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>.</p>
+    <section class="sec" id="use">
+      <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">How we use your information</h2></div>
+      <ul>
+        <li>To provide and operate the App's core features (workout tracking, history, charts)</li>
+        <li>To measure distance, route, and pace during outdoor cardio workouts</li>
+        <li>To sync your data across your devices when you sign in</li>
+        <li>To generate personalized AI Coach insights (Pro subscribers only)</li>
+        <li>To process subscription purchases and verify entitlements</li>
+        <li>To respond to support requests</li>
+      </ul>
+    </section>
 
-<h3>RevenueCat (subscription management)</h3>
-<p>We use RevenueCat to manage and verify subscription entitlements across platforms. RevenueCat receives purchase receipts and an anonymous app user ID, but not your payment card details. See <a href="https://www.revenuecat.com/privacy">RevenueCat's privacy policy</a>.</p>
+    <section class="sec" id="third-party">
+      <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Third-party services</h2></div>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="svc-top"><span class="svc-name">Supabase</span><span class="svc-role">Data storage</span></div>
+          <p>Our backend for authentication and data sync. Supabase stores your account email, workout data, and (if applicable) attached photos.</p>
+          <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Privacy policy
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
+        </div>
+        <div class="svc">
+          <div class="svc-top"><span class="svc-name">Anthropic</span><span class="svc-role">AI Coach · Pro</span></div>
+          <p>The AI Coach uses the Claude API to generate plans, weekly reviews, and chart explanations. We send only goals, training-history summaries, and aggregated metrics — never raw health records. Anthropic does not train on this data.</p>
+          <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Privacy policy
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
+        </div>
+        <div class="svc">
+          <div class="svc-top"><span class="svc-name">RevenueCat</span><span class="svc-role">Subscriptions</span></div>
+          <p>Manages and verifies subscription entitlements across platforms. RevenueCat receives purchase receipts and an anonymous app user ID, but not your payment card details.</p>
+          <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Privacy policy
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
+        </div>
+        <div class="svc">
+          <div class="svc-top"><span class="svc-name">Apple &amp; Google</span><span class="svc-role">Platform</span></div>
+          <p>Sign in, In-App Purchases / Billing, Apple Health &amp; Health Connect, Live Activities, and Apple Watch are provided under each platform's own privacy policy.</p>
+          <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="margin-top:8px;">Google
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<h3>Apple (iOS)</h3>
-<p>Sign in with Apple, In-App Purchases, Apple Health, Live Activities, and Apple Watch are provided by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
+    <section class="sec" id="retention">
+      <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Data retention</h2></div>
+      <p>We retain your account data for as long as your account is active. You can delete your account at any time from <b>Settings → Account → Delete Account</b>. Upon deletion, your account, workout history, and synced data are permanently removed from our servers within 30 days. Local data on your device is removed when you uninstall the App.</p>
+    </section>
 
-<h3>Google (Android)</h3>
-<p>Google Sign-In, Google Play Billing, and Health Connect are provided by Google under <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+    <section class="sec" id="rights">
+      <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Your rights</h2></div>
+      <p>Depending on where you live, you may have the right to:</p>
+      <ul class="rights">
+        <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Access</b> the personal data we hold about you</span></li>
+        <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Correct</b> inaccurate data</span></li>
+        <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Delete</b> your account and associated data</span></li>
+        <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Export</b> your data in a portable format</span></li>
+        <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Object</b> to certain processing</span></li>
+        <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Withdraw consent</b> for processing where consent is the legal basis</span></li>
+      </ul>
+      <p>To exercise these rights, contact us at the email below. EU/UK users have rights under GDPR; California users have rights under CCPA/CPRA.</p>
+    </section>
 
-<h2>4. Data Retention</h2>
-<p>We retain your account data for as long as your account is active. You can delete your account at any time from Settings → Account → Delete Account. Upon deletion, your account, workout history, and synced data are permanently removed from our servers within 30 days. Local data on your device is removed when you uninstall the App.</p>
+    <section class="sec" id="children">
+      <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Children's privacy</h2></div>
+      <p>Repto is rated 12+ and is not directed to children under 13. We do not knowingly collect personal information from children under 13. If we discover such collection, we will delete the data promptly.</p>
+    </section>
 
-<h2>5. Your Rights</h2>
-<p>Depending on where you live, you may have the right to:</p>
-<ul>
-  <li><strong>Access</strong> the personal data we hold about you</li>
-  <li><strong>Correct</strong> inaccurate data</li>
-  <li><strong>Delete</strong> your account and associated data</li>
-  <li><strong>Export</strong> your data in a portable format</li>
-  <li><strong>Object</strong> to certain processing</li>
-  <li><strong>Withdraw consent</strong> for data processing where consent is the legal basis</li>
-</ul>
-<p>To exercise these rights, contact us at the email below. EU/UK users have rights under GDPR; California users have rights under CCPA/CPRA.</p>
+    <section class="sec" id="security">
+      <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Security</h2></div>
+      <p>We use industry-standard encryption in transit (HTTPS/TLS) and at rest. Our backend is hosted by Supabase with row-level security policies. However, no system is perfectly secure, and we cannot guarantee absolute security.</p>
+    </section>
 
-<h2>6. Children's Privacy</h2>
-<p>Repto is rated 12+ and is not directed to children under 13. We do not knowingly collect personal information from children under 13. If we discover such collection, we will delete the data promptly.</p>
+    <section class="sec" id="transfers">
+      <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">International transfers</h2></div>
+      <p>Our backend is hosted in Sydney, Australia (Supabase ap-southeast-2). If you are accessing the App from outside that region, your data is transferred to and processed there.</p>
+    </section>
 
-<h2>7. Security</h2>
-<p>We use industry-standard encryption in transit (HTTPS/TLS) and at rest. Our backend is hosted by Supabase with row-level security policies. However, no system is perfectly secure, and we cannot guarantee absolute security.</p>
+    <section class="sec" id="changes">
+      <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">Changes to this policy</h2></div>
+      <p>We may update this Privacy Policy from time to time. The "Effective date" at the top will reflect the latest version. Material changes will be communicated through the App or via email.</p>
+    </section>
 
-<h2>8. International Transfers</h2>
-<p>Our backend is hosted in Sydney, Australia (Supabase ap-southeast-2). If you are accessing the App from outside that region, your data is transferred to and processed there.</p>
+    <section class="sec" id="contact">
+      <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">Contact us</h2></div>
+      <p>For privacy questions, data requests, or any other concerns, reach out any time.</p>
+      <div class="contact-card">
+        <div class="cc-text">
+          <b>Repto Support</b>
+          We typically reply within a couple of days.
+        </div>
+        <a class="mail-btn" href="mailto:reptoapp.official@gmail.com">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          reptoapp.official@gmail.com
+        </a>
+      </div>
+    </section>
 
-<h2>9. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. The "Effective date" at the top will reflect the latest version. Material changes will be communicated through the App or via email.</p>
+  </article>
+</div>
 
-<h2>10. Contact Us</h2>
-<p>For privacy questions, data requests, or any other concerns, contact:</p>
-<p><strong>Email:</strong> <a href="mailto:reptoapp.official@gmail.com">reptoapp.official@gmail.com</a></p>
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <a class="wordmark" href="index.html"><img src="assets/repto-logo.png" alt="" /><span>Repto</span></a>
+        <p class="foot-tag">The workout tracker with rhythm. Master your time. Elevate your performance.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#coach">Repto Coach</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a class="cur" href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Repto. All rights reserved.</span>
+      <span>Made for people who actually train.</span>
+    </div>
+  </div>
+</footer>
 
-<p style="margin-top: 48px; font-size: 14px; color: #6e6e73;">
-  <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a>
-</p>
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  var onScroll = function () {
+    if (window.scrollY > 24) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+    spy();
+  };
+  // scrollspy — pick the section whose top is nearest above the offset line
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function spy() {
+    var line = 140, idx = 0;
+    for (var i = 0; i < secs.length; i++) {
+      if (secs[i] && secs[i].getBoundingClientRect().top <= line) idx = i;
+    }
+    links.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
 </body>
 </html>
