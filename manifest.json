@@ -1,0 +1,37 @@
+{
+  "name": "Repto — Workout Tracker",
+  "short_name": "Repto",
+  "description": "The workout tracker with a built-in AI coach, real-time timers, and Apple Watch + Apple Health built in.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#0F0D10",
+  "theme_color": "#0F0D10",
+  "icons": [
+    {
+      "src": "/assets/repto-logo.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/repto-logo.jpeg",
+      "sizes": "261x261",
+      "type": "image/jpeg"
+    }
+  ],
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "app.repto.android",
+      "url": "https://play.google.com/store/apps/details?id=app.repto.android"
+    },
+    {
+      "platform": "itunes",
+      "id": "6761402067",
+      "url": "https://apps.apple.com/app/repto-workout-tracker/id6761402067"
+    }
+  ]
+}
