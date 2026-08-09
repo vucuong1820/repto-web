@@ -65,10 +65,14 @@ function shell({ locale, title, description, canonical, body }) {
 export function renderSharePage({ summary, code, kind, locale }) {
   const t = COPY[locale]
   const name = escapeHtml(summary.name)
-  const stats =
+  // Copy strings are human-readable text (e.g. '< 1 min'), not HTML — escape
+  // once here so every use below (og:description, the visible stats line)
+  // is covered without baking entities into copy.mjs.
+  const stats = escapeHtml(
     kind === 'program'
       ? `${t.plans(summary.planCount)} · ${t.exercises(summary.exerciseCount)} · ${t.minutes(summary.minutes)}`
       : `${t.exercises(summary.exerciseCount)} · ${t.minutes(summary.minutes)}`
+  )
   const canonical = `https://reptofit.com/${kind === 'program' ? 'p' : 'w'}/${escapeHtml(code)}`
 
   const cards = summary.plans
@@ -81,10 +85,11 @@ export function renderSharePage({ summary, code, kind, locale }) {
         .join('')
       const more = plan.moreCount > 0 ? `<div class="more">${t.more(plan.moreCount)}</div>` : ''
       const day = kind === 'program' ? `<div class="day">${t.day(plan.dayIndex)}</div>` : ''
+      const meta = escapeHtml(`${t.exercises(plan.exerciseCount)} · ${t.minutes(plan.minutes)}`)
       return `<div class="card">
   ${day}
   <h2>${escapeHtml(plan.name)}</h2>
-  <div class="meta">${t.exercises(plan.exerciseCount)} · ${t.minutes(plan.minutes)}</div>
+  <div class="meta">${meta}</div>
   ${rows}${more}
 </div>`
     })
