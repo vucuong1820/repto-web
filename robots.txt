@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://reptofit.com/sitemap.xml
+
+Disallow: /p/
+Disallow: /w/
