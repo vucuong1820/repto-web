@@ -8,10 +8,14 @@ function setDetail(exercise) {
   const sets = Array.isArray(exercise?.sets) ? exercise.sets : []
   if (sets.length === 0) return ''
   const first = sets[0] ?? {}
-  if (first.targetDistanceMeters) {
-    return `${sets.length}×${formatDistance(Number(first.targetDistanceMeters))}`
+  // Test for a number, not truthiness: a non-numeric value would render NaN,
+  // and a legitimate 0 target would fall through and be shown as a rep count.
+  if (Number.isFinite(first.targetDistanceMeters)) {
+    return `${sets.length}×${formatDistance(first.targetDistanceMeters)}`
   }
-  if (first.targetSeconds) return `${sets.length}×${Number(first.targetSeconds)}s`
+  if (Number.isFinite(first.targetSeconds)) {
+    return `${sets.length}×${first.targetSeconds}s`
+  }
   return `${sets.length}×${Number(first.reps) || 0}`
 }
 

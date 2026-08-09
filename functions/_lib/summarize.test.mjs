@@ -57,3 +57,32 @@ test('summarize survives a malformed payload', () => {
   assert.equal(result.exerciseCount, 0)
   assert.equal(result.name, '')
 })
+
+test('summarize does not render NaN for a non-numeric target', () => {
+  const bad = { name: 'X', exercises: [
+    { name: 'Plank', restSeconds: 0, sets: [{ reps: 0, targetSeconds: 'abc' }] },
+  ] }
+  const detail = summarize(bad, 'plan').plans[0].exercises[0].detail
+  assert.ok(!detail.includes('NaN'), `expected no NaN, got ${detail}`)
+  assert.equal(detail, '1×0')
+})
+
+test('summarize keeps a zero target in its own mode', () => {
+  const zero = { name: 'X', exercises: [
+    { name: 'Row', restSeconds: 0, sets: [{ reps: 0, targetDistanceMeters: 0 }] },
+  ] }
+  assert.equal(summarize(zero, 'plan').plans[0].exercises[0].detail, '1×0 m')
+})
+
+test('summarize formats sub-kilometre distances in metres', () => {
+  const short = { name: 'X', exercises: [
+    { name: 'Sprint', restSeconds: 0, sets: [{ reps: 0, targetDistanceMeters: 400 }] },
+  ] }
+  assert.equal(summarize(short, 'plan').plans[0].exercises[0].detail, '1×400 m')
+})
+
+test('summarize survives a null plan and null sets', () => {
+  assert.equal(summarize({ name: 'X', workouts: [null] }, 'program').planCount, 0)
+  const nullSets = { name: 'X', exercises: [{ name: 'Y', restSeconds: 0, sets: null }] }
+  assert.equal(summarize(nullSets, 'plan').plans[0].exercises[0].detail, '')
+})
