@@ -1,5 +1,5 @@
 {
   "version": 1,
-  "include": ["/p/*", "/w/*", "/.well-known/apple-app-site-association"],
+  "include": ["/p/*", "/w/*", "/.well-known/apple-app-site-association", "/.well-known/assetlinks.json"],
   "exclude": []
 }
