@@ -85,11 +85,18 @@ export function renderSharePage({ summary, code, kind, locale }) {
         .join('')
       const more = plan.moreCount > 0 ? `<div class="more">${t.more(plan.moreCount)}</div>` : ''
       const day = kind === 'program' ? `<div class="day">${t.day(plan.dayIndex)}</div>` : ''
-      const meta = escapeHtml(`${t.exercises(plan.exerciseCount)} · ${t.minutes(plan.minutes)}`)
+      // A single-plan payload already put the name in <h1> and the stats in
+      // .stats above — repeating them in the card's <h2>/.meta would print
+      // the same two lines twice. Only the program case (multiple cards,
+      // each a different plan) needs its own header.
+      const header =
+        kind === 'plan'
+          ? ''
+          : `<h2>${escapeHtml(plan.name)}</h2>
+  <div class="meta">${escapeHtml(`${t.exercises(plan.exerciseCount)} · ${t.minutes(plan.minutes)}`)}</div>`
       return `<div class="card">
   ${day}
-  <h2>${escapeHtml(plan.name)}</h2>
-  <div class="meta">${meta}</div>
+  ${header}
   ${rows}${more}
 </div>`
     })
