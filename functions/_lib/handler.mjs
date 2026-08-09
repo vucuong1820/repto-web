@@ -2,6 +2,7 @@ import { isValidShareCode } from './code.mjs'
 import { summarize } from './summarize.mjs'
 import { renderSharePage, renderMessage } from './render.mjs'
 import { COPY, pickLocale } from './copy.mjs'
+import { pickPlatform } from './platform.mjs'
 
 const TABLES = { program: 'shared_programs', plan: 'shared_workouts' }
 
@@ -17,13 +18,14 @@ function html(body, status) {
 
 export async function handleShare({ kind, params, env, request }) {
   const locale = pickLocale(request)
+  const platform = pickPlatform(request)
   const t = COPY[locale]
   const code = params?.code
 
   // Reject before touching the database so the route cannot be used to
   // enumerate codes.
   if (!isValidShareCode(code)) {
-    return html(renderMessage({ locale, title: t.notFoundTitle, body: t.notFoundBody, kind }), 404)
+    return html(renderMessage({ locale, title: t.notFoundTitle, body: t.notFoundBody, kind, platform }), 404)
   }
 
   // summarize()/renderSharePage() run inside this guard too: a throw from
@@ -44,12 +46,12 @@ export async function handleShare({ kind, params, env, request }) {
     const payload = rows?.[0]?.payload
 
     if (!payload) {
-      return html(renderMessage({ locale, title: t.notFoundTitle, body: t.notFoundBody, kind }), 404)
+      return html(renderMessage({ locale, title: t.notFoundTitle, body: t.notFoundBody, kind, platform }), 404)
     }
 
     const summary = summarize(payload, kind)
-    return html(renderSharePage({ summary, code, kind, locale }), 200)
+    return html(renderSharePage({ summary, code, kind, locale, platform }), 200)
   } catch {
-    return html(renderMessage({ locale, title: t.errorTitle, body: t.errorBody, kind }), 502)
+    return html(renderMessage({ locale, title: t.errorTitle, body: t.errorBody, kind, platform }), 502)
   }
 }

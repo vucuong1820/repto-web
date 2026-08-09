@@ -1,8 +1,35 @@
 import { escapeHtml } from './escape.mjs'
 import { COPY } from './copy.mjs'
+import { androidIntentUrl, APP_STORE_URL, PLAY_STORE_URL } from './platform.mjs'
 
-const APP_STORE_URL = 'https://apps.apple.com/app/repto-workout-tracker/id6761402067'
 const OG_IMAGE = 'https://reptofit.com/assets/og-share.png'
+
+/**
+ * The open-in-app button plus the store line beneath it, per platform. `code` is null on
+ * the 404/502 shells, which have nothing to open.
+ *
+ * Android gets an `intent://` URL rather than `repto://` because in-app WebViews block
+ * custom schemes; its `browser_fallback_url` also covers the not-installed case, which is
+ * why Android needs no separate secondary link.
+ */
+function ctaBlock({ t, platform, code }) {
+  const open =
+    code == null
+      ? ''
+      : platform === 'android'
+        ? `<a class="cta" href="${escapeHtml(androidIntentUrl(code))}">${t.open}</a>`
+        : platform === 'ios'
+          ? `<a class="cta" href="repto://import?code=${escapeHtml(code)}">${t.open}</a>`
+          : ''
+  const store =
+    platform === 'android'
+      ? `<a class="alt" href="${PLAY_STORE_URL}">${t.noAppAndroid}</a>`
+      : platform === 'ios'
+        ? `<a class="alt" href="${APP_STORE_URL}">${t.noAppIos}</a>`
+        : `<a class="alt" href="${PLAY_STORE_URL}">${t.noAppBoth}</a>
+<a class="alt" href="${APP_STORE_URL}">${t.getAppStore}</a>`
+  return `${open}\n${store}`
+}
 
 function shell({ locale, title, description, canonical, body }) {
   return `<!doctype html>
@@ -62,7 +89,7 @@ function shell({ locale, title, description, canonical, body }) {
 </html>`
 }
 
-export function renderSharePage({ summary, code, kind, locale }) {
+export function renderSharePage({ summary, code, kind, locale, platform = 'desktop' }) {
   const t = COPY[locale]
   const name = escapeHtml(summary.name)
   // Copy strings are human-readable text (e.g. '< 1 min'), not HTML — escape
@@ -111,12 +138,11 @@ export function renderSharePage({ summary, code, kind, locale }) {
 <h1>${name}</h1>
 <div class="stats">${stats}</div>
 ${cards}
-<a class="cta" href="repto://import?code=${escapeHtml(code)}">${t.open}</a>
-<a class="alt" href="${APP_STORE_URL}">${t.noApp}</a>`,
+${ctaBlock({ t, platform, code })}`,
   })
 }
 
-export function renderMessage({ locale, title, body, kind = 'program' }) {
+export function renderMessage({ locale, title, body, kind = 'program', platform = 'desktop' }) {
   const t = COPY[locale]
   return shell({
     locale,
@@ -125,6 +151,6 @@ export function renderMessage({ locale, title, body, kind = 'program' }) {
     canonical: 'https://reptofit.com/',
     body: `<h1>${escapeHtml(title)}</h1>
 <div class="stats">${escapeHtml(body)}</div>
-<a class="cta" href="${APP_STORE_URL}">${t.noApp}</a>`,
+${ctaBlock({ t, platform, code: null })}`,
   })
 }
