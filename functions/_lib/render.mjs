@@ -104,12 +104,12 @@ ${cards}
   })
 }
 
-export function renderMessage({ locale, title, body }) {
+export function renderMessage({ locale, title, body, kind = 'program' }) {
   const t = COPY[locale]
   return shell({
     locale,
     title: 'Repto',
-    description: t.ogSuffix.program,
+    description: t.ogSuffix[kind] ?? t.ogSuffix.program,
     canonical: 'https://reptofit.com/',
     body: `<h1>${escapeHtml(title)}</h1>
 <div class="stats">${escapeHtml(body)}</div>
