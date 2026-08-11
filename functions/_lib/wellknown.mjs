@@ -28,7 +28,7 @@ export const ASSETLINKS = [
       namespace: 'android_app',
       package_name: 'app.repto.android',
       sha256_cert_fingerprints: [
-        'REPLACE_WITH_PLAY_APP_SIGNING_SHA256',
+        '54:16:31:E7:30:FA:AB:5E:CE:51:58:BB:DD:E4:81:15:28:F2:B7:18:7D:4F:16:CA:70:4F:7E:11:51:1B:79:E8',
         '42:AF:95:54:EA:BF:FF:B9:88:1F:DC:75:B8:01:9C:8E:75:93:53:A0:06:2F:C0:BC:D5:84:A4:02:25:C2:52:50',
         '71:B8:D5:3D:94:C7:92:8B:24:79:F8:A7:04:31:A8:6E:75:37:08:3E:72:32:28:AA:D8:50:08:EA:52:9F:B4:62',
       ],
