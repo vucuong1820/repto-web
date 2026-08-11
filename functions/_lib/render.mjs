@@ -2,7 +2,11 @@ import { escapeHtml } from './escape.mjs'
 import { COPY } from './copy.mjs'
 import { androidIntentUrl, APP_STORE_URL, PLAY_STORE_URL } from './platform.mjs'
 
-const OG_IMAGE = 'https://reptofit.com/assets/og-share.png'
+// The ?v= is a cache buster, not a file name. Facebook, Slack and LinkedIn key their
+// OG-image cache on the URL and hold it for days, so replacing the PNG in place leaves
+// every previously-scraped link showing the old card. Bump this whenever the artwork
+// changes; v2 is the logo-mark-only card (no wordmark, no tagline).
+const OG_IMAGE = 'https://reptofit.com/assets/og-share.png?v=2'
 
 /**
  * The open-in-app button plus the store line beneath it, per platform. `code` is null on
