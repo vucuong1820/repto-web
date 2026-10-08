@@ -35,7 +35,7 @@
       "@id": "https://reptofit.com/#org",
       "name": "Repto",
       "url": "https://reptofit.com/",
-      "email": "reptoapp.official@gmail.com",
+      "email": "support@reptofit.com",
       "sameAs": ["https://www.facebook.com/reptoapp/"]
     },
     {
@@ -84,48 +84,50 @@
 </head>
 <body>
 
-<!-- ============================================================ ICON SPRITE
-     Lucide-geometry stroke icons; referenced via <svg class="icon"><use/></svg>.
-     Stroke/fill/size are set by presentation attributes on each <use> wrapper. -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
-    <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
-    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></symbol>
-    <symbol id="i-watch" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><polyline points="12 10 12 12 13 13"/><path d="m16.13 7.66-.81-4.05a2 2 0 0 0-2-1.61h-2.68a2 2 0 0 0-2 1.61l-.78 4.05"/><path d="m7.88 16.36.8 4a2 2 0 0 0 2 1.61h2.72a2 2 0 0 0 2-1.61l.81-4.05"/></symbol>
-    <symbol id="i-heartPulse" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
-    <symbol id="i-trendingUp" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
-    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></symbol>
-    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
-    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
-    <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
-    <symbol id="i-chevronDown" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
-    <symbol id="i-chevronRight" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
-    <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></symbol>
-    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
-    <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
-    <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.13 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z"/></symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24"><path d="M17.05 12.5c-.03-2.5 2.04-3.7 2.13-3.76-1.16-1.7-2.97-1.93-3.61-1.96-1.54-.16-3 .9-3.78.9-.77 0-1.97-.88-3.24-.85-1.67.02-3.21.97-4.07 2.46-1.73 3.01-.44 7.46 1.24 9.9.82 1.2 1.8 2.53 3.08 2.48 1.24-.05 1.7-.8 3.2-.8 1.49 0 1.9.8 3.2.77 1.32-.02 2.16-1.21 2.97-2.41.93-1.38 1.32-2.72 1.34-2.79-.03-.01-2.57-.99-2.6-3.92zM14.6 5.1c.68-.83 1.14-1.98 1.01-3.1-.98.04-2.16.65-2.87 1.47-.63.73-1.18 1.9-1.03 3.02 1.09.08 2.21-.56 2.89-1.39z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z" fill="#00C3FF"/><path d="m13.792 12 2.882-2.882 4.434 2.53c.78.445.78 1.26 0 1.704l-4.434 2.53L13.792 12z" fill="#FFCE00"/><path d="m16.674 9.118-2.882 2.882L3.61 1.814a.998.998 0 0 1 .98-.04l12.084 7.344z" fill="#00E676"/><path d="m13.792 12 2.882 2.882L4.589 22.226a.998.998 0 0 1-.98-.04L13.792 12z" fill="#FF3D47"/></symbol>
+    <symbol id="i-sbar" viewBox="0 0 66 12"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/><path d="M28 3.2a9 9 0 0 1 11.5 0l-1.3 1.4a7 7 0 0 0-8.9 0zM30.4 5.9a5.4 5.4 0 0 1 6.7 0l-1.3 1.4a3.4 3.4 0 0 0-4.1 0zM33.75 11 32 9.2a2.4 2.4 0 0 1 3.5 0z"/><rect x="44.5" y=".5" width="19" height="11" rx="3.2" fill="none" stroke="currentColor" stroke-opacity=".4"/><rect x="46.5" y="2.5" width="15" height="7" rx="1.6"/><path d="M65 4.2v3.6a1.9 1.9 0 0 0 0-3.6z" fill-opacity=".45"/></symbol>
   </defs>
 </svg>
 
+<div class="page">
+  <div class="glow glow--a" aria-hidden="true"></div>
+  <div class="glow glow--b" aria-hidden="true"></div>
+
 <!-- ============================================================ NAV -->
 <header class="nav" id="nav">
-  <nav class="nav__inner container">
-    <a href="#top" class="wordmark" aria-label="Repto home">
-      <img src="assets/repto-logo.jpeg" alt="" width="30" height="30" class="wordmark__logo" />
-      <span class="wordmark__name">Repto</span>
+  <div class="nav__inner">
+    <a href="#top" class="brand" aria-label="Repto">
+      <img src="assets/repto-logo.jpeg" alt="" class="brand__icon" width="34" height="34" />
+      <img src="assets/wordmark-white.png" alt="Repto" class="brand__word" width="152" height="38" />
     </a>
-    <div class="nav__links">
+    <nav class="nav__links">
       <a href="#features">Features</a>
-      <a href="#coach">Coach</a>
-      <a href="#showcase">Showcase</a>
+      <a href="#watch">Apple Watch</a>
+      <a href="#programs">Programs</a>
+      <a href="#coach">Repto Coach</a>
+      <a href="#meal">Meal plan</a>
       <a href="#pricing">Pricing</a>
-    </div>
+    </nav>
+    <span class="nav__spacer"></span>
     <div class="nav__lang" data-lang-switch><noscript><a href="/vi">Tiếng Việt</a></noscript></div>
-    <a href="#download" class="btn-cta nav__cta">Download</a>
+    <a href="#download" class="nav__cta">GET THE APP</a>
+    <button class="nav__burger" type="button" aria-label="Menu" aria-expanded="false" data-burger>
+      <svg class="ic-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg>
+      <svg class="ic-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <nav class="nav__menu" data-menu>
+    <a href="#features">Features<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+    <a href="#watch">Apple Watch<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+    <a href="#programs">Programs<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+    <a href="#coach">Repto Coach<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+    <a href="#meal">Meal plan<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+    <a href="#pricing">Pricing<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
   </nav>
 </header>
 
@@ -133,491 +135,498 @@
 
 <!-- ============================================================ HERO -->
 <section id="top" class="hero">
-  <div class="hero__glows" aria-hidden="true">
-    <span class="glow glow--hero-a"></span>
-    <span class="glow glow--hero-b"></span>
+  <div class="hero__copy">
+    <div class="hero__kicker"><span class="hero__dot"></span><span class="eyebrow">AI WORKOUT TRACKER · REP + TEMPO</span></div>
+    <h1 class="hero__title">Train with rhythm.<br><span class="lime">Track every rep.</span></h1>
+    <p class="hero__lead">Log every set in seconds. Track your progress, session after session.</p>
+    <div class="badges">
+      <a href="https://apps.apple.com/app/repto-workout-tracker/id6761402067" target="_blank" rel="noopener" class="badge badge--64" aria-label="Download Repto on the App Store">
+        <svg class="badge__glyph" fill="#fff" aria-hidden="true"><use href="#i-apple"/></svg>
+        <span class="badge__txt"><span class="badge__pre">Download on the</span><span class="badge__name">App Store</span></span>
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=app.repto.android&amp;pcampaignid=web_share" target="_blank" rel="noopener" class="badge badge--64" aria-label="Get Repto on Google Play">
+        <svg class="badge__glyph badge__glyph--play" aria-hidden="true"><use href="#i-play"/></svg>
+        <span class="badge__txt"><span class="badge__pre">GET IT ON</span><span class="badge__name">Google Play</span></span>
+      </a>
+    </div>
+    <div class="hero__rating"><span class="stars" data-stars="4.9"></span><span><b>4.9</b> · loved by lifters who actually train</span></div>
   </div>
-  <div class="container hero__inner">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <div class="reveal"><span class="overline"><span class="overline__dot"></span><span class="overline__text">Master your time · Elevate your performance</span></span></div>
-        <h1 class="reveal hero__title" data-delay="70">Train with rhythm.<br />Track <span class="accent">every rep.</span></h1>
-        <p class="reveal hero__lead" data-delay="140">The workout tracker with a built-in AI coach, real-time timers, and Apple Watch + Health built in.</p>
-        <div class="reveal hero__ctas" data-delay="210">
-          <!-- App Store badge -->
-          <a href="https://apps.apple.com/app/repto-workout-tracker/id6761402067" target="_blank" rel="noopener" class="badge badge--58" aria-label="Download Repto on the App Store">
-            <svg class="badge__glyph" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.05 12.5c-.03-2.5 2.04-3.7 2.13-3.76-1.16-1.7-2.97-1.93-3.61-1.96-1.54-.16-3 .9-3.78.9-.77 0-1.97-.88-3.24-.85-1.67.02-3.21.97-4.07 2.46-1.73 3.01-.44 7.46 1.24 9.9.82 1.2 1.8 2.53 3.08 2.48 1.24-.05 1.7-.8 3.2-.8 1.49 0 1.9.8 3.2.77 1.32-.02 2.16-1.21 2.97-2.41.93-1.38 1.32-2.72 1.34-2.79-.03-.01-2.57-.99-2.6-3.92zM14.6 5.1c.68-.83 1.14-1.98 1.01-3.1-.98.04-2.16.65-2.87 1.47-.63.73-1.18 1.9-1.03 3.02 1.09.08 2.21-.56 2.89-1.39z"/></svg>
-            <span class="badge__txt"><span class="badge__pre">Download on the</span><span class="badge__name">App Store</span></span>
-          </a>
-          <!-- Google Play badge -->
-          <a href="https://play.google.com/store/apps/details?id=app.repto.android&amp;pcampaignid=web_share" target="_blank" rel="noopener" class="badge badge--58" aria-label="Get Repto on Google Play">
-            <svg class="badge__glyph badge__glyph--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z" fill="#00C3FF"/><path d="m13.792 12 2.882-2.882 4.434 2.53c.78.445.78 1.26 0 1.704l-4.434 2.53L13.792 12z" fill="#FFCE00"/><path d="m16.674 9.118-2.882 2.882L3.61 1.814a.998.998 0 0 1 .98-.04l12.084 7.344z" fill="#00E676"/><path d="m13.792 12 2.882 2.882L4.589 22.226a.998.998 0 0 1-.98-.04L13.792 12z" fill="#FF3D47"/></svg>
-            <span class="badge__txt"><span class="badge__pre">GET IT ON</span><span class="badge__name">Google Play</span></span>
-          </a>
-          <a href="#features" class="btn-ghost">See features <svg class="icon" width="16" height="16" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chevronDown"/></svg></a>
+
+  <div class="hero__device" aria-hidden="true">
+    <div class="hero__halo"></div>
+    <div class="phone">
+      <div class="phone__screen">
+        <div class="phone__island"></div>
+        <div class="sbar"><span>9:41</span><svg class="sbar__icons" width="66" height="12" fill="currentColor"><use href="#i-sbar"/></svg></div>
+        <div class="aw__top">
+          <span class="aw__btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></span>
+          <span style="font-size:15px;font-weight:600">Chest</span>
+          <span class="aw__btn" data-session>0:05</span>
         </div>
-        <div class="reveal hero__rating" data-delay="280">
-          <span class="stars" data-stars="4.9" aria-label="4.9 out of 5"></span>
-          <span class="hero__rating-txt"><strong>4.9</strong> · loved by lifters who actually train</span>
+        <div class="aw__hero">
+          <img src="assets/ex/iso-chest-press.png" alt="" />
+          <span class="aw__timer"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="10"/><path d="M12 7v5H8" stroke="rgba(0,0,0,.45)" stroke-width="3" fill="none" stroke-linecap="round"/></svg><span data-session>0:05</span> <span style="opacity:.6">·</span> 0/43</span>
+          <span class="aw__name">ISO-LATERAL CHEST PRESS (MACHINE)</span>
         </div>
-      </div>
-      <div class="hero-phone">
-        <div class="reveal reveal--far" data-delay="180">
-          <!-- PHONE: Active Workout -->
-          <div class="phone phone--312">
-            <span class="phone__glow" aria-hidden="true"></span>
-            <div class="phone__body repto-float">
-              <div class="phone__screen">
-                <div class="phone__ambient" aria-hidden="true"><span></span><span></span></div>
-                <div class="statusbar">
-                  <span class="statusbar__time" data-clock>9:41</span>
-                  <span class="statusbar__icons">
-                    <svg width="17" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0.5" width="3" height="11.5" rx="1"/></svg>
-                    <svg width="16" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2c2.6 0 5 1 6.8 2.7l1.3-1.4A11 11 0 0 0 8.5.3 11 11 0 0 0 .9 3.5l1.3 1.4A9.4 9.4 0 0 1 8.5 2.2z"/><path d="M8.5 6c1.5 0 2.9.6 3.9 1.6l1.3-1.4a7.3 7.3 0 0 0-10.4 0l1.3 1.4A5.4 5.4 0 0 1 8.5 6z"/><path d="m8.5 9.4 2.1-2.2a3 3 0 0 0-4.2 0z"/></svg>
-                    <svg width="24" height="12" viewBox="0 0 26 13" fill="none"><rect x="0.5" y="0.5" width="21" height="12" rx="3.5" stroke="currentColor" opacity="0.4"/><rect x="2" y="2" width="18" height="9" rx="2" fill="currentColor"/><path d="M23.5 4.5v4c.8-.3 1.3-1 1.3-2s-.5-1.7-1.3-2z" fill="currentColor" opacity="0.5"/></svg>
-                  </span>
-                  <span class="statusbar__notch"></span>
-                </div>
-                <div class="phone__content">
-                  <!-- Active workout screen -->
-                  <div class="aw">
-                    <div class="aw__head">
-                      <div class="aw__title">Push Day A</div>
-                      <span class="aw__live"><span class="repto-pulse aw__live-dot"></span> LIVE</span>
-                    </div>
-                    <div class="aw__pad">
-                      <div class="aw__rest">
-                        <div class="plabel" data-rest-label>REST</div>
-                        <div class="aw__ring">
-                          <svg width="116" height="116" viewBox="0 0 116 116" class="aw__ring-svg">
-                            <circle cx="58" cy="58" r="46" fill="none" stroke="var(--surface-highest)" stroke-width="8"/>
-                            <circle cx="58" cy="58" r="46" fill="none" stroke="var(--lime)" stroke-width="9" stroke-linecap="round" class="aw__ring-prog" data-rest-ring stroke-dasharray="289.03" stroke-dashoffset="154.15"/>
-                          </svg>
-                          <div class="aw__ring-num" data-rest-num>0:42</div>
-                        </div>
-                        <div class="aw__upnext">Up next: Bench Press · Set 3</div>
-                      </div>
-                    </div>
-                    <div class="aw__pad aw__exwrap">
-                      <div class="aw__ex">
-                        <div class="aw__ex-head">
-                          <div class="aw__ex-icon" style="background:var(--muscle-chest)"><img src="assets/exercises/bench_press_barbell.png" alt="" /></div>
-                          <div class="aw__ex-meta">
-                            <div class="card-title">Bench Press</div>
-                            <div class="caption">Barbell · Chest</div>
-                          </div>
-                          <span class="aw__ex-timer"><svg class="icon" width="11" height="11" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg><span class="mono" data-elapsed>24:18</span></span>
-                        </div>
-                        <div class="aw__sets">
-                          <div class="aw__set aw__set--done">
-                            <span class="aw__set-mark"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span>
-                            <div class="aw__set-body"><div class="aw__set-label aw__set-label--done">SET 1</div><div class="aw__set-val"><span>10 reps</span><span class="aw__set-x">×</span><span>60 kg</span></div></div>
-                            <span class="aw__set-check aw__set-check--done"><svg class="icon" width="16" height="16" fill="none" stroke="var(--lime)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span>
-                          </div>
-                          <div class="aw__set aw__set--done">
-                            <span class="aw__set-mark"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span>
-                            <div class="aw__set-body"><div class="aw__set-label aw__set-label--done">SET 2</div><div class="aw__set-val"><span>8 reps</span><span class="aw__set-x">×</span><span>60 kg</span></div></div>
-                            <span class="aw__set-check aw__set-check--done"><svg class="icon" width="16" height="16" fill="none" stroke="var(--lime)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span>
-                          </div>
-                          <div class="aw__set">
-                            <span class="aw__set-num">3</span>
-                            <div class="aw__set-body"><div class="aw__set-label">SET 3</div><div class="aw__set-val"><span>8 reps</span><span class="aw__set-x">×</span><span>65 kg</span></div></div>
-                            <span class="aw__set-check"></span>
-                          </div>
-                          <div class="aw__set">
-                            <span class="aw__set-num">4</span>
-                            <div class="aw__set-body"><div class="aw__set-label">SET 4</div><div class="aw__set-val"><span>8 reps</span><span class="aw__set-x">×</span><span>65 kg</span></div></div>
-                            <span class="aw__set-check"></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="aw__actions">
-                      <div class="aw__pause"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--text-primary)"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></div>
-                      <div class="aw__finish">Finish Workout</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="aw__collapse"><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="m9 4 3 3 3-3"/><path d="M12 7V2"/><path d="m9 20 3-3 3 3"/><path d="M12 17v5"/></svg>COLLAPSE ALL</span></div>
+        <div class="aw__card">
+          <div class="aw__head">
+            <img src="assets/ex/iso-chest-press.png" alt="" style="width:26px;height:26px;object-fit:contain;flex:none" />
+            <div class="aw__ex"><b>ISO-LATERAL CHEST PRESS (MACHINE)</b><span>0/4 sets</span></div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.4 2.6a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4Z"/></svg>
+            <span class="aw__rest"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M10 2h4"/></svg>45s</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </div>
+          <div class="set set--active">
+            <span class="set__n">1</span>
+            <div class="set__body"><span class="set__lbl">SET 1</span><span class="set__last">Last time <b>12 × 20 kg</b></span>
+              <div class="set__vals"><div class="set__val"><b>12</b><span>REPS</span></div><span class="set__x">×</span><div class="set__val"><b>20</b><span>KG</span></div></div>
+            </div>
+            <span class="set__ring"></span>
+          </div>
+          <div class="set">
+            <span class="set__n">2</span>
+            <div class="set__body"><span class="set__lbl">SET 2</span><span class="set__last">Last time <b>12 × 20 kg</b></span>
+              <div class="set__vals"><div class="set__val"><b>12</b><span>REPS</span></div><span class="set__x">×</span><div class="set__val"><b>20</b><span>KG</span></div></div>
+            </div>
+            <span class="set__ring"></span>
+          </div>
+        </div>
+        <div class="aw__dock">
+          <div class="aw__side" style="color:var(--lime)"><span style="background:rgba(164,235,63,.14)"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--lime)"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg></span>PAUSE</div>
+          <span class="aw__done"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>COMPLETE SET</span>
+          <div class="aw__side" style="color:var(--error)"><span style="background:rgba(255,115,81,.18)"><i style="width:12px;height:12px;border-radius:2px;background:var(--error)"></i></span>END</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ SOCIAL PROOF -->
-<section class="proof">
-  <div class="container proof__inner">
-    <div class="proof-stats">
-      <div class="proof__stat"><span class="proof__val">4.9</span><span class="proof__lbl">App Store rating</span></div>
-      <div class="proof__stat"><span class="proof__val">2.4M+</span><span class="proof__lbl">Workouts logged</span></div>
-      <div class="proof__stat"><span class="proof__val">1,500+</span><span class="proof__lbl">Exercises in library</span></div>
-    </div>
-    <div class="proof__works">
-      <span class="proof__work"><svg class="icon" width="16" height="16" fill="none" stroke="var(--health-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heartPulse"/></svg> Apple Health</span>
-      <span class="proof__sep"></span>
-      <span class="proof__work"><svg class="icon" width="16" height="16" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-watch"/></svg> Apple Watch</span>
-      <span class="proof__workswith">Works with</span>
-    </div>
+<!-- ============================================================ STATS -->
+<section class="sec sec--tight">
+  <div class="stats">
+    <div class="stat"><b>41</b><span class="ovl">READY-MADE PROGRAMS</span></div>
+    <div class="stat"><b data-count-to="789" data-count-suffix="+">789+</b><span class="ovl">ILLUSTRATED EXERCISES</span></div>
+    <div class="stat"><b data-count-to="668">668</b><span class="ovl">VIDEO GUIDES</span></div>
+    <div class="stat"><b class="lime">$1.29</b><span class="ovl">/ MONTH FOR REPTO PRO</span></div>
   </div>
 </section>
 
-<!-- ============================================================ FEATURES -->
-<section id="features" class="features">
-  <div class="container">
-    <div class="reveal section-head">
-      <span class="overline"><span class="overline__dot"></span><span class="overline__text">Everything you train with</span></span>
-      <h2 class="section-title">Built for people who lift.</h2>
-      <p class="section-lead">No fluff. Every feature earns its place in your session.</p>
+<!-- ============================================================ LOGGING -->
+<section id="features" class="sec sec--tight sec--stack">
+  <div class="copy copy--narrow">
+    <span class="eyebrow">LOG YOUR WORKOUT</span>
+    <h2 class="h2 h2--lg">Tick the set, rest, repeat. Repto handles the rest.</h2>
+  </div>
+  <div class="cards">
+    <div class="card card--lg">
+      <div class="row"><span class="ovl">PROGRESSION ENGINE</span><span class="pill">SUGGESTED</span></div>
+      <div class="prog-line"><span style="font-size:22px;font-weight:700;color:var(--text-secondary)">60 kg</span><span class="lime" style="font-size:22px">→</span><span class="lime" style="font-size:44px;font-weight:900">62.5 kg</span></div>
+      <div class="col" style="gap:6px"><span class="t-title">Know exactly what to lift next time</span></div>
     </div>
-    <div class="feat-grid">
-      <div class="reveal feat-cell"><article class="feature"><div class="feature__icon"><svg class="icon" width="22" height="22" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-timer"/></svg></div><h3 class="feature__title">Real-time logging</h3><p class="feature__desc">Count-up stopwatch, set checkboxes and rest countdown timers — log every set as you lift.</p></article></div>
-      <div class="reveal feat-cell" data-delay="60"><article class="feature"><div class="feature__icon"><svg class="icon" width="22" height="22" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-smartphone"/></svg></div><h3 class="feature__title">Live Activities &amp; Dynamic Island</h3><p class="feature__desc">Your rest timer on the Lock Screen and Dynamic Island. Never miss a set.</p></article></div>
-      <div class="reveal feat-cell" data-delay="120"><article class="feature"><div class="feature__icon"><svg class="icon" width="22" height="22" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sparkles"/></svg></div><h3 class="feature__title">Repto Coach (AI)</h3><p class="feature__desc">Chat, weekly reviews and adaptive programs that respond to your data.</p></article></div>
-      <div class="reveal feat-cell" data-delay="180"><article class="feature"><div class="feature__icon"><svg class="icon" width="22" height="22" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-watch"/></svg></div><h3 class="feature__title">Apple Watch app</h3><p class="feature__desc">Standalone and ready — start and log your whole workout from your wrist.</p></article></div>
-      <div class="reveal feat-cell"><article class="feature"><div class="feature__icon"><svg class="icon" width="22" height="22" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heartPulse"/></svg></div><h3 class="feature__title">Apple Health</h3><p class="feature__desc">Auto-syncs workouts, body weight and recovery into one place.</p></article></div>
-      <div class="reveal feat-cell" data-delay="60"><article class="feature"><div class="feature__icon"><svg class="icon" width="22" height="22" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trendingUp"/></svg></div><h3 class="feature__title">Analytics &amp; PRs</h3><p class="feature__desc">1RM estimates, rep PRs and progress charts that make gains visible.</p></article></div>
-      <div class="reveal feat-cell" data-delay="120"><article class="feature"><div class="feature__icon"><svg class="icon" width="22" height="22" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-layers"/></svg></div><h3 class="feature__title">Programs &amp; templates</h3><p class="feature__desc">Browse, filter and apply ready-made plans — or build your own.</p></article></div>
-      <div class="reveal feat-cell" data-delay="180"><article class="feature"><div class="feature__icon"><svg class="icon" width="22" height="22" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-route"/></svg></div><h3 class="feature__title">Cardio modes</h3><p class="feature__desc">Time and distance tracking with live pace for runs and intervals.</p></article></div>
+    <div class="card card--lg">
+      <span class="ovl">EXERCISE LIBRARY</span>
+      <div class="ex-grid">
+        <div style="background:var(--muscle-chest)"><img src="assets/exercises/bench_press_barbell.png" alt="Bench press" loading="lazy" /></div>
+        <div style="background:var(--muscle-quads)"><img src="assets/exercises/bulgarian_split_squat.png" alt="Bulgarian split squat" loading="lazy" /></div>
+        <div style="background:var(--muscle-biceps)"><img src="assets/exercises/bicep_curl_dumbbell.png" alt="Bicep curl" loading="lazy" /></div>
+        <div style="background:var(--muscle-cardio)"><img src="assets/exercises/box_jump.png" alt="Box jump" loading="lazy" /></div>
+      </div>
+      <div class="col" style="gap:6px"><span class="t-title">789 exercises, 668 demo videos</span></div>
     </div>
+    <div class="card card--lg">
+      <span class="ovl">TRACKING MODES</span>
+      <div class="chips"><span class="chip chip--on">REPS × KG</span><span class="chip">REPS ONLY</span><span class="chip">DURATION</span><span class="chip">CARDIO · DISTANCE</span><span class="chip">KG / LBS</span></div>
+      <div class="col" style="gap:6px"><span class="t-title">From dumbbells to running</span></div>
+    </div>
+  </div>
+  <div class="bullets--grid">
+    <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Context while you lift</span></div></div>
+    <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Edit mid-workout, save to template</span></div></div>
+    <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Muscle heatmap</span></div></div>
+    <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Unlimited custom exercises</span></div></div>
   </div>
 </section>
 
-<!-- ============================================================ COACH SPOTLIGHT -->
-<section id="coach" class="coach">
-  <div class="glow glow--coach" aria-hidden="true"></div>
-  <div class="container coach__inner">
-    <div class="coach-grid">
-      <div class="coach-phone">
-        <div class="reveal reveal--far">
-          <!-- PHONE: Coach chat -->
-          <div class="phone phone--300">
-            <span class="phone__glow" aria-hidden="true"></span>
-            <div class="phone__body repto-float" style="animation-delay:.6s">
-              <div class="phone__screen">
-                <div class="phone__ambient" aria-hidden="true"><span></span><span></span></div>
-                <div class="statusbar">
-                  <span class="statusbar__time" data-clock>9:41</span>
-                  <span class="statusbar__icons">
-                    <svg width="17" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0.5" width="3" height="11.5" rx="1"/></svg>
-                    <svg width="16" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2c2.6 0 5 1 6.8 2.7l1.3-1.4A11 11 0 0 0 8.5.3 11 11 0 0 0 .9 3.5l1.3 1.4A9.4 9.4 0 0 1 8.5 2.2z"/><path d="M8.5 6c1.5 0 2.9.6 3.9 1.6l1.3-1.4a7.3 7.3 0 0 0-10.4 0l1.3 1.4A5.4 5.4 0 0 1 8.5 6z"/><path d="m8.5 9.4 2.1-2.2a3 3 0 0 0-4.2 0z"/></svg>
-                    <svg width="24" height="12" viewBox="0 0 26 13" fill="none"><rect x="0.5" y="0.5" width="21" height="12" rx="3.5" stroke="currentColor" opacity="0.4"/><rect x="2" y="2" width="18" height="9" rx="2" fill="currentColor"/><path d="M23.5 4.5v4c.8-.3 1.3-1 1.3-2s-.5-1.7-1.3-2z" fill="currentColor" opacity="0.5"/></svg>
-                  </span>
-                  <span class="statusbar__notch"></span>
-                </div>
-                <div class="phone__content">
-                  <!-- Coach chat screen -->
-                  <div class="coach-scr">
-                    <div class="coach-scr__head">
-                      <span class="coach-scr__avatar"><svg class="icon" width="20" height="20" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sparkles"/></svg></span>
-                      <div class="coach-scr__id">
-                        <div class="card-title">Repto Coach</div>
-                        <div class="coach-scr__status"><span class="repto-pulse coach-scr__dot"></span> Online · reviewing your data</div>
-                      </div>
-                    </div>
-                    <div class="coach-scr__thread">
-                      <div class="bubble bubble--user">I felt flat on bench today. What happened?</div>
-                      <div class="bubble bubble--coach">Your sleep dropped to <strong class="accent">6h 10m</strong> this week and bench volume is up 14%. That's fatigue, not weakness.</div>
-                      <div class="coach-scr__insight">
-                        <div class="coach-scr__insight-head"><svg class="icon" width="15" height="15" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trendingUp"/></svg><span class="coach-scr__insight-title">THIS WEEK'S PLAN</span></div>
-                        <div class="coach-scr__insight-body">I've trimmed Friday to a light technique day and pushed your bench PR attempt to next week.</div>
-                        <div class="coach-scr__metrics">
-                          <div class="coach-scr__metric"><div class="coach-scr__metric-v">−18%</div><div class="coach-scr__metric-k">VOLUME</div></div>
-                          <div class="coach-scr__metric"><div class="coach-scr__metric-v">RPE 7</div><div class="coach-scr__metric-k">INTENSITY</div></div>
-                          <div class="coach-scr__metric"><div class="coach-scr__metric-v">Watch</div><div class="coach-scr__metric-k">SLEEP</div></div>
-                        </div>
-                      </div>
-                      <div class="bubble bubble--typing"><span class="repto-typing"></span><span class="repto-typing" style="animation-delay:.18s"></span><span class="repto-typing" style="animation-delay:.36s"></span></div>
-                    </div>
-                    <div class="coach-scr__compose">
-                      <div class="coach-scr__chips">
-                        <span class="coach-scr__chip">Why did my leg volume drop?</span>
-                        <span class="coach-scr__chip">Suggest a deload</span>
-                      </div>
-                      <div class="coach-scr__input"><span class="coach-scr__placeholder">Ask your data…</span><span class="coach-scr__send"><svg class="icon" width="15" height="15" fill="none" stroke="var(--lime-soft)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg></span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<!-- ============================================================ LOCK SCREEN -->
+<section id="lockscreen" class="sec">
+  <div class="split">
+    <div class="lock__devices" aria-hidden="true">
+      <div class="phone phone--sm">
+        <div class="phone__screen lock__screen">
+          <div class="phone__island"></div>
+          <div class="sbar"><span>9:41</span><svg class="sbar__icons" width="66" height="12" fill="currentColor"><use href="#i-sbar"/></svg></div>
+          <span class="lock__date">Thursday, October 8</span>
+          <span class="lock__time">9:41</span>
+          <div class="la">
+            <div class="la__row"><img src="assets/repto-logo.jpeg" alt="" style="width:16px;height:16px;border-radius:4px" /><span style="flex:1;font-size:13px;font-weight:600">Chest</span><span class="mono lime" style="font-size:14px;font-variant-numeric:tabular-nums" data-session>0:05</span></div>
+            <div class="la__row">
+              <img src="assets/ex/iso-chest-press.png" alt="" style="width:24px;height:24px;object-fit:contain;flex:none" />
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px"><span class="lime" style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Iso-Lateral Chest Press (Machine)</span><span class="muted" style="font-size:10.5px">0/43 sets</span></div>
+              <span class="la__done"><span><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Done</span>
             </div>
           </div>
+          <div class="lock__actions">
+            <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6c0 2-2 2-2 4v10a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V10c0-2-2-2-2-4V2h12z"/><path d="M6 6h12"/><path d="M12 12v.01"/></svg></span>
+            <span><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M9 3 7.2 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3z"/><circle cx="12" cy="12.5" r="3.6" fill="#333"/></svg></span>
+          </div>
+          <span class="lock__home"></span>
         </div>
       </div>
-      <div class="coach-copy">
-        <div class="reveal"><span class="overline"><span class="overline__dot"></span><span class="overline__text">Repto Coach</span></span></div>
-        <h2 class="reveal coach__title" data-delay="70">Your AI coach.<br /><span class="accent">In your pocket.</span></h2>
-        <p class="reveal coach__lead" data-delay="130">Not a chatbot bolted on — a coach that actually reads your training data and acts on it.</p>
-        <div class="coach__bullets">
-          <div class="reveal coach__bullet" data-delay="180"><span class="coach__bullet-icon"><svg class="icon" width="20" height="20" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg></span><div><div class="coach__bullet-title">Builds your program</div><div class="coach__bullet-desc">Two quick questions and AI drafts a plan tailored to your goals and schedule.</div></div></div>
-          <div class="reveal coach__bullet" data-delay="250"><span class="coach__bullet-icon"><svg class="icon" width="20" height="20" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-calendar"/></svg></span><div><div class="coach__bullet-title">Reviews your week</div><div class="coach__bullet-desc">A weekly review reads your sessions, sleep and recovery — then tells you what to change.</div></div></div>
-          <div class="reveal coach__bullet" data-delay="320"><span class="coach__bullet-icon"><svg class="icon" width="20" height="20" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trendingUp"/></svg></span><div><div class="coach__bullet-title">Adapts to your progress</div><div class="coach__bullet-desc">Volume too high? PR stalling? Your next week shifts automatically.</div></div></div>
+      <div class="lock__side">
+        <div class="android">
+          <div class="android__sbar"><span>9:41</span><span style="width:10px;height:10px;border-radius:50%;background:#000;box-shadow:0 0 0 2px #222"></span><span>▾ ◢ ▮</span></div>
+          <div class="android__card">
+            <div style="display:flex;align-items:center;gap:8px"><img src="assets/repto-logo.jpeg" alt="" style="width:20px;height:20px;border-radius:50%" /><span class="android__muted" style="font-size:12px;font-weight:500;letter-spacing:.4px">Repto · Live Update</span></div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font-size:16px;font-weight:500;line-height:24px">Resting</span><span class="lime" style="font-size:22px;font-weight:500;font-variant-numeric:tabular-nums" data-rest>01:12</span></div>
+            <span class="android__muted" style="font-size:14px;line-height:20px;letter-spacing:.25px">Next: Bench Press · Set 3</span>
+            <div class="android__track"><i data-rest-bar style="width:20%"></i></div>
+          </div>
+          <span class="android__muted" style="padding:0 16px 12px;font-size:11px;font-weight:500;letter-spacing:.5px">ANDROID 16 · LIVE UPDATE</span>
         </div>
-        <div class="reveal coach__ctas" data-delay="420">
-          <a href="https://apps.apple.com/app/repto-workout-tracker/id6761402067" target="_blank" rel="noopener" class="badge badge--56" aria-label="Download Repto on the App Store">
-            <svg class="badge__glyph" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.05 12.5c-.03-2.5 2.04-3.7 2.13-3.76-1.16-1.7-2.97-1.93-3.61-1.96-1.54-.16-3 .9-3.78.9-.77 0-1.97-.88-3.24-.85-1.67.02-3.21.97-4.07 2.46-1.73 3.01-.44 7.46 1.24 9.9.82 1.2 1.8 2.53 3.08 2.48 1.24-.05 1.7-.8 3.2-.8 1.49 0 1.9.8 3.2.77 1.32-.02 2.16-1.21 2.97-2.41.93-1.38 1.32-2.72 1.34-2.79-.03-.01-2.57-.99-2.6-3.92zM14.6 5.1c.68-.83 1.14-1.98 1.01-3.1-.98.04-2.16.65-2.87 1.47-.63.73-1.18 1.9-1.03 3.02 1.09.08 2.21-.56 2.89-1.39z"/></svg>
-            <span class="badge__txt"><span class="badge__pre">Download on the</span><span class="badge__name">App Store</span></span>
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=app.repto.android&amp;pcampaignid=web_share" target="_blank" rel="noopener" class="badge badge--56" aria-label="Get Repto on Google Play">
-            <svg class="badge__glyph badge__glyph--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z" fill="#00C3FF"/><path d="m13.792 12 2.882-2.882 4.434 2.53c.78.445.78 1.26 0 1.704l-4.434 2.53L13.792 12z" fill="#FFCE00"/><path d="m16.674 9.118-2.882 2.882L3.61 1.814a.998.998 0 0 1 .98-.04l12.084 7.344z" fill="#00E676"/><path d="m13.792 12 2.882 2.882L4.589 22.226a.998.998 0 0 1-.98-.04L13.792 12z" fill="#FF3D47"/></svg>
-            <span class="badge__txt"><span class="badge__pre">GET IT ON</span><span class="badge__name">Google Play</span></span>
-          </a>
+        <div class="card" style="padding:16px;border-radius:20px">
+          <span class="ovl">WIDGET · MEAL PLAN</span>
+          <div style="display:flex;align-items:baseline;gap:6px"><span class="mono" style="font-size:28px;font-weight:700">1,840</span><span class="t-meta">/ 2,450 kcal</span></div>
+          <div class="bar"><i style="width:75%"></i></div>
+          <span class="t-meta">Next: Dinner · Pan-seared salmon</span>
         </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span class="eyebrow">LOCK SCREEN · DYNAMIC ISLAND</span>
+      <h2 class="h2">Your rest timer follows you, even on the lock screen.</h2>
+      <div class="bullets">
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Live Activities + Dynamic Island</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Android Live Update</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Amber warning</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Meal plan widget</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ SHOWCASE -->
-<section id="showcase" class="showcase">
-  <div class="container">
-
-    <!-- Row 1: Analytics (phone left) -->
-    <div class="showcase-row">
-      <div class="sr-phone">
-        <div class="reveal reveal--far">
-          <div class="phone phone--290">
-            <span class="phone__glow" aria-hidden="true"></span>
-            <div class="phone__body repto-float" style="animation-delay:.2s">
-              <div class="phone__screen">
-                <div class="phone__ambient" aria-hidden="true"><span></span><span></span></div>
-                <div class="statusbar"><span class="statusbar__time" data-clock>9:41</span><span class="statusbar__icons"><svg width="17" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0.5" width="3" height="11.5" rx="1"/></svg><svg width="16" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2c2.6 0 5 1 6.8 2.7l1.3-1.4A11 11 0 0 0 8.5.3 11 11 0 0 0 .9 3.5l1.3 1.4A9.4 9.4 0 0 1 8.5 2.2z"/><path d="M8.5 6c1.5 0 2.9.6 3.9 1.6l1.3-1.4a7.3 7.3 0 0 0-10.4 0l1.3 1.4A5.4 5.4 0 0 1 8.5 6z"/><path d="m8.5 9.4 2.1-2.2a3 3 0 0 0-4.2 0z"/></svg><svg width="24" height="12" viewBox="0 0 26 13" fill="none"><rect x="0.5" y="0.5" width="21" height="12" rx="3.5" stroke="currentColor" opacity="0.4"/><rect x="2" y="2" width="18" height="9" rx="2" fill="currentColor"/><path d="M23.5 4.5v4c.8-.3 1.3-1 1.3-2s-.5-1.7-1.3-2z" fill="currentColor" opacity="0.5"/></svg></span><span class="statusbar__notch"></span></div>
-                <div class="phone__content">
-                  <!-- Analytics screen -->
-                  <div class="ana">
-                    <div class="ana__head"><div class="page-title">Progress</div><svg class="icon" width="18" height="18" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-calendar"/></svg></div>
-                    <div class="ana__strip">
-                      <div class="ana__stat"><div class="ana__stat-v">24</div><div class="ana__stat-l">WORKOUTS</div></div>
-                      <div class="ana__stat"><div class="ana__stat-v">18.2k</div><div class="ana__stat-l">TOTAL KG</div></div>
-                      <div class="ana__stat"><div class="ana__stat-v">12</div><div class="ana__stat-l">DAY STREAK</div></div>
-                    </div>
-                    <div class="ana__card">
-                      <div class="ana__card-head">
-                        <div><div class="plabel">BENCH 1RM</div><div class="ana__1rm"><span class="ana__1rm-v">102.5</span><span class="caption">kg</span></div></div>
-                        <span class="ana__delta"><svg class="icon" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trendingUp"/></svg> +7.5kg</span>
-                      </div>
-                      <svg width="100%" viewBox="0 0 244 86" class="ana__chart">
-                        <defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="rgba(164,235,63,.28)"/><stop offset="100%" stop-color="rgba(164,235,63,0)"/></linearGradient></defs>
-                        <polygon points="0,78 0,62.4 34.857,53.04 69.714,56.16 104.571,42.12 139.428,35.1 174.285,39 209.142,23.4 244,14.04 244,78" fill="url(#area)"/>
-                        <polyline points="0,62.4 34.857,53.04 69.714,56.16 104.571,42.12 139.428,35.1 174.285,39 209.142,23.4 244,14.04" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ana__chart-line"/>
-                        <circle cx="244" cy="14.04" r="4.5" fill="var(--lime)"/>
-                      </svg>
-                    </div>
-                    <div class="ana__card">
-                      <div class="plabel plabel--muted">WEEKLY VOLUME</div>
-                      <div class="ana__bars">
-                        <div class="ana__bar" style="height:40%"></div>
-                        <div class="ana__bar" style="height:62%"></div>
-                        <div class="ana__bar" style="height:50%"></div>
-                        <div class="ana__bar" style="height:78%"></div>
-                        <div class="ana__bar" style="height:66%"></div>
-                        <div class="ana__bar" style="height:92%"></div>
-                        <div class="ana__bar" style="height:70%"></div>
-                        <div class="ana__bar ana__bar--last" style="height:100%"></div>
-                      </div>
-                    </div>
-                    <div class="ana__pr">
-                      <span class="ana__pr-icon"><svg class="icon" width="18" height="18" fill="var(--amber)" stroke="none"><use href="#i-zap"/></svg></span>
-                      <div class="ana__pr-body"><div class="card-title">New rep PR</div><div class="caption">Squat · 8 × 120kg</div></div>
-                      <span class="ana__pr-today">Today</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- ============================================================ APPLE WATCH -->
+<section id="watch" class="sec" style="display:flex;flex-direction:column;gap:48px">
+  <div class="split" style="gap:24px 56px;align-items:end">
+    <div class="copy">
+      <span class="eyebrow">APPLE WATCH · STANDALONE</span>
+      <h2 class="h2">Leave your phone in the locker.</h2>
+    </div>
+    <div class="bullets--grid2">
+      <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">No iPhone needed</span></div></div>
+      <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Live heart rate</span></div></div>
+      <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Workout summary</span></div></div>
+      <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Watch ↔ iPhone sync</span></div></div>
+    </div>
+  </div>
+  <div class="watches">
+    <div class="watches__glow" aria-hidden="true"></div>
+    <div class="wfig">
+      <div class="watch" aria-hidden="true"><div class="watch__screen">
+        <div class="watch__nav"><span style="color:rgb(166,255,0)">Bench Press</span><span>9:41</span></div>
+        <div class="watch__body">
+          <span class="wnum" style="font-size:32px;letter-spacing:-.5px;color:rgb(166,255,0)" data-w-stop>24:18</span>
+          <div style="display:flex;align-items:baseline;gap:3px;white-space:nowrap"><span class="wnum" style="font-size:30px">62.5</span><span class="wnum" style="font-size:14px">KG</span><span class="wnum wdim" style="font-size:30px;padding-left:4px">×8</span><span style="flex:1"></span><span class="wdim" style="font-size:12px;font-weight:500">SET 3/4</span></div>
+          <div style="display:flex;gap:3px;padding-top:3px"><span style="flex:1;height:4px;border-radius:9999px;background:rgb(166,255,0)"></span><span style="flex:1;height:4px;border-radius:9999px;background:rgb(166,255,0)"></span><span style="flex:1;height:4px;border-radius:9999px;background:rgba(166,255,0,.45)"></span><span style="flex:1;height:4px;border-radius:9999px;background:rgba(255,255,255,.14)"></span></div>
+          <div style="display:flex;align-items:baseline;gap:12px;padding-top:5px"><span><span class="wnum" style="font-size:20px">128</span> <span class="wnum" style="font-size:12px;color:rgb(255,66,69)">BPM</span></span><span><span class="wnum" style="font-size:20px">214</span> <span class="wnum" style="font-size:12px;color:rgb(250,17,79)">KCAL</span></span></div>
+          <span style="flex:1"></span>
+          <div style="display:flex"><span class="wbtn wbtn--primary">Complete Set</span></div>
         </div>
+      </div></div>
+      <div class="wfig__cap"><span class="ovl lime">WORKOUT</span></div>
+    </div>
+    <div class="wfig">
+      <div class="watch" aria-hidden="true"><div class="watch__screen">
+        <div class="watch__nav"><span style="color:rgb(166,255,0)">Rest</span><span>9:41</span></div>
+        <div class="watch__body" style="align-items:center;gap:6px">
+          <div style="position:relative;width:108px;height:108px">
+            <svg width="108" height="108" viewBox="0 0 108 108" style="transform:rotate(-90deg)"><circle cx="54" cy="54" r="49.5" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="9"/><circle cx="54" cy="54" r="49.5" fill="none" stroke="rgb(166,255,0)" stroke-width="9" stroke-linecap="round" stroke-dasharray="311" stroke-dashoffset="62" style="transition:stroke-dashoffset 1s linear" data-w-ring/></svg>
+            <div class="wnum" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:32px;color:rgb(166,255,0)" data-w-rest>1:12</div>
+          </div>
+          <span class="wdim" style="font-size:13px;white-space:nowrap">Next: Set 4 · 65 kg × 8</span>
+          <span style="flex:1"></span>
+          <div style="display:flex;gap:6px;width:100%"><span class="wbtn">+30s</span><span class="wbtn wbtn--primary">Skip</span></div>
+        </div>
+      </div></div>
+      <div class="wfig__cap"><span class="ovl lime">REST</span></div>
+    </div>
+    <div class="wfig">
+      <div class="watch" aria-hidden="true"><div class="watch__screen">
+        <div class="watch__nav"><span style="color:rgb(255,214,0)">Zone 3</span><span>9:41</span></div>
+        <div class="watch__body" style="gap:6px">
+          <div style="display:flex;align-items:baseline;gap:6px"><svg width="20" height="20" viewBox="0 0 24 24" fill="rgb(255,66,69)"><path d="M12 21s-7.5-4.6-9.5-9.3C1 7.9 3.4 4.5 7 4.5c2 0 3.5 1.1 5 2.8 1.5-1.7 3-2.8 5-2.8 3.6 0 6 3.4 4.5 7.2C19.5 16.4 12 21 12 21z"/></svg><span class="wnum" style="font-size:40px" data-w-bpm>142</span><span class="wnum" style="font-size:14px;color:rgb(255,66,69)">BPM</span></div>
+          <div style="display:flex;align-items:flex-end;gap:3px;height:12px"><span style="flex:1;border-radius:9999px;background:rgb(0,192,232);opacity:.35;height:6px"></span><span style="flex:1;border-radius:9999px;background:rgb(4,222,113);opacity:.35;height:6px"></span><span style="flex:1;border-radius:9999px;background:rgb(255,214,0);height:12px"></span><span style="flex:1;border-radius:9999px;background:rgb(255,141,40);opacity:.35;height:6px"></span><span style="flex:1;border-radius:9999px;background:rgb(255,66,69);opacity:.35;height:6px"></span></div>
+          <span style="height:1px;background:rgba(255,255,255,.14);margin-top:4px"></span>
+          <div style="display:flex;align-items:baseline;gap:3px"><span class="wnum" style="font-size:28px">214</span><span class="wnum" style="font-size:13px;color:rgb(250,17,79)">Active KCAL</span></div>
+          <div style="display:flex;flex-direction:column"><span class="wdim" style="font-size:12px">Avg BPM</span><span class="wnum" style="font-size:16px">131</span></div>
+        </div>
+      </div></div>
+      <div class="wfig__cap"><span class="ovl lime">HEART RATE</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PROGRAMS -->
+<section id="programs" class="sec">
+  <div class="split">
+    <div class="col">
+      <div class="card"><span class="ovl">FILTER BY</span><div class="chips"><span class="chip chip--on">GOAL</span><span class="chip">LEVEL</span><span class="chip">EQUIPMENT</span><span class="chip">MUSCLE GROUP</span><span class="chip">SPORT</span></div></div>
+      <div class="card">
+        <div class="row" style="align-items:baseline"><span class="ovl">41 READY-MADE PROGRAMS</span><span class="t-meta lime">Apply in 1 tap</span></div>
+        <div class="chips"><span class="tag">Push / Pull / Legs</span><span class="tag">Upper / Lower</span><span class="tag">Full Body Beginner</span><span class="tag">5x5 Strength</span><span class="tag">Bro Split</span><span class="tag">Dumbbell Full Body</span><span class="tag">Bodyweight Starter</span><span class="tag">Home Minimal Setup</span><span class="tag">Athletic Performance</span><span class="tag">6-Week Mass Builder</span><span class="tag">30-Day Shred</span><span class="tag">8-Week Squat PR</span><span class="tag">8-Week Bench PR</span><span class="tag">8-Week Deadlift PR</span><span class="tag">Glute Builder</span><span class="tag">Hourglass</span><span class="tag">V-Taper Aesthetic</span><span class="tag">14-Day Visible Abs</span><span class="tag">Desk Reset</span><span class="tag">Posture Builder</span><span class="tag muted">+21 more</span></div>
       </div>
-      <div class="sr-text">
-        <div class="reveal"><span class="overline"><span class="overline__dot"></span><span class="overline__text">Progress that's visible</span></span></div>
-        <h2 class="reveal showcase__title" data-delay="70">See every gain, not just the grind.</h2>
-        <p class="reveal showcase__body" data-delay="130">1RM trends, weekly volume and rep PRs rendered in clean, mono-numeric charts. Tap any lift to see how far you've come.</p>
-        <div class="reveal showcase__chips" data-delay="200">
-          <span class="chip"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg> 1RM estimates</span>
-          <span class="chip"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg> Rep PRs</span>
-          <span class="chip"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg> Volume by muscle</span>
+      <div class="cards--2">
+        <div class="card"><span class="ovl">ONBOARDING</span><span class="big-num lime">30s</span><span class="t-cap">Goal · sex · level · schedule · equipment · height &amp; weight</span></div>
+        <div class="card"><span class="ovl">LEVEL UP</span><span class="big-num">BEG → INT</span><span class="t-cap">Ranked by sex and level, with a nudge when you are ready to level up</span></div>
+      </div>
+    </div>
+    <div class="copy">
+      <span class="eyebrow">PROGRAMS &amp; TEMPLATES</span>
+      <h2 class="h2">41 programs. Or build your own from scratch.</h2>
+      <div class="bullets">
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Filter for exactly what you need</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Single-workout templates</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Recommendations for you</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Start in 30 seconds</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ COACH -->
+<section id="coach" class="sec sec--tight">
+  <div class="coach">
+    <div class="glow coach__glow" aria-hidden="true"></div>
+    <div class="copy" style="position:relative">
+      <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sparkles"/></svg><span class="eyebrow">REPTO COACH · PRO</span></div>
+      <h2 class="h2 h2--lg">Plans ahead. Looks back.</h2>
+      <div class="coach__list">
+        <div class="coach__item"><b>01</b><div><span class="t-title">AI program generation</span></div></div>
+        <div class="coach__item"><b>02</b><div><span class="t-title">Weekly review</span></div></div>
+        <div class="coach__item"><b>03</b><div><span class="t-title">Ask your data</span></div></div>
+        <div class="coach__item"><b>04</b><div><span class="t-title">Explain</span></div></div>
+        <div class="coach__item"><b>05</b><div><span class="t-title">AI single workouts</span></div></div>
+        <div class="coach__item"><b>06</b><div><span class="t-title">Insight feed</span></div></div>
+      </div>
+    </div>
+    <div class="coach__ui" aria-hidden="true">
+      <div class="tile">
+        <div class="tile__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <div style="flex:1"><div class="t-label lime" style="margin-bottom:3px">WEEKLY REVIEW</div><div class="t-title">Your next week is ready.</div><div class="t-cap">Tap to review now</div></div>
+        <div style="position:relative;width:48px;height:48px;flex:none"><svg class="ring-svg" width="48" height="48" viewBox="0 0 48 48" style="transform:rotate(-90deg)"><circle cx="24" cy="24" r="21" fill="none" stroke="var(--surface-highest)" stroke-width="4"/><circle cx="24" cy="24" r="21" fill="none" stroke="var(--lime)" stroke-width="4" stroke-linecap="round" stroke-dasharray="131.9" stroke-dashoffset="94.2"/></svg><div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><span class="mono" style="font-size:16px;font-weight:700;line-height:1">2</span><span class="muted" style="font-size:9px">days</span></div></div>
+      </div>
+      <div class="tile tile--lime">
+        <div class="tile__ic"><svg width="22" height="22" fill="none" stroke="var(--text-on-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sparkles"/></svg></div>
+        <div style="flex:1"><div class="t-title" style="color:var(--text-on-primary)">Generate new program</div><div class="t-cap" style="color:rgba(52,84,0,.75)">AI creates a plan tailored to you</div></div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-on-primary)" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <div class="card" style="gap:10px;padding:16px">
+        <span class="ovl">ASK YOUR DATA</span>
+        <div class="bubble bubble--me">Why did my leg volume drop?</div>
+        <div class="bubble bubble--ai">
+          <span>You skipped 2 leg days and sleep averaged 6.1h. Volume is down 18% vs last week.</span>
+          <div class="bars" style="height:48px"><i style="height:70%"></i><i style="height:85%"></i><i style="height:100%"></i><i class="on" style="height:82%"></i></div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Row 2: Programs (phone right) -->
-    <div class="showcase-row showcase-row--rev">
-      <div class="sr-text">
-        <div class="reveal"><span class="overline"><span class="overline__dot"></span><span class="overline__text">Programs &amp; templates</span></span></div>
-        <h2 class="reveal showcase__title" data-delay="70">Start from a plan that works.</h2>
-        <p class="reveal showcase__body" data-delay="130">Browse and filter proven programs, then apply one in a tap. Push/Pull/Legs, upper/lower, athlete power — or build your own from scratch.</p>
-        <div class="reveal showcase__chips" data-delay="200">
-          <span class="chip"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg> Filter &amp; browse</span>
-          <span class="chip"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg> One-tap apply</span>
-          <span class="chip"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg> Fully editable</span>
-        </div>
+<!-- ============================================================ MEAL PLAN -->
+<section id="meal" class="sec">
+  <div class="split">
+    <div class="copy">
+      <span class="eyebrow">AI MEAL PLAN</span>
+      <h2 class="h2">Train right. Eat right.</h2>
+      <div class="bullets">
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Automatic calories &amp; macros</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">AI weekly menus, dish swaps</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Build your own meals — free</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Meal plan library</span></div></div>
       </div>
-      <div class="sr-phone">
-        <div class="reveal reveal--far">
-          <div class="phone phone--290">
-            <span class="phone__glow" aria-hidden="true"></span>
-            <div class="phone__body repto-float" style="animation-delay:.9s">
-              <div class="phone__screen">
-                <div class="phone__ambient" aria-hidden="true"><span></span><span></span></div>
-                <div class="statusbar"><span class="statusbar__time" data-clock>9:41</span><span class="statusbar__icons"><svg width="17" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0.5" width="3" height="11.5" rx="1"/></svg><svg width="16" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2c2.6 0 5 1 6.8 2.7l1.3-1.4A11 11 0 0 0 8.5.3 11 11 0 0 0 .9 3.5l1.3 1.4A9.4 9.4 0 0 1 8.5 2.2z"/><path d="M8.5 6c1.5 0 2.9.6 3.9 1.6l1.3-1.4a7.3 7.3 0 0 0-10.4 0l1.3 1.4A5.4 5.4 0 0 1 8.5 6z"/><path d="m8.5 9.4 2.1-2.2a3 3 0 0 0-4.2 0z"/></svg><svg width="24" height="12" viewBox="0 0 26 13" fill="none"><rect x="0.5" y="0.5" width="21" height="12" rx="3.5" stroke="currentColor" opacity="0.4"/><rect x="2" y="2" width="18" height="9" rx="2" fill="currentColor"/><path d="M23.5 4.5v4c.8-.3 1.3-1 1.3-2s-.5-1.7-1.3-2z" fill="currentColor" opacity="0.5"/></svg></span><span class="statusbar__notch"></span></div>
-                <div class="phone__content">
-                  <!-- Programs / templates screen -->
-                  <div class="prog" data-programs>
-                    <div class="prog__head"><div class="page-title">Programs</div><div class="caption prog__sub">Ready-made plans, built to apply</div></div>
-                    <div class="prog__filters">
-                      <span class="prog__filter prog__filter--on">All</span>
-                      <span class="prog__filter">Strength</span>
-                      <span class="prog__filter">Hypertrophy</span>
-                      <span class="prog__filter">PPL</span>
-                    </div>
-                    <div class="prog__wrap" data-prog-wrap>
-                      <div class="prog__list" data-prog-list>
-                        <div class="prog__item"><div class="prog__icon" style="background:var(--muscle-chest)"><img src="assets/exercises/bench_press_barbell.png" alt="" /></div><div class="prog__meta"><div class="prog__name-row"><span class="card-title">Push / Pull / Legs</span><span class="prog__tag">POPULAR</span></div><div class="prog__sub-row"><svg class="icon" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dumbbell"/></svg> 6 days · 12 wk</div></div><svg class="icon prog__chev" width="16" height="16" fill="none" stroke="var(--text-secondary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chevronRight"/></svg></div>
-                        <div class="prog__item"><div class="prog__icon" style="background:var(--muscle-back)"><img src="assets/exercises/bicep_curl_dumbbell.png" alt="" /></div><div class="prog__meta"><div class="prog__name-row"><span class="card-title">Upper / Lower Split</span></div><div class="prog__sub-row"><svg class="icon" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dumbbell"/></svg> 4 days · 8 wk</div></div><svg class="icon prog__chev" width="16" height="16" fill="none" stroke="var(--text-secondary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chevronRight"/></svg></div>
-                        <div class="prog__item"><div class="prog__icon" style="background:var(--muscle-quads)"><img src="assets/exercises/box_jump.png" alt="" /></div><div class="prog__meta"><div class="prog__name-row"><span class="card-title">Athlete Power</span><span class="prog__tag">NEW</span></div><div class="prog__sub-row"><svg class="icon" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dumbbell"/></svg> 5 days · 10 wk</div></div><svg class="icon prog__chev" width="16" height="16" fill="none" stroke="var(--text-secondary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chevronRight"/></svg></div>
-                        <div class="prog__item"><div class="prog__icon" style="background:var(--muscle-hamstrings)"><img src="assets/exercises/bulgarian_split_squat.png" alt="" /></div><div class="prog__meta"><div class="prog__name-row"><span class="card-title">Full-Body Foundations</span></div><div class="prog__sub-row"><svg class="icon" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dumbbell"/></svg> 3 days · 6 wk</div></div><svg class="icon prog__chev" width="16" height="16" fill="none" stroke="var(--text-secondary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chevronRight"/></svg></div>
-                        <div class="prog__item"><div class="prog__icon" style="background:var(--muscle-shoulders)"><img src="assets/exercises/bench_press_barbell.png" alt="" /></div><div class="prog__meta"><div class="prog__name-row"><span class="card-title">5×5 Strength</span></div><div class="prog__sub-row"><svg class="icon" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dumbbell"/></svg> 3 days · 12 wk</div></div><svg class="icon prog__chev" width="16" height="16" fill="none" stroke="var(--text-secondary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chevronRight"/></svg></div>
-                        <div class="prog__item"><div class="prog__icon" style="background:var(--muscle-biceps)"><img src="assets/exercises/bicep_curl_dumbbell.png" alt="" /></div><div class="prog__meta"><div class="prog__name-row"><span class="card-title">Hypertrophy Block</span></div><div class="prog__sub-row"><svg class="icon" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dumbbell"/></svg> 5 days · 8 wk</div></div><svg class="icon prog__chev" width="16" height="16" fill="none" stroke="var(--text-secondary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chevronRight"/></svg></div>
-                        <div class="prog__item"><div class="prog__icon" style="background:var(--muscle-glutes)"><img src="assets/exercises/bulgarian_split_squat.png" alt="" /></div><div class="prog__meta"><div class="prog__name-row"><span class="card-title">Powerlifting Peak</span><span class="prog__tag">PEAK</span></div><div class="prog__sub-row"><svg class="icon" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dumbbell"/></svg> 4 days · 6 wk</div></div><svg class="icon prog__chev" width="16" height="16" fill="none" stroke="var(--text-secondary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chevronRight"/></svg></div>
-                        <div class="prog__item"><div class="prog__icon" style="background:var(--muscle-cardio)"><img src="assets/exercises/box_jump.png" alt="" /></div><div class="prog__meta"><div class="prog__name-row"><span class="card-title">Conditioning &amp; HIIT</span></div><div class="prog__sub-row"><svg class="icon" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dumbbell"/></svg> 4 days · 6 wk</div></div><svg class="icon prog__chev" width="16" height="16" fill="none" stroke="var(--text-secondary)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chevronRight"/></svg></div>
-                      </div>
-                      <div class="prog__fade prog__fade--top" aria-hidden="true"></div>
-                      <div class="prog__fade prog__fade--bot" aria-hidden="true"></div>
-                      <div class="prog__scroll" data-prog-track aria-hidden="true"><div class="prog__thumb" data-prog-thumb></div></div>
-                    </div>
-                    <div class="prog__footer"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-layers"/></svg> 40+ programs in the library</div>
-                  </div>
-                </div>
-              </div>
+    </div>
+    <div class="card meal">
+      <div class="row"><span class="ovl">THIS WEEK · THURSDAY</span><span class="t-meta lime" style="display:flex;align-items:center;gap:6px"><svg width="14" height="14" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sparkles"/></svg>AI suggested</span></div>
+      <div style="display:flex;align-items:baseline;gap:8px"><span class="mono" style="font-size:44px;font-weight:900">2,450</span><span class="t-cap">kcal target / day</span></div>
+      <div class="macro"><div class="row"><span class="ovl">PROTEIN</span><span class="mono">142<span class="muted"> / 180g</span></span></div><div class="bar"><i style="width:79%"></i></div></div>
+      <div class="macro"><div class="row"><span class="ovl">CARBS</span><span class="mono">210<span class="muted"> / 260g</span></span></div><div class="bar"><i style="width:81%;background:var(--chart-cyan)"></i></div></div>
+      <div class="macro"><div class="row"><span class="ovl">FAT</span><span class="mono">58<span class="muted"> / 75g</span></span></div><div class="bar"><i style="width:77%;background:var(--amber)"></i></div></div>
+      <div class="col" style="gap:8px">
+        <div class="dish"><div><span class="t-label muted">BREAKFAST</span><span class="t-title" style="font-size:15px">Oats, banana, whey</span></div><span class="mono">520</span></div>
+        <div class="dish"><div><span class="t-label muted">LUNCH</span><span class="t-title" style="font-size:15px">Chicken breast, brown rice, broccoli</span></div><span class="mono">780</span></div>
+        <div class="dish"><div><span class="t-label muted">DINNER</span><span class="t-title" style="font-size:15px">Pan-seared salmon, sweet potato</span></div><span class="mono">690</span><span class="pill" style="padding:6px 10px">SWAP</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ANALYTICS -->
+<section id="analytics" class="sec">
+  <div class="split">
+    <div class="col">
+      <div class="seg" data-tabs><span class="on" data-tab>OVERVIEW</span><span data-tab>HISTORY</span><span data-tab>BODY</span></div>
+      <div class="tabs__panels">
+      <div class="card tabs__panel is-on" data-tab-panel>
+        <div style="display:flex;align-items:center;gap:12px"><div style="width:44px;height:44px;border-radius:14px;background:var(--muscle-chest);display:flex;align-items:center;justify-content:center"><img src="assets/exercises/bench_press_barbell.png" alt="" style="width:90%;height:90%;object-fit:contain" loading="lazy" /></div><div style="flex:1;display:flex;flex-direction:column"><span class="t-title">Bench Press</span><span class="t-meta">e1RM · 12 weeks</span></div><span class="pill pill--solid">PR</span></div>
+        <div style="display:flex;align-items:baseline;gap:8px"><span class="mono" style="font-size:40px;font-weight:900">92.5</span><span class="t-cap">kg</span><span class="mono lime" style="font-size:14px;font-weight:700">+12.5</span></div>
+        <div class="bars" style="height:90px"><i style="height:26%"></i><i style="height:35%"></i><i style="height:31%"></i><i style="height:44%"></i><i style="height:48%"></i><i style="height:46%"></i><i style="height:57%"></i><i style="height:66%"></i><i style="height:64%"></i><i style="height:75%"></i><i style="height:84%"></i><i class="on" style="height:92%"></i></div>
+        <div style="display:flex;gap:4px" class="mono"><span style="padding:5px 10px;border-radius:8px;font-size:11px;font-weight:700;background:var(--surface-bright)">3M</span><span class="muted" style="padding:5px 10px;font-size:11px;font-weight:700">6M</span><span class="muted" style="padding:5px 10px;font-size:11px;font-weight:700">1Y</span><span class="muted" style="padding:5px 10px;font-size:11px;font-weight:700">ALL</span></div>
+      </div>
+      <div class="card tabs__panel" data-tab-panel>
+        <div class="row"><span class="ovl">LAST 3 WORKOUTS</span><span class="pill">+8%</span></div>
+        <div class="dish"><div><span class="t-title" style="font-size:15px">Push Day</span><span class="t-meta">Thu · 52 min</span></div><span class="mono" style="font-size:13px;color:var(--text-primary)">12,480 kg</span><span class="t-meta">18 sets</span></div>
+        <div class="dish"><div><span class="t-title" style="font-size:15px">Pull Day</span><span class="t-meta">Tue · 47 min</span></div><span class="mono" style="font-size:13px;color:var(--text-primary)">10,920 kg</span><span class="t-meta">16 sets</span></div>
+        <div class="dish"><div><span class="t-title" style="font-size:15px">Leg Day</span><span class="t-meta">Mon · 58 min</span></div><span class="mono" style="font-size:13px;color:var(--text-primary)">14,350 kg</span><span class="t-meta">20 sets</span></div>
+      </div>
+      <div class="card tabs__panel" data-tab-panel>
+        <div class="row"><span class="ovl">BODY COMPOSITION · 12 WEEKS</span><span class="pill">InBody</span></div>
+        <svg class="lc" viewBox="-6 0 312 120" preserveAspectRatio="none" aria-hidden="true"><g class="lc__grid"><line x1="0" x2="300" y1="10" y2="10"/><line x1="0" x2="300" y1="43" y2="43"/><line x1="0" x2="300" y1="76" y2="76"/><line x1="0" x2="300" y1="109" y2="109"/></g><g class="lc__lines"><path d="M0.0 14.0 L42.9 21.9 L85.7 27.1 L128.6 35.0 L171.4 37.6 L214.3 45.5 L257.1 50.7 L300.0 56.0" stroke="var(--lime)"/><path d="M0.0 70.0 L42.9 66.9 L85.7 60.8 L128.6 57.7 L171.4 48.5 L214.3 42.3 L257.1 36.2 L300.0 30.0" stroke="var(--chart-cyan)"/><path d="M0.0 40.0 L42.9 45.8 L85.7 55.4 L128.6 63.2 L171.4 70.9 L214.3 80.6 L257.1 88.3 L300.0 96.0" stroke="var(--amber)"/><path d="M0.0 58.0 L42.9 64.0 L85.7 72.0 L128.6 80.0 L171.4 86.0 L214.3 94.0 L257.1 102.0 L300.0 108.0" stroke="#B388FF"/></g><g class="lc__dots"><path d="M300.0 56.0 l0 0" stroke="var(--lime)"/><path d="M300.0 30.0 l0 0" stroke="var(--chart-cyan)"/><path d="M300.0 96.0 l0 0" stroke="var(--amber)"/><path d="M300.0 108.0 l0 0" stroke="#B388FF"/></g></svg>
+        <div class="lc__legend"><div class="lc__item"><i style="background:var(--lime)"></i><span class="t-meta">Weight</span><b class="mono">76.8 kg</b><span class="mono lc__d">−1.6</span></div><div class="lc__item"><i style="background:var(--chart-cyan)"></i><span class="t-meta">SMM</span><b class="mono">35.2 kg</b><span class="mono lc__d">+1.3</span></div><div class="lc__item"><i style="background:var(--amber)"></i><span class="t-meta">Body fat</span><b class="mono">14.2%</b><span class="mono lc__d">−2.9</span></div><div class="lc__item"><i style="background:#B388FF"></i><span class="t-meta">Fat mass</span><b class="mono">10.9 kg</b><span class="mono lc__d">−2.5</span></div></div>
+      </div>
+      </div>
+      <div class="cards--2 cards--scan">
+        <div class="card"><span class="ovl">STREAK</span><span class="big-num">12 WK</span><span class="t-cap">Weekly volume by muscle group</span></div>
+        <div class="card">
+          <div class="row"><span class="ovl">BODY SCAN</span><span class="scan__rec"><i></i>REC</span></div>
+          <div class="scan" aria-hidden="true">
+            <div class="scan__sheet">
+              <div class="scan__title">BODY COMPOSITION</div>
+              <div class="scan__lines"><i style="width:70%"></i><i style="width:52%"></i><i style="width:64%"></i></div>
+              <div class="scan__chart"><i style="height:55%"></i><i style="height:80%"></i><i style="height:40%"></i><i style="height:65%"></i><i style="height:48%"></i></div>
+              <div class="scan__lines"><i style="width:58%"></i><i style="width:44%"></i></div>
             </div>
+            <span class="scan__corner scan__corner--tl"></span><span class="scan__corner scan__corner--tr"></span><span class="scan__corner scan__corner--bl"></span><span class="scan__corner scan__corner--br"></span>
+            <span class="scan__beam"></span>
+            <span class="scan__tag scan__tag--a">Fat 14.2%</span>
+            <span class="scan__tag scan__tag--b">Muscle 35.2 kg</span>
+            <span class="scan__tag scan__tag--c">Weight 76.8 kg</span>
+            <span class="scan__status">AI reading sheet…</span>
           </div>
+          <span class="t-cap">InBody · ACCUNIQ · Tanita</span>
         </div>
       </div>
     </div>
-
-    <!-- Row 3: Watch + Live Activity -->
-    <div class="showcase-row watch-row">
-      <div class="watch-row__mocks">
-        <div class="reveal reveal--far watch-row__mocks-inner">
-          <!-- Watch mock -->
-          <div class="repto-float watch">
-            <div class="watch__screen">
-              <div class="watch__head"><span class="watch__live"><span class="repto-pulse watch__live-dot"></span><span class="watch__live-txt">PUSH A</span></span><span class="watch__time" data-watch-time>24:18</span></div>
-              <div class="watch__spacer"></div>
-              <div class="watch__metrics">
-                <div class="watch__metric"><span class="watch__metric-k"><svg class="icon" width="11" height="11" fill="none" stroke="var(--health-red)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heartPulse"/></svg><span class="watch__metric-lbl">HEART</span></span><span class="watch__metric-v"><span class="watch__metric-num" data-watch-bpm style="color:var(--health-red)">148</span><span class="watch__metric-unit">BPM</span></span></div>
-                <div class="watch__metric"><span class="watch__metric-k"><svg class="icon" width="11" height="11" fill="none" stroke="var(--amber)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-flame"/></svg><span class="watch__metric-lbl">CALORIES</span></span><span class="watch__metric-v"><span class="watch__metric-num" data-watch-cal style="color:var(--amber)">318</span><span class="watch__metric-unit">CAL</span></span></div>
-              </div>
-              <div class="watch__spacer"></div>
-              <div class="watch__rest">
-                <div class="watch__rest-head"><span class="watch__rest-lbl">REST · SET 3</span><span class="watch__rest-time">0:42</span></div>
-                <div class="watch__rest-bar"><div class="watch__rest-fill"></div></div>
-              </div>
-            </div>
-          </div>
-          <!-- Live Activity mock -->
-          <div class="liveact">
-            <div class="liveact__island"><span class="liveact__island-l"><span class="repto-pulse liveact__island-dot"></span><span class="liveact__island-rest">REST</span></span><span class="liveact__island-time">0:42</span><span class="liveact__island-icon"><svg class="icon" width="11" height="11" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dumbbell"/></svg></span></div>
-            <div class="liveact__card">
-              <div class="liveact__card-head"><img src="assets/repto-logo.jpeg" alt="" width="22" height="22" class="liveact__logo" /><span class="liveact__card-title">REPTO · PUSH DAY A</span></div>
-              <div class="liveact__card-row">
-                <div><div class="caption">Rest</div><div class="liveact__big">0:42</div></div>
-                <div class="liveact__upnext"><div class="caption">Up next</div><div class="liveact__next">Bench · Set 3</div></div>
-              </div>
-              <div class="liveact__bar"><div class="liveact__fill"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="watch-row__text">
-        <div class="reveal"><span class="overline"><span class="overline__dot"></span><span class="overline__text">On every screen you own</span></span></div>
-        <h2 class="reveal showcase__title" data-delay="70">From your wrist to your Lock Screen.</h2>
-        <p class="reveal showcase__body" data-delay="130">A standalone Apple Watch app logs sets from your wrist. Live Activities keep your rest timer running on the Lock Screen and Dynamic Island — glance, breathe, lift.</p>
-        <div class="reveal showcase__chips" data-delay="200">
-          <span class="chip"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg> Standalone Watch app</span>
-          <span class="chip"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg> Live rest timer</span>
-          <span class="chip"><svg class="icon" width="13" height="13" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg> Dynamic Island</span>
-        </div>
+    <div class="copy">
+      <span class="eyebrow">ANALYTICS &amp; PROGRESS</span>
+      <h2 class="h2">Progress you can see.</h2>
+      <div class="bullets">
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Per-exercise stats</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Muscle-group volume, streaks, PR badges</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Weekly &amp; monthly Training Summary</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Body composition scan</span></div></div>
       </div>
     </div>
+  </div>
+</section>
 
+<!-- ============================================================ HEALTH & SHARING -->
+<section id="health" class="sec">
+  <div class="split">
+    <div class="copy">
+      <span class="eyebrow">APPLE HEALTH · SHARING</span>
+      <h2 class="h2">All your data in one place. Show off in one tap.</h2>
+      <div class="bullets">
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Two-way Apple Health sync</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Share with a 6-character code</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">6 post-workout posters</span></div></div>
+        <div class="bullet"><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg><div><span class="t-title">Photo check-in</span></div></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="padding:24px">
+        <div style="display:flex;align-items:center;gap:10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--health-red)"><path d="M12 21s-7.5-4.6-9.5-9.3C1 7.9 3.4 4.5 7 4.5c2 0 3.5 1.1 5 2.8 1.5-1.7 3-2.8 5-2.8 3.6 0 6 3.4 4.5 7.2C19.5 16.4 12 21 12 21z"/></svg><span class="t-title">Apple Health</span></div>
+        <span class="ovl">REPTO WRITES</span>
+        <div class="chips"><span class="hchip">Workouts</span><span class="hchip">Body composition</span></div>
+        <span class="ovl">REPTO READS</span>
+        <div class="chips"><span class="hchip">Weight</span><span class="hchip">Sleep</span><span class="hchip">Body fat</span><span class="hchip">Resting heart rate</span><span class="hchip">Calories</span><span class="hchip">Heart rate</span></div>
+      </div>
+      <div class="card" style="padding:24px">
+        <span class="ovl">WORKOUT SHARING · FREE</span>
+        <div class="code"><span>R</span><span>7</span><span>K</span><span>2</span><span>Q</span><span>X</span></div>
+        <span class="t-cap">6-character code · reptofit.com link · .reptoplan file · CSV export</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MORE -->
+<section class="sec sec--tight" style="display:flex;flex-direction:column;gap:24px">
+  <span class="eyebrow">AND MORE</span>
+  <div class="more">
+    <div><span class="more__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="t-title">Nearby map</span><span class="t-cap">Find nearby gyms and parks with directions.</span></div>
+    <div><span class="more__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-15-6.7L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"/><path d="M16 16h5v5"/></svg></span><span class="t-title">Sync across devices</span><span class="t-cap">Sign in with Apple or Google, your data follows you.</span></div>
+    <div><span class="more__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18Z" fill="var(--lime)"/></svg></span><span class="t-title">Light / Dark / System</span><span class="t-cap">Dark by default.</span></div>
+    <div><span class="more__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg></span><span class="t-title">Sounds &amp; haptics</span><span class="t-cap">Customize feedback when rest ends.</span></div>
+    <div><span class="more__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18Z"/></svg></span><span class="t-title">8 languages</span><span class="t-cap">English, Tiếng Việt, 简体中文, 日本語, 한국어, Deutsch, Français, Español.</span></div>
   </div>
 </section>
 
 <!-- ============================================================ PRICING -->
-<section id="pricing" class="pricing">
-  <div class="container">
-    <div class="reveal section-head">
-      <span class="overline"><span class="overline__dot"></span><span class="overline__text">Pricing</span></span>
-      <h2 class="section-title">Train free. Go Pro when you're ready.</h2>
-      <p class="section-lead">Sharing, export, Health and Watch are free for everyone.</p>
+<section id="pricing" class="sec sec--tight pricing">
+  <div class="pricing__head">
+    <span class="eyebrow">PRICING</span>
+    <h2 class="h2 h2--lg">Free is plenty. Pro costs less than a coffee.</h2>
+  </div>
+  <div class="seg" role="tablist" data-periods>
+    <button type="button" data-period="month" data-price="$1.29" data-unit="/ month · 14-day free trial" data-badge="14-DAY TRIAL">MONTHLY</button>
+    <button type="button" class="on" data-period="year" data-price="$11.99" data-unit="/ year · save ~22%" data-badge="SAVE 22%">YEARLY</button>
+    <button type="button" data-period="life" data-price="$29.99" data-unit="pay once, yours for life" data-badge="LIFETIME">LIFETIME</button>
+  </div>
+  <div class="plans">
+    <div class="card plan">
+      <span class="ovl">FREE</span>
+      <div class="plan__price"><b>$0</b><span class="t-cap">forever</span></div>
+      <ul class="plan__list">
+        <li><svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>Unlimited programs &amp; history</li>
+        <li><svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>Rest timers, Live Activities, Apple Watch</li>
+        <li><svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>Apple Health sync</li>
+        <li><svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>Share codes, links, CSV export</li>
+        <li><svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>1 AI-generated program</li>
+        <li><svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>1 body scan</li>
+      </ul>
     </div>
-    <div class="price-grid">
-      <!-- FREE -->
-      <div class="reveal price-cell">
-        <div class="price-card">
-          <div class="price-card__tier">FREE</div>
-          <div class="price-card__amount"><span class="price-card__num">$0</span><span class="price-card__per">forever</span></div>
-          <p class="price-card__blurb">Everything you need to track real training.</p>
-          <ul class="price-card__list">
-            <li class="price-line"><span class="price-line__check"><svg class="icon" width="12" height="12" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span class="price-line__txt">Up to 4 plans per program</span></li>
-            <li class="price-line"><span class="price-line__check"><svg class="icon" width="12" height="12" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span class="price-line__txt">Templates &amp; program library</span></li>
-            <li class="price-line"><span class="price-line__check"><svg class="icon" width="12" height="12" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span class="price-line__txt">Sharing &amp; CSV export</span></li>
-            <li class="price-line"><span class="price-line__check"><svg class="icon" width="12" height="12" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span class="price-line__txt">Apple Health sync</span></li>
-            <li class="price-line"><span class="price-line__check"><svg class="icon" width="12" height="12" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span class="price-line__txt">Apple Watch app</span></li>
-          </ul>
-          <a href="#download" class="price-card__cta price-card__cta--free">Get Repto free</a>
-        </div>
-      </div>
-      <!-- PRO -->
-      <div class="reveal price-cell" data-delay="90">
-        <div class="pro-card">
-          <div class="pro-card__halo" aria-hidden="true"></div>
-          <div class="pro-card__inner">
-            <div class="pro-card__top">
-              <div class="pro-card__tier"><svg class="icon" width="14" height="14" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gem"/></svg> REPTO PRO</div>
-              <span class="pro-card__badge">Most popular</span>
-            </div>
-            <div class="price-card__amount"><span class="price-card__num">$1.29</span><span class="price-card__per">/ month</span></div>
-            <div class="pro-card__alts"><span class="pro-card__alt">$11.99 / yr</span><span class="pro-card__alt">$29.99 lifetime</span></div>
-            <ul class="price-card__list">
-              <li class="price-line"><span class="price-line__check"><svg class="icon" width="12" height="12" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span class="price-line__txt price-line__txt--bold">Everything in Free</span></li>
-              <li class="price-line"><span class="price-line__check"><svg class="icon" width="12" height="12" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span class="price-line__txt">Unlimited plans per program</span></li>
-              <li class="price-line"><span class="price-line__check"><svg class="icon" width="12" height="12" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span class="price-line__txt">Full Repto Coach (AI)</span></li>
-              <li class="price-line"><span class="price-line__check"><svg class="icon" width="12" height="12" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span class="price-line__txt">Weekly reviews &amp; adaptive weeks</span></li>
-              <li class="price-line"><span class="price-line__check"><svg class="icon" width="12" height="12" fill="none" stroke="var(--lime)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span class="price-line__txt">Priority AI coaching</span></li>
-            </ul>
-            <a href="#download" class="price-card__cta price-card__cta--pro">Start Pro</a>
-          </div>
-        </div>
-      </div>
+    <div class="card plan plan--pro">
+      <div class="row"><span class="ovl lime">REPTO PRO</span><span class="pill pill--solid" data-pro-badge>SAVE 22%</span></div>
+      <div class="plan__price"><b class="lime" data-pro-price>$11.99</b><span class="t-cap" data-pro-unit>/ year · save ~22%</span></div>
+      <ul class="plan__list">
+        <li><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>Repto Coach: review, chat, explain, insight</li>
+        <li><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>Unlimited AI-generated programs</li>
+        <li><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>AI meal plan: weekly plans &amp; swaps</li>
+        <li><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>Full charts 3M / 6M / 1Y / All</li>
+        <li><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>All 6 share cards, hide logo</li>
+        <li><svg width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round"><use href="#i-check"/></svg>Unlimited body scans</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- ============================================================ FINAL CTA -->
-<section id="download" class="cta">
-  <div class="cta__glow" aria-hidden="true"></div>
-  <div class="container cta__inner">
-    <div class="reveal cta__logo-wrap"><img src="assets/repto-logo.jpeg" alt="Repto" width="72" height="72" class="cta__logo" /></div>
-    <h2 class="reveal cta__title" data-delay="60">Ready to train <span class="accent">smarter?</span></h2>
-    <p class="reveal cta__lead" data-delay="120">Download Repto and log your first set in under a minute. Free to start.</p>
-    <div class="reveal cta__badges" data-delay="190">
-      <a href="https://apps.apple.com/app/repto-workout-tracker/id6761402067" target="_blank" rel="noopener" class="badge badge--62" aria-label="Download Repto on the App Store">
-        <svg class="badge__glyph" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.05 12.5c-.03-2.5 2.04-3.7 2.13-3.76-1.16-1.7-2.97-1.93-3.61-1.96-1.54-.16-3 .9-3.78.9-.77 0-1.97-.88-3.24-.85-1.67.02-3.21.97-4.07 2.46-1.73 3.01-.44 7.46 1.24 9.9.82 1.2 1.8 2.53 3.08 2.48 1.24-.05 1.7-.8 3.2-.8 1.49 0 1.9.8 3.2.77 1.32-.02 2.16-1.21 2.97-2.41.93-1.38 1.32-2.72 1.34-2.79-.03-.01-2.57-.99-2.6-3.92zM14.6 5.1c.68-.83 1.14-1.98 1.01-3.1-.98.04-2.16.65-2.87 1.47-.63.73-1.18 1.9-1.03 3.02 1.09.08 2.21-.56 2.89-1.39z"/></svg>
+<section id="download" class="sec" style="padding-bottom:80px">
+  <div class="cta">
+    <div class="cta__glow" aria-hidden="true"></div>
+    <img src="assets/repto-logo.jpeg" alt="" class="cta__icon" width="88" height="88" />
+    <img src="assets/wordmark-neon.png" alt="Repto" class="cta__word" width="360" height="90" />
+    <div class="cta__copy">
+      <span class="cta__tag">Master your time.<br><span class="lime">Elevate your performance.</span></span>
+      <span class="muted" style="font-size:17px;max-width:460px;text-wrap:pretty">Two quick questions and AI builds a program just for you. Takes 30 seconds.</span>
+    </div>
+    <div class="badges">
+      <a href="https://apps.apple.com/app/repto-workout-tracker/id6761402067" target="_blank" rel="noopener" class="badge badge--64" aria-label="Download Repto on the App Store">
+        <svg class="badge__glyph" fill="#fff" aria-hidden="true"><use href="#i-apple"/></svg>
         <span class="badge__txt"><span class="badge__pre">Download on the</span><span class="badge__name">App Store</span></span>
       </a>
-      <a href="https://play.google.com/store/apps/details?id=app.repto.android&amp;pcampaignid=web_share" target="_blank" rel="noopener" class="badge badge--62" aria-label="Get Repto on Google Play">
-        <svg class="badge__glyph badge__glyph--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z" fill="#00C3FF"/><path d="m13.792 12 2.882-2.882 4.434 2.53c.78.445.78 1.26 0 1.704l-4.434 2.53L13.792 12z" fill="#FFCE00"/><path d="m16.674 9.118-2.882 2.882L3.61 1.814a.998.998 0 0 1 .98-.04l12.084 7.344z" fill="#00E676"/><path d="m13.792 12 2.882 2.882L4.589 22.226a.998.998 0 0 1-.98-.04L13.792 12z" fill="#FF3D47"/></svg>
+      <a href="https://play.google.com/store/apps/details?id=app.repto.android&amp;pcampaignid=web_share" target="_blank" rel="noopener" class="badge badge--64" aria-label="Get Repto on Google Play">
+        <svg class="badge__glyph badge__glyph--play" aria-hidden="true"><use href="#i-play"/></svg>
         <span class="badge__txt"><span class="badge__pre">GET IT ON</span><span class="badge__name">Google Play</span></span>
       </a>
     </div>
-    <div class="reveal cta__rating" data-delay="250"><span class="stars" data-stars="4.9"></span> 4.9 on the App Store</div>
+    <span class="t-cap">iOS 17+ · Apple Watch · Android · 14-day Pro trial</span>
   </div>
 </section>
 
 </main>
+</div>
+
 
 <!-- ============================================================ FOOTER -->
 <footer class="footer">
@@ -643,7 +652,7 @@
           <li><a href="#features">Features</a></li>
           <li><a href="#coach">Repto Coach</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#showcase">Apple Watch</a></li>
+          <li><a href="#watch">Apple Watch</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -653,7 +662,7 @@
           <li><a href="#download">Blog</a></li>
           <li><a href="#download">Careers</a></li>
           <li><a href="https://www.facebook.com/reptoapp/" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="mailto:reptoapp.official@gmail.com">Contact</a></li>
+          <li><a href="mailto:support@reptofit.com">Contact</a></li>
         </ul>
       </div>
       <div class="footer__col">
