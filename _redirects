@@ -1,6 +1,6 @@
 # 301 redirects for old *-vi paths (with and without .html extension)
-/index-vi.html   /vi         301
-/index-vi        /vi         301
+/index-vi.html   /vi/         301
+/index-vi        /vi/         301
 /privacy-vi.html /vi/privacy 301
 /privacy-vi      /vi/privacy 301
 /terms-vi.html   /vi/terms   301

@@ -1,0 +1,46 @@
+# Repto
+
+> Repto is a workout tracker and gym log for iPhone, Apple Watch and Android, with a built-in AI coach. You log sets in seconds and follow rest timers on the Lock Screen, in the Dynamic Island or on your wrist. It comes with 789+ illustrated exercises, 41 ready-made programs and AI meal plans. The core app is free. Repto Pro adds the AI features and starts with a 14-day free trial.
+
+Website: https://reptofit.com/ (English) · https://reptofit.com/vi/ (Vietnamese)
+Download: [App Store](https://apps.apple.com/app/repto-workout-tracker/id6761402067) · [Google Play](https://play.google.com/store/apps/details?id=app.repto.android)
+Platforms: iOS 17+, standalone Apple Watch app, Android
+Languages: English, Vietnamese, Simplified Chinese, Japanese, Korean, German, French, Spanish
+Contact: support@reptofit.com · https://www.facebook.com/reptoapp/
+
+## Key features
+
+- Workout logging: tick a set, rest, repeat. Shows what you lifted last time and suggests the next weight (progressive overload, e.g. 60 kg → 62.5 kg).
+- Tracking modes: reps × weight, reps only, duration, cardio/distance; kg or lbs. Unlimited custom exercises, muscle heatmap.
+- Exercise library: 789+ illustrated exercises, 668 demo videos.
+- Programs: 41 ready-made programs (Push/Pull/Legs, Upper/Lower, Full Body Beginner, 5x5 Strength, Bro Split, Dumbbell Full Body, Bodyweight Starter, Home Minimal Setup, 8-Week Squat/Bench/Deadlift PR, Glute Builder, 30-Day Shred, Posture Builder and more), filterable by goal, level, equipment, muscle group and sport. Single-workout templates and custom programs.
+- Onboarding: answer goal, sex, level, schedule, equipment, height and weight, and AI builds a program in about 30 seconds.
+- Rest timer everywhere: Live Activities and Dynamic Island on iPhone, Live Update on Android 16, meal plan widget.
+- Apple Watch: works without the iPhone, with live heart rate, rest timer, workout summary and Watch ↔ iPhone sync.
+- Repto Coach (AI, Pro): AI program generation, weekly review, "ask your data" chat, explanations of charts, AI single workouts, insight feed.
+- AI meal plan (Pro): automatic calories and macros, weekly menus, dish swaps. Building your own meals is free.
+- Analytics: per-exercise stats and estimated 1RM, muscle-group volume, streaks, PR badges, weekly and monthly training summaries.
+- Body composition scan: read InBody, ACCUNIQ or Tanita result sheets with AI.
+- Apple Health: two-way sync (writes workouts and body composition; reads weight, sleep, body fat, resting heart rate, calories, heart rate).
+- Sharing: share a workout with a 6-character code, a reptofit.com link or a .reptoplan file; CSV export; 6 post-workout poster cards.
+- Also: nearby gyms and parks map, sync across devices (Sign in with Apple or Google), light/dark theme, custom sounds and haptics.
+
+## Pricing
+
+- Free ($0, forever): unlimited programs and history, rest timers, Live Activities, Apple Watch, Apple Health sync, share codes/links/CSV export, 1 AI-generated program, 1 body scan.
+- Repto Pro: $1.29/month or $11.99/year (save ~22%). Both start with a 14-day free trial, and you can cancel before it ends without being charged. Lifetime: $29.99 one-time (no trial).
+- Pro includes: Repto Coach (review, chat, explain, insights), unlimited AI-generated programs, AI meal plans, full charts (3M/6M/1Y/All), all 6 share cards with the logo hidden, unlimited body scans.
+- Subscriptions are billed and managed by Apple or Google. Refunds go through the store.
+
+## Privacy
+
+- Health data is processed on the device and is never sold or used for advertising.
+- The AI Coach uses Anthropic's Claude API. Only goals, workout summaries and aggregate metrics are sent, never raw health records, and Anthropic does not train on this data.
+
+## Pages
+
+- [Home (English)](https://reptofit.com/): features, Apple Watch, programs, AI coach, meal plan, pricing
+- [Trang chủ (Tiếng Việt)](https://reptofit.com/vi/): Vietnamese version of the home page
+- [Support & FAQ](https://reptofit.com/support): cancelling, refunds, restoring purchases, Free vs Pro, Apple Watch, export, deleting an account
+- [Privacy Policy](https://reptofit.com/privacy)
+- [Terms of Use](https://reptofit.com/terms)

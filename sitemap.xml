@@ -3,50 +3,58 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://reptofit.com/</loc>
+    <lastmod>2026-10-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/vi"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/vi/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/"/>
   </url>
   <url>
-    <loc>https://reptofit.com/vi</loc>
+    <loc>https://reptofit.com/vi/</loc>
+    <lastmod>2026-10-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/vi"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/vi/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/"/>
   </url>
   <url>
-    <loc>https://reptofit.com/privacy.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/privacy.html"/>
+    <loc>https://reptofit.com/privacy</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/vi/privacy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/privacy"/>
   </url>
   <url>
     <loc>https://reptofit.com/vi/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/privacy.html"/>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/vi/privacy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/privacy"/>
   </url>
   <url>
-    <loc>https://reptofit.com/terms.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/terms.html"/>
+    <loc>https://reptofit.com/terms</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/terms"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/vi/terms"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/terms"/>
   </url>
   <url>
     <loc>https://reptofit.com/vi/terms</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/terms.html"/>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/terms"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/vi/terms"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/terms"/>
   </url>
   <url>
-    <loc>https://reptofit.com/support.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/support.html"/>
+    <loc>https://reptofit.com/support</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/support"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/vi/support"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/support"/>
   </url>
   <url>
     <loc>https://reptofit.com/vi/support</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/support.html"/>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reptofit.com/support"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://reptofit.com/vi/support"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reptofit.com/support"/>
   </url>
 </urlset>
