@@ -11,7 +11,7 @@ export const AASA = {
     details: [
       {
         appIDs: ['28T5K7WQTG.com.vucuong1820.Repto'],
-        components: [{ '/': '/p/*' }, { '/': '/w/*' }],
+        components: [{ '/': '/p/*' }, { '/': '/w/*' }, { '/': '/go/*' }],
       },
     ],
   },
