@@ -19,7 +19,7 @@ test('serves the Android Digital Asset Links statement', async () => {
 test('still serves the Apple app-site-association', async () => {
   const res = wellKnownResponse('/.well-known/apple-app-site-association')
   const body = await res.json()
-  assert.deepEqual(body.applinks.details[0].components, [{ '/': '/p/*' }, { '/': '/w/*' }, { '/': '/go/*' }])
+  assert.deepEqual(body.applinks.details[0].components, [{ '/': '/p/*' }, { '/': '/w/*' }])
 })
 
 test('every other path is not a well-known document', () => {
