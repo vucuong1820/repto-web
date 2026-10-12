@@ -1,35 +1,17 @@
 /* ============================================================
-   Repto — campaign link attribution.
-   reptofit.com/go/<slug> logs the click, stores it in the
-   repto_click cookie (<click id>.<slug>[.<provider token>]) and
-   lands here. This tags the store buttons with it — ct/pt for the
-   App Store, click_id in the Play referrer (exact Android match) —
-   and reports screen + timezone, which iOS install matching needs.
+   Repto — attribute installs that start on this site.
+   On phones the store buttons go through reptofit.com/go/organic-web
+   (the "Website" campaign in the analytics dashboard): the click is
+   logged, then the phone is sent to its own store — so these installs
+   show up as "Website" instead of anonymous organic.
+   Only iPhone/Android UAs are rewritten: /go sends anything else back
+   here, which would loop (iPadOS reports itself as a Mac).
    ============================================================ */
 (function () {
   try {
-    var m = document.cookie.match(/(?:^|; )repto_click=([0-9a-f-]{36})\.([a-z0-9-]{1,64})(?:\.(\d+))?(?:;|$)/);
-    if (!m) return;
-    var click = m[1], slug = m[2], pt = m[3];
-    document.querySelectorAll('a[href*="apps.apple.com/"]').forEach(function (a) {
-      var u = new URL(a.href);
-      u.searchParams.set('ct', slug);
-      u.searchParams.set('mt', '8');
-      if (pt) u.searchParams.set('pt', pt);
-      a.href = u.toString();
+    if (!/iPhone|iPod|Android/i.test(navigator.userAgent)) return;
+    document.querySelectorAll('a[href*="apps.apple.com/"], a[href*="play.google.com/store/apps/details"]').forEach(function (a) {
+      a.href = '/go/organic-web';
     });
-    document.querySelectorAll('a[href*="play.google.com/store/apps/details"]').forEach(function (a) {
-      var u = new URL(a.href);
-      u.searchParams.set('referrer', 'click_id=' + click + '&utm_campaign=' + slug);
-      a.href = u.toString();
-    });
-    var sent = 'repto_b_' + click;
-    if (sessionStorage.getItem(sent)) return;
-    sessionStorage.setItem(sent, '1');
-    navigator.sendBeacon('/go/_b?c=' + click, JSON.stringify({
-      screen: screen.width + 'x' + screen.height,
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      language: navigator.language
-    }));
   } catch (e) {}
 })();
