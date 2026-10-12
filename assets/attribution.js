@@ -7,6 +7,8 @@
    on phones the store buttons switch to it. Until it arrives (or if it never
    does) phone buttons go through /go/organic-web, which logs and redirects.
    Desktop buttons are left alone: /go would send a desktop back here.
+   Browsers cache /assets for 4 h: bump ?v= on this script's <script> tag
+   in index.html and vi/index.html whenever this file changes.
    ============================================================ */
 (function () {
   try {
